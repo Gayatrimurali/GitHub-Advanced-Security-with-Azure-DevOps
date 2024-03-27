@@ -1,5 +1,7 @@
 
-### Task 5: Secret Scanning Alerts
+## Lab 02: Secret Scanning 
+
+### Task 1: Secret Scanning Alerts
 
 Secret Scanning scans your codebase and other resources to identify potential secrets that may have been inadvertently committed and provides alerts to mitigate the risk of exposure. Push protection also prevents any credentials from being leaked in the first place.
 
@@ -18,7 +20,7 @@ Secrets Review
 4.	Notice this includes the Recommendation, Locations found, Remediation Steps, Severity, and the Date it was first introduced. We can easily clean this up and dismiss the alert.
     ![Secret Details](media/secret_details.png)
 
-### Task 6: Protection of Repositories (Stop the Leak) 
+### Task 2: Protection of Repositories (Stop the Leak) 
 Once a credential touches the repo, it's too late. Hackers might have already exploited it. The only way forward is to eliminate these leaks permanently and to find all the places they're actually being used in production.
 
  **Note:** Good news, GHAzDO focuses on preventing this in the first place. Bad news, these need to be manually fixed. There isn't an Easy Button.
