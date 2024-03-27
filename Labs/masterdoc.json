@@ -1,0 +1,25 @@
+[
+  {
+    "Name": "GitHub Advanced Security with Azure DevOps",
+    "Language": "English",
+    "BaseURL": "https://github.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module1.md?token=GHSAT0AAAAAACQF7HB6ST6ECIDODO7D5PDCZQEH64Q",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module2.md?token=GHSAT0AAAAAACQF7HB6OAQDGNLHPRMRJEDIZQEIAPA",
+        "Order": 2
+      },
+       {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module3.md?token=GHSAT0AAAAAACQF7HB7OJAKLUEW32O7UVAIZQEIAEA",
+        "Order": 3
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module4.md?token=GHSAT0AAAAAACQF7HB73FARZBLRZPB2DVKIZQEIA5A",
+        "Order": 4
+      }
+    ]
+  }
+]
