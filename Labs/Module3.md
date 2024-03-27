@@ -1,3 +1,5 @@
+## Lab 03: Dependency Scanning
+
 ### Task 4: Resolution of Dependency Detections
 
 1.	Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
