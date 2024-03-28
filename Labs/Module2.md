@@ -12,20 +12,20 @@ The Advance Security Alert hub is where all alerts are raised and where we gain 
 Secrets Review 
 1.	Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
 
-    ![Advances Sec](media/Advanced_sec.png)
+     ![Advances Sec](media/Advanced_sec.png)
 
 2.	Click on **Secrets** to see a list of all the exposed Secrets alerts that have been found. This includes the Alert and Introduced date. Click on the Microsoft Azure Storage account access key identifiable... to see more details about the alert and what you can do to clean up the secret.
-    ![Secrets page](media/secrets_page.png)
+
+  	 ![Secrets page](media/secrets_page.png)
 
 4.	Notice this includes the Recommendation, Locations found, Remediation Steps, Severity, and the Date it was first introduced. We can easily clean this up and dismiss the alert.
-    ![Secret Details](media/secret_details.png)
+
+  	 ![Secret Details](media/secret_details.png)
 
 ### Task 2: Protection of Repositories (Stop the Leak) 
 Once a credential touches the repo, it's too late. Hackers might have already exploited it. The only way forward is to eliminate these leaks permanently and to find all the places they're actually being used in production.
 
  **Note:** Good news, GHAzDO focuses on preventing this in the first place. Bad news, these need to be manually fixed. There isn't an Easy Button.
-
-
 
 #### Push Protection
 
