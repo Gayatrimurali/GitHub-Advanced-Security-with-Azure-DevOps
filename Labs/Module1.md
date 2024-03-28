@@ -16,11 +16,11 @@ GitHub Advanced Security for Azure DevOps includes extra permissions for more le
 
 1.	Click on Settings, then click **Advanced Security**, On to turn it on.
 
-    ![setup](media/setup-enable.png)
+   ![setup](media/setup-enable.png)
 
 1.	Click Begin **Billing**.
 
-    ![enable-billing](media/enable-billing.png)
+   ![enable-billing](media/enable-billing.png)
 
 1.	Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well
  
@@ -38,6 +38,6 @@ GitHub Advanced Security for Azure DevOps includes extra permissions for more le
 
 5.	If successful, a green checkmark ✅ appears next to the selected permission.
 
-    ![allow-permissions](media/Allow-permissions.png)
+   ![allow-permissions](media/Allow-permissions.png)
 
 
