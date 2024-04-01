@@ -129,7 +129,7 @@ Repeat the same for **Test** environment.
 
 > As part of the deployment, Azure Resource Manager template will provision the resource group and the resources in your Azure Subscription.
 
-### Task 1: Enable Advanced Security from Portal
+### Task 5: Enable Advanced Security from Portal
 
 GitHub Advanced Security for Azure DevOps includes extra permissions for more levels of control around Advanced Security results and management. Be sure to adjust individual permissions for your repository.
 
