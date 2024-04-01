@@ -5,10 +5,30 @@
 GitHub Advanced Security for Azure DevOps includes extra permissions for more levels of control around Advanced Security results and management. Be sure to adjust individual permissions for your repository.
 
  To ensure Azure DevOps Advanced Security is enabled in your organization, you can follow these steps:
+1. Open Edge browser and navigate to https://dev.azure.com and select **Start Free** and sign in with the credentials provided in the Environment variables.
 
-1.	Sign in to your Azure DevOps account with appropriate permissions to access organization settings.
+      ![setup](media/setup-enable.png)
 
-1.	Navigate to the Azure DevOps organization and Team Project you want to check.
+1. On **Get Started with Azure DevOps** page, click on **Continue**
+
+      ![setup](media/setup-enable.png)
+
+1. If prompted (*"Almost done"*), leave the name for the Azure DevOps organization at default (it needs to be a globally unique name) and pick a hosting location close to you from the list, enter the required **captcha** and click on **Continue**
+
+      ![setup](media/setup-enable.png)
+
+1. On **Create new Project** window, provide the below settings:
+
+     - name: **eShopOnWeb** 
+     - visibility: **Private**
+
+1. Click on **Create**.
+
+      ![setup](media/setup-enable.png)
+
+1. Click on **Repos>Files** , **Import a Repository**. Select **Import**. On the **Import a Git Repository** window, paste the following URL https://github.com/MicrosoftLearning/eShopOnWeb.git  and click **Import**:
+
+      ![setup](media/setup-enable.png)
 
 1.	In the lower-left corner, click on **Project Settings**. In the left menu area under Repos, click **Repositories**.
 
