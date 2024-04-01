@@ -4,7 +4,7 @@
 
 GitHub Advanced Security for Azure DevOps includes extra permissions for more levels of control around Advanced Security results and management. Be sure to adjust individual permissions for your repository.
 
- To ensure Azure DevOps Advanced Security is enabled in your organization, you can follow these steps:
+To ensure Azure DevOps Advanced Security is enabled in your organization, you can follow these steps:
 
 1. Open Edge browser and navigate to https://dev.azure.com and select **Start Free** and sign in with the credentials provided in the Environment variables.
 
@@ -30,17 +30,7 @@ GitHub Advanced Security for Azure DevOps includes extra permissions for more le
 1. At the **Organization settings** screen click **Billing** (opening this screen takes a few seconds).
 
 1. Click **Setup billing** and on the right-hand side of the screen select the **Existing subscription** listed and click **Save** to link the subscription with the organization.
-
-1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then click the **SAVE** button at the bottom. 
-
-1. In **Organization Settings**, go to section **Security** and click **Policies**.
-
-1. Toggle the switch to **On** for **Third-party application access via OAuth**
-    > Note: The OAuth setting helps enable tools such as the DemoDevOpsGenerator to register extensions. Without this, several labs may fail due to a lack of the required extensions.
-
-1. Toggle the switch to **On** for **Allow public projects**
-    > Note: Extensions used in some labs might require a public project to allow using the free version.
-
+ 
 1. Navigate to **eShopOnWeb**, devOps project and click on **Repos>Files** , **Import a Repository**. Select **Import**. On the **Import a Git Repository** window, paste the following URL https://github.com/MicrosoftLearning/eShopOnWeb.git  and click **Import**:
 
       ![setup](media/last4.png)
@@ -63,6 +53,8 @@ GitHub Advanced Security for Azure DevOps includes extra permissions for more le
    {% include note.html content= "GitHub Advanced Security for Azure DevOps includes extra permissions for more levels of control around Advanced Security results and management. Be sure to adjust individual permissions for your repository." %}
 
 ### Task 2: Setup Advanced Security permissions
+
+In this task, you will configure Advanced Security permissions for the eShopOnWeb repository in Azure DevOps. This involves granting specific permissions to Project Administrators to manage security alerts and settings related to the repository.
 
 1.	In the lower-left corner, click on **Project Settings**. In the left menu area under Repos, click **Repositories**.
 
