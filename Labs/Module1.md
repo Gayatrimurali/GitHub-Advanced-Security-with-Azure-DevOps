@@ -35,31 +35,31 @@ Once you provision the project follow the below steps to configure the approvals
 
 1. Navigate to **Pipelines** section and select **Environments**
 
-    ![](media/pipelines/select_environment.png)
+    ![](media/select_environment.png)
 
 1. Select **Production** environment
 
-    ![](media/pipelines/navigate_production.png)
+    ![](media/navigate_production.png)
 
 1. Navigate to **Approvals and checks** and select **Approvals**
     
-    ![](media/pipelines/add_approvals.png)
+    ![](media/add_approvals.png)
 
 1. Choose an approver and click on create
 
-    ![](media/pipelines/choose_approver.png)
+    ![](media/choose_approver.png)
 
 1. To select additional checks, click on + button
 
-    ![](media/pipelines/add_additiona_checks.png)
+    ![](media/add_additiona_checks.png)
 
 1. Select **Required tempalte** and click on Next
 
-    ![](media/pipelines/choose_require_tempalte.png)
+    ![](media/choose_require_tempalte.png)
 
 1. Click on + button to add tempalte
 
-    ![](media/pipelines/required_tempalte.png)
+    ![](media/required_tempalte.png)
 
 1. Input the values in the Required YAML template fields and click on **Add required template** button
 
@@ -68,20 +68,20 @@ Once you provision the project follow the below steps to configure the approvals
     - Ref: **refs/heads/main**
     - Path to required YAML template: **template.yaml**
 
-   ![](media/pipelines/input_values.png)
+   ![](media/input_values.png)
 
 1. Repository will be pointing to the main branch, click on **Create** button.
 
-    ![](media/pipelines/click_create.png)
+    ![](media/click_create.png)
 
 1. Choose the Kebab menu &#8942; and select **Security** option to configure the environment security.
 
-    ![](media/pipelines/Prod_env_security.png)
+    ![](media/Prod_env_security.png)
 
 1. On the **Pipeline permission** section choose **+** button and select the pipeline.
 Repeat the same for **Test** environment.
 
-    ![](media/pipelines/select_pipeline.png)
+    ![](media/select_pipeline.png)
 
 ### Task 3: Create Azure Resource Manager service connection
 > To create Azure Resource Manager service connection, you must be the owner or co-owner of the Azure Subscription
@@ -94,16 +94,16 @@ Repeat the same for **Test** environment.
 
 1. Choose an authentication method, and then select **Next**
 
-    ![](media/pipelines/Choose_ARM.png)
+    ![](media/Choose_ARM.png)
 
 1. Choose the Authentication type as **Service principal (automatic)** and then select **Next**
 
-    ![](media/pipelines/Choose_SPN_Automated.png)
+    ![](media/Choose_SPN_Automated.png)
 
 1. Choose a Subscription and Provide the service connection name as **eShopOnWeb** and select **Save**
 
 
-    ![](media/pipelines/Choose_your_subscription.png)
+    ![](media/Choose_your_subscription.png)
 
 
 > Service connection with the same name is already present in the YAML pipeline, no need to modify the pipeline.
@@ -112,15 +112,15 @@ Repeat the same for **Test** environment.
 
 1. Open **eShopOnWeb** service connection created in the previous task
 
-    ![](media/pipelines/Open_eShopOnWeb_Connection.png)
+    ![](media/Open_eShopOnWeb_Connection.png)
 
 1. Choose Security option on the Kebab menu &#8942;
     
-    ![](media/pipelines/Choose_Security.png)
+    ![](media/Choose_Security.png)
 
 1.  Under the **Pipelines permission** section, choose **+** button and select the pipeline **eShopOnWeb**. This grants the permission to the YAML pipeline to use the service connection.
 
-    ![](media/pipelines/Choose_pipeline.png)
+    ![](media/Choose_pipeline.png)
 
 
 1. Edit the YAML pipeline and make sure that the subscription has been configured correctly.
