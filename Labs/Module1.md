@@ -77,8 +77,7 @@ GitHub Advanced Security for Azure DevOps includes extra permissions for more le
 4.	Next to Advanced Security: view alerts, click the dropdown and select **Allow**.
 
 5.	If successful, a green checkmark ✅ appears next to the selected permission.
-
-     
+  
      ![allow-permissions](media/last1.png)
 
-
+END OF THE LAB-1
