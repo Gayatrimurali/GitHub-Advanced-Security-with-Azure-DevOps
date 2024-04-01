@@ -78,6 +78,6 @@ GitHub Advanced Security for Azure DevOps includes extra permissions for more le
 
 5.	If successful, a green checkmark ✅ appears next to the selected permission.
 
-    ![allow-permissions](media/last1.png)
+     ![allow-permissions](media/last1.png)
 
 
