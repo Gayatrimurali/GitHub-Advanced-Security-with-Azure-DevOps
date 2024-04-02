@@ -43,7 +43,7 @@ You can follow these steps to update a file.
 
 3.	On line 9, update the variable name as "STORAGE_ID". 
     
-    ![Modify the Details](media/advsc8.png)
+    ![Modify the Details](media/advsc81.png)
 
 4.	Click Commit to save changes. Enter StorageDetails for the branch name and check Create a pull request, then click Commit again.
 
@@ -76,7 +76,7 @@ You can follow these steps to fix the exposed secret.
 1.	Next, we need to update the build pipeline to add a variable. Click on Pipelines and click on eShoponWeb.
 
 10.	Click on *Edit* to edit the pipeline. Change to the SecretFix branch.
-    ![Remove STORAGE_ID](media/pipeline-secretfix.png)
+    ![Remove STORAGE_ID](media/advsc44.png)
  
 11.	Click on Variables and click + New Variable. Enter STORAGE_ID for the name and paste the URL from Notepad into the value field.
     ![Add Value_storageid](media/advsc5.png)
