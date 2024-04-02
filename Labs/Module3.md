@@ -1,5 +1,27 @@
 ## Lab 03: Dependency Scanning
 
+### Task 3: Setup Dependency Scanning
+Dependency Scanning scans your project's dependencies such as libraries, frameworks, and packages, to identify any known security vulnerabilities or outdated versions that may pose a risk to your application
+
+1.	Select and Edit the pipeline you want to add scanning to **eShopOnweb**
+
+    ![choose-pipeline](images/ghas/Choose_pipeline.png)
+
+
+1.	Locate the section where the build steps are defined, hint: look for *- task: DotNetCoreCLI@2*.
+
+1.	Add the task *Advanced Security Dependency Scanning*(AdvancedSecurity-Dependency-Scanning@1) directly to your YAML pipeline file.
+
+1.	 *- task: AdvancedSecurity-Dependency-Scanning@1*
+
+     *- task: AdvancedSecurity-Publish@1*
+ 
+1.	Click **Save** to save the pipeline configuration file.
+
+1.	The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. Please note that this process may take up to 10 minutes to finish. 
+
+
+
 ### Task 4: Resolution of Dependency Detections
 
 1.	Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
