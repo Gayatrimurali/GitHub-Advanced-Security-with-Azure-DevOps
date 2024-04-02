@@ -147,7 +147,17 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 1. At the **Organization settings** screen click **Billing** (opening this screen takes a few seconds).
 
 1. Click **Setup billing** and on the right-hand side of the screen select the **Existing subscription** listed and click **Save** to link the subscription with the organization.
- 
+
+1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then click the **SAVE** button at the bottom.
+
+1. In **Organization Settings**, go to section **Security** and click **Policies**.
+
+1. Toggle the switch to **On** for **Third-party application access via OAuth**
+    > Note: The OAuth setting helps enable tools such as the DemoDevOpsGenerator to register extensions. Without this, several labs may fail due to a lack of the required extensions.
+
+1. Toggle the switch to **On** for **Allow public projects**
+    > Note: Extensions used in some labs might require a public project to allow using the free version.
+
 1.	Open the **eShopOnWeb** project and click on **Project Settings** available in the lower left corner. In the left menu area under Repos, click **Repositories**.
 
 1.	Click on the **eShopOnWeb** repository.
