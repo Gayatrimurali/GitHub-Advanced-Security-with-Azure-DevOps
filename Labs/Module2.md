@@ -77,12 +77,14 @@ You can follow these steps to fix the exposed secret.
 1.	Next, we need to update the build pipeline to add a variable. Click on Pipelines and click on eShoponWeb.
 
 10.	Click on *Edit* to edit the pipeline. Change to the SecretFix branch.
-    ![Remove STORAGE_ID](media/advsc44.png)
+    
+     ![Remove STORAGE_ID](media/advsc44.png)
  
 11.	Click on Variables and click + New Variable. Enter STORAGE_ID for the name and paste the URL from Notepad into the value field.
-    ![Add Value_storageid](media/advsc5.png)
 
-12.	Click Keep this value secret to hide the value, then click OK and Save. Next, we need to edit the pipeline and add a new build task to replace the #{STORAGE_ID}# with the actual value.
+   	![Add Value_storageid](media/advsc5.png)
+
+13.	Click Keep this value secret to hide the value, then click OK and Save. Next, we need to edit the pipeline and add a new build task to replace the #{STORAGE_ID}# with the actual value.
 
 14.	While still in edit mode, add the following task between the Checkout and Restore tasks, around line 15. This will replace the #{STORAGE_ID}# with the actual value in the src/Web/Constants.cs file.
     ``` YAML
