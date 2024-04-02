@@ -14,11 +14,11 @@ The Advance Security Alert hub is where all alerts are raised and where we gain 
 
 1. Click on **Secrets** to see a list of all the exposed Secrets alerts that have been found. This includes the Alert and Introduced date. Click on the Microsoft Azure Storage account access key identifiable... to see more details about the alert and what you can do to clean up the secret.
 
-   ![Secrets page](media/advsecurity2.png)
+  ![Secrets page](media/advsecurity2.png)
 
 1. Notice this includes the Recommendation, Locations found, Remediation Steps, Severity, and the Date it was first introduced. We can easily clean this up and dismiss the alert.
 
-   ![Secret Details](media/advsc3.png)
+  ![Secret Details](media/advsc3.png)
 
 ### Task 2: Fixing secret scanning alerts
 
