@@ -16,11 +16,11 @@ The Advance Security Alert hub is where all alerts are raised and where we gain 
 
 2.	Click on **Secrets** to see a list of all the exposed Secrets alerts that have been found. This includes the Alert and Introduced date. Click on the Microsoft Azure Storage account access key identifiable... to see more details about the alert and what you can do to clean up the secret.
 
-  	 ![Secrets page](media/secrets_page.png)
+  	 ![Secrets page](media/advsecurity2.png)
 
 4.	Notice this includes the Recommendation, Locations found, Remediation Steps, Severity, and the Date it was first introduced. We can easily clean this up and dismiss the alert.
 
-  	 ![Secret Details](media/secret_details.png)
+  	 ![Secret Details](media/advsc3.png)
 
 ### Task 2: Protection of Repositories (Stop the Leak) 
 Once a credential touches the repo, it's too late. Hackers might have already exploited it. The only way forward is to eliminate these leaks permanently and to find all the places they're actually being used in production.
@@ -34,17 +34,20 @@ Push Protection helps protect your repository by preventing unauthorized or mali
 #### Updating Secrets:
 
 You can follow these steps to update a file. 
+
 1.	While viewing the alert details, click on the line of code, _Constants._ _cs_.
-    ![Click on File](media/clickonfile.png)
+    ![Click on File](media/advsc9.png)
 
 
 2.	Click Edit to edit the file. This will open up the code editor and highlight the exact location of the secret. In this case, it's in the .cs    file.
 
 3.	On line 9, update the variable name as "STORAGE_ID". 
     
-    ![Modify the Details](media/modify_variable.png)
+    ![Modify the Details](media/advsc8.png)
 
 4.	Click Commit to save changes. Enter StorageDetails for the branch name and check Create a pull request, then click Commit again.
+
+    ![Modify the Details](media/advsc7.png)
 
 5.	The commit was rejected because the repository has both secret and branch protection enabled. This is a good thing! It's preventing us from checking in the exposed secret. Let's fix this.
     ![Commit Rejected](media/commit_rejected.png)
@@ -62,9 +65,11 @@ You can follow these steps to fix the exposed secret.
 
 1.	On line 9, copy the STORAGE_ID value and note it down in a notepad. Now, replace this value with        #{STORAGE_ID}#.
 
+    ![Remove STORAGE_ID](media/advsc2.png)
+
 1.	Click Commit to save changes. Enter SecretFix for the branch name and link a work item.
 
-    ![Remove STORAGE_ID](media/Commit-token.png)
+    ![Remove STORAGE_ID](media/advsc6.png)
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline
 
@@ -74,7 +79,7 @@ You can follow these steps to fix the exposed secret.
     ![Remove STORAGE_ID](media/pipeline-secretfix.png)
  
 11.	Click on Variables and click + New Variable. Enter STORAGE_ID for the name and paste the URL from Notepad into the value field.
-    ![Add Value_storageid](media/Storage_id_value.png)
+    ![Add Value_storageid](media/advsc5.png)
 
 12.	Click Keep this value secret to hide the value, then click OK and Save. Next, we need to edit the pipeline and add a new build task to replace the #{STORAGE_ID}# with the actual value.
 
