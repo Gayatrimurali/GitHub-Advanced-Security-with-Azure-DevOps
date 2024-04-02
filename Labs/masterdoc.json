@@ -5,20 +5,24 @@
     "BaseURL": "https://github.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps",
     "Files": [
       {
-        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module1.md",
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/gettingstarted.md",
         "Order": 1
       },
       {
-        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module2.md",
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module1.md",
         "Order": 2
+      },
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module2.md",
+        "Order": 3
       },
        {
         "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module3.md",
-        "Order": 3
+        "Order": 4
       },
       {
         "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module4.md",
-        "Order": 4
+        "Order": 5
       }
     ]
   }
