@@ -3,6 +3,15 @@
  
 ### Task 1: Configuring the eShopOnWeb team project
 
+1. Open Edge browser and navigate to https://dev.azure.com and select **Start Free** and sign in with the credentials provided in the Environment variables.
+
+      ![setup](media/last5.png)
+
+1. On **Get Started with Azure DevOps** page, ensure that Project visibility is set to **Private** and enter the provided **captcha** click on **Continue**
+
+      ![setup](media/last99.png)
+
+
 1. Navigate to [https://azuredevopsdemogenerator.azurewebsites.net](https://azuredevopsdemogenerator.azurewebsites.net/). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. For more information on the site, please see [https://docs.microsoft.com/en-us/azure/devops/demo-gen](https://docs.microsoft.com/en-us/azure/devops/demo-gen).
 
 1. Sign in using the Microsoft account associated with your Azure DevOps subscription.
@@ -45,11 +54,11 @@ Once you provision the project follow the below steps to configure the approvals
     
     ![](media/add_approvals.png)
 
-1. Choose an approver and click on create
+1. Choose **<inject key="AzureAdUserEmail"></inject>** as a approver and click on create
 
     ![](media/choose_approver.png)
 
-1. To select additional checks, click on + button
+1. To select additional checks, click on **+ Add new** button
 
     ![](media/add_additiona_checks.png)
 
@@ -86,11 +95,11 @@ Repeat the same for **Test** environment.
 ### Task 3: Create Azure Resource Manager service connection
 > To create Azure Resource Manager service connection, you must be the owner or co-owner of the Azure Subscription
 
-1. Sign in to your organization your organization and select your project
+1. Sign in to your organization and select your project
 
 1. Navigate to **Project Settings** and select **Service connections**
 
-1. Select **+ New service connection**, select the type of service as **Azure Resource Manger**, and then select **Next**
+1. Select **Create service connection**, select the type of service as **Azure Resource Manger**, and then select **Next**
 
 1. Choose an authentication method, and then select **Next**
 
@@ -100,7 +109,7 @@ Repeat the same for **Test** environment.
 
     ![](media/Choose_SPN_Automated.png)
 
-1. Choose a Subscription and Provide the service connection name as **eShopOnWeb** and select **Save**
+1. Choose the default Subscription and Provide the service connection name as **eShopOnWeb** and select **Save**
 
 
     ![](media/Choose_your_subscription.png)
@@ -135,36 +144,11 @@ GitHub Advanced Security for Azure DevOps includes extra permissions for more le
 
 To ensure Azure DevOps Advanced Security is enabled in your organization, you can follow these steps:
 
-1. Open Edge browser and navigate to https://dev.azure.com and select **Start Free** and sign in with the credentials provided in the Environment variables.
-
-      ![setup](media/last5.png)
-
-1. On **Get Started with Azure DevOps** page, click on **Continue**
-
-      ![setup](media/last6.png)
-
-1. If prompted (*"Almost done"*), leave the name for the Azure DevOps organization at default (it needs to be a globally unique name) and pick a hosting location close to you from the list, enter the required **captcha** and click on **Continue**
-
-      ![setup](media/last7.png)
-
-1. On **Create new Project** window, provide the below settings:
-
-     - name: **eShopOnWeb** 
-     - visibility: **Private**
-
-1. Click on **Create**.
-
-      ![setup](media/last8.png)
-
 1. At the **Organization settings** screen click **Billing** (opening this screen takes a few seconds).
 
 1. Click **Setup billing** and on the right-hand side of the screen select the **Existing subscription** listed and click **Save** to link the subscription with the organization.
  
-1. Navigate to **eShopOnWeb**, devOps project and click on **Repos>Files** , **Import a Repository**. Select **Import**. On the **Import a Git Repository** window, paste the following URL https://github.com/MicrosoftLearning/eShopOnWeb.git  and click **Import**:
-
-      ![setup](media/last4.png)
-
-1.	In the lower-left corner, click on **Project Settings**. In the left menu area under Repos, click **Repositories**.
+1.	Open the **eShopOnWeb** project and click on **Project Settings** available in the lower left corner. In the left menu area under Repos, click **Repositories**.
 
 1.	Click on the **eShopOnWeb** repository.
 
