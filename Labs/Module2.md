@@ -1,15 +1,15 @@
 
 ## Lab 02: Secret Scanning 
 
-### Task 1: Secret Scanning Alerts
 
 Secret Scanning scans your codebase and other resources to identify potential secrets that may have been inadvertently committed and provides alerts to mitigate the risk of exposure. Push protection also prevents any credentials from being leaked in the first place.
 
 Once this is toggled on, it starts off a background scan of this repo and looks for exposed credentials. The scan doesn't just look at the tip of the main since attackers would look through all the branches and the entire commit history.
 
-#### Secret Scanning Alerts (Gain Insights) 
+### Task 1: Viewing alerts of repository 
+
 The Advance Security Alert hub is where all alerts are raised and where we gain insights, specifically under the category of Secrets. When a secret is found, you can click on it to access more information. The secret may be located in different places, including various commits. 
-Secrets Review 
+
 1.	Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
 
      ![Advances Sec](media/Advanced_sec.png)
