@@ -68,9 +68,9 @@ You can follow these steps to fix the exposed secret.
 
     ![Remove STORAGE_ID](media/advsc2.png)
 
-1.	Click Commit to save changes. Enter SecretFix for the branch name and link a work item.
+1.	Click Commit to save changes. Enter SecretFix for the branch name and link any work item from the list.
 
-    ![Remove STORAGE_ID](media/advsc6.png)
+    ![Remove STORAGE_ID](media/advsc66.png)
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline
 
