@@ -22,7 +22,8 @@ The Advance Security Alert hub is where all alerts are raised and where we gain 
 
   	 ![Secret Details](media/advsc3.png)
 
-### Task 2: Protection of Repositories (Stop the Leak) 
+### Task 2: Fixing secret scanning alerts
+
 Once a credential touches the repo, it's too late. Hackers might have already exploited it. The only way forward is to eliminate these leaks permanently and to find all the places they're actually being used in production.
 
  **Note:** Good news, GHAzDO focuses on preventing this in the first place. Bad news, these need to be manually fixed. There isn't an Easy Button.
@@ -39,7 +40,7 @@ You can follow these steps to update a file.
     ![Click on File](media/advsc9.png)
 
 
-2.	Click Edit to edit the file. This will open up the code editor and highlight the exact location of the secret. In this case, it's in the .cs    file.
+2.	Click Edit to edit the file. This will open up the code editor and highlight the exact location of the secret. In this case, it's in the .cs file.
 
 3.	On line 9, update the variable name as "STORAGE_ID". 
     
@@ -120,7 +121,8 @@ You can follow these steps to fix the exposed secret.
     > **Note**
     The build will run automatically, initiating the secret scanning task, and publishing the results to Advanced Security, and an alert will automatically be closed. However, the exposed issue will still be in the history and must be dismissed.
 
-#### Dismissing Alert
+### Task 3: Dismissing secret scanning alerts
+
 You can follow these steps to dismiss the alert.
 
 1.	Once the pipeline eShoponWeb has been completed, go to the Azure DevOps Advanced Security dashboard and click on Secrets. 
