@@ -1,6 +1,6 @@
 ## Lab 04: Code scanning
 
-### Task 7: Setup Code Scanning
+### Task 1: Setup Code Scanning
 
 Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the code in an Azure DevOps repository to find security vulnerabilities and coding errors. Any problems identified by the analysis are raised as an alert. Code scanning uses CodeQL to identify vulnerabilities.
 
@@ -16,7 +16,7 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
  
 1.	Click **Save** to save the pipeline configuration file.
 
-### Task 8: Review Code Scanning Alert (Gain Insights)
+### Task 2: Review Code Scanning Alert (Gain Insights)
 
 1.	Go to the **Repos** tab and click on the Advanced Security menu item at the bottom.
 
@@ -40,7 +40,7 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
     > When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to Closed. To see these resolved alerts, you can use the State filter in the main toolbar and select Closed.
 
 
-#### Fixing the Code to resolve the alert
+### Task 3: Fixing the Code to resolve the alert
 1.	This is simple to fix using the method using parameters with dynamic SQL described in the Remediation steps.
 
 1.	Click on Locations found to see the code that triggered the alert.
