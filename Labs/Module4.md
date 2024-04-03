@@ -6,9 +6,6 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
 1.	Select and Edit the pipeline you want to add scanning to, **eShopOnweb**
 
-    ![choose-pipeline](media/Choose_pipeline.png)
-
-
 1.	Locate the section where the build steps are defined, hint: look for *- task: DotNetCoreCLI@2*.
 
 1.	Add the task *Initialize CodeQL*(ms.advancedsecurity-tasks.codeql.init.AdvancedSecurity-Codeql-Init@1) directly to your YAML pipeline file. This task will be added before the Dotnet build.
