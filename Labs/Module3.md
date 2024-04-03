@@ -5,8 +5,7 @@ Dependency Scanning scans your project's dependencies such as libraries, framewo
 
 1.	Select and Edit the pipeline you want to add scanning to **eShopOnweb**
 
-    ![choose-pipeline](images/ghas/Choose_pipeline.png)
-
+    ![alert_detected](media/Alert_detected.png)
 
 1.	Locate the section where the build steps are defined, hint: look for *- task: DotNetCoreCLI@2*.
 
