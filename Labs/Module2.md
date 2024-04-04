@@ -123,7 +123,7 @@ https://marketplace.visualstudio.com.
 
 1. Change Merge Type to **Squash commit** and check box Delete SecretFix after merging, to merge changes into the main branch.
 
-    ![Completing merge](media/completing-merge.png)
+    ![Completing merge](media/advlab25.png)
 
     > **ProTip!**
     Squash Merge is important. If we just commit, the exposed credential will still be in the history. To avoid this, fix the code, use a Squash Merge, push it to repo, and you're done!
@@ -141,7 +141,7 @@ You can follow these steps to dismiss the alert.
 
 1. Click on Close alert to dismiss the alert, select Revoked, then click Close.
     
-    ![Closing Alert](media/closing-alert.png)
+    ![Closing Alert](media/advlab24.png)
 
     >**Note**: Once the code is merged into main, GHAzDO starts off a background scan of this repo and looks for exposed credentials. The scan doesn't just look at tip of main either, since attackers would look through all the branches and entire commit history.
 
