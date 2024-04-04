@@ -1,27 +1,30 @@
 ## Lab 03: Dependency Scanning
 
-### Task 3: Setup Dependency Scanning
+### Task 1: Setup Dependency Scanning
+
 Dependency Scanning scans your project's dependencies such as libraries, frameworks, and packages, to identify any known security vulnerabilities or outdated versions that may pose a risk to your application
 
-1.	Select and Edit the pipeline you want to add scanning to **eShopOnweb**
+1.	Select the pipeline **eShopOnweb**
 
     ![alert_detected](media/Alert_detected.png)
 
-1.	Locate the section where the build steps are defined, hint: look for *- task: DotNetCoreCLI@2*.
+1.	Locate the task *Advanced Security Dependency Scanning*(AdvancedSecurity-Dependency-Scanning@1) which already included in the YAML pipeline file.
 
-1.	Add the task *Advanced Security Dependency Scanning*(AdvancedSecurity-Dependency-Scanning@1) directly to your YAML pipeline file.
+1.	      ```
+            - task: ms.advancedsecurity-tasks.dependency-scanning.AdvancedSecurity-Dependency-Scanning@1
+            condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+            displayName: 'Dependency Scanning'
+          ```
 
-1.	 *- task: AdvancedSecurity-Dependency-Scanning@1*
+    ![alert_detected](media/advlab32.png)
 
-     *- task: AdvancedSecurity-Publish@1*
- 
-1.	Click **Save** to save the pipeline configuration file.
+1.	Click **Run** to run the pipeline configuration file which will setup the dependency scanning
+
+    ![alert_detected](media/advlab31.png)
 
 1.	The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. Please note that this process may take up to 10 minutes to finish. 
 
-
-
-### Task 4: Resolution of Dependency Detections
+### Task 2: Resolution of Dependency Detections
 
 1.	Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
 
@@ -67,9 +70,9 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1.	Click on the Locations to see the code that triggered the alert.
  
-1.	From the code editor, update the package to 1.0.4.2. To do that, here we will use Visual Studio
+1.	From the code editor, update the package to 1.0.4.2. To do that, here we will use Visual Studio. Locate the visual studio which was installed in the LabVM.
 
-1.	Clone the repository in Visual Studio and switch the *fixalert* branch
+1.	Clone the repository in Visual Studio and switch the *SecretFix* branch
 
   
     > **Note:**
