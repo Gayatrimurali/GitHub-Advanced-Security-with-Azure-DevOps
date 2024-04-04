@@ -10,7 +10,7 @@ The Advance Security Alert hub is where all alerts are raised and where we gain 
 
 1. Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
 
-   ![Advances Sec](media/Advanced_sec.png)
+   ![setup](media/lab1-image16.png)
 
 1. Click on **Secrets** to see a list of all the exposed Secrets alerts that have been found. This includes the Alert and Introduced date. Click on the Microsoft Azure Storage account access key identifiable... to see more details about the alert and what you can do to clean up the secret.
 
@@ -38,16 +38,17 @@ You can follow these steps to update a file.
 
     ![Click on File](media/advsc9.png)
 
+1. Click **Edit** to edit the file. This will open up the code editor and highlight the exact location of the secret. In this case, it's in the .cs file.
 
-1. Click Edit to edit the file. This will open up the code editor and highlight the exact location of the secret. In this case, it's in the .cs file.
+   ![setup](media/lab1-image17.png)
 
-1. On line 9, update the variable name as "STORAGE_ID". 
+1. On line 9, update the variable name as "STORAGE_ID"and Click Commit to save changes.
     
-    ![Modify the Details](media/advsc81.png)
+     ![setup](media/lab1-image18.png)
 
-1. Click Commit to save changes. Enter StorageDetails for the branch name and check Create a pull request, then click Commit again.
+1. Enter StorageDetails for the branch name and check Create a pull request, then click Commit again.
 
-    ![Modify the Details](media/advsc7.png)
+     ![setup](media/lab1-image19.png)
 
 1. The commit was rejected because the repository has both secret and branch protection enabled. This is a good thing! It's preventing us from checking in the exposed secret. Let's fix this.
    
@@ -75,18 +76,24 @@ You can follow these steps to fix the exposed secret.
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline
 
-1. Next, we need to update the build pipeline to add a variable. Click on Pipelines and click on **eShoponWeb**.
+1. Next, we need to update the build pipeline to add a variable. Click on **Pipelines** and select **eShoponWeb**.
 
-1. Click on *Edit* to edit the pipeline. Change to the **SecretFix** branch.
-    
+    ![setup](media/lab1-image19.png)
+
+1. Click on **Edit** to edit the pipeline. Change to the **SecretFix** branch.
+
+     ![setup](media/lab1-image20.png)
+   
      ![Remove STORAGE_ID](media/advsc44.png)
  
-1. Click on Variables and click + New Variable. Enter **STORAGE_ID** for the name and paste the secret value from Notepad into the value field.
+1. Click on Variables and click **+** New Variable. 
 
-     ![Add Value_storageid](media/advsc5.png)
+     ![setup](media/lab1-image21.png)
 
-1. Click Keep this value secret to hide the value, then click OK and Save. Next, we need to edit the pipeline and add a new build task to replace the #{STORAGE_ID}# with the actual value.
+1. Enter **STORAGE_ID** for the name and paste the secret value from Notepad into the value field. Click Keep this value secret to hide the value, then click OK and Save. Next, we need to edit the pipeline and add a new build task to replace the #{STORAGE_ID}# with the actual value.
 
+   ![setup](media/lab1-image22.png)
+   
 1. While still in edit mode, add the following task between the Checkout and Restore tasks, around line 17. This will replace the #{STORAGE_ID}# with the actual value in the src/Web/Constants.cs file.
 
     ``` YAML
