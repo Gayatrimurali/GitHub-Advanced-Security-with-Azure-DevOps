@@ -26,10 +26,11 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
 2.	This includes the Recommendation, Locations found,  Description, Severity, and the Date it was first detected. We can easily fix this threat. 
 
-    ![code_alert_detected](media/avdlab4n2png)
+    ![code_alert_detected](media/advlab4n2.png)
 
 3.	You can also view the code that triggered the alert and what build detected it.
-    ![where_detected](media/avdlab4n1.png)
+   
+    ![where_detected](media/advlab4n1.png)
 
 4.	Click on Detections to see the different builds that detected this alert.
 
@@ -43,13 +44,13 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
 1.	Click on Locations found to see the code that triggered the alert.
 
-    ![Image](media/avdlab4n6.png)
+    ![Image](media/advlab4n6.png)
 
 1.	Click on the Edit button to edit the file. Line number 23 is highlighted here. 
 
 1. The value of __{drive}__ is getting red from the line number 20.
 
-    ![Image](media/avdlab4n3.png)
+    ![Image](media/advlab4n3.png)
 
 1. Instead of getting the value of 
 __{drive}__ using a query, we can directly define it as __C__.
@@ -57,11 +58,11 @@ __{drive}__ using a query, we can directly define it as __C__.
     string drive = "C";
     ```
 
-    ![Image](media/avdlab4n4.png)
+    ![Image](media/advlab4n4.png)
 
 1. Click Commit to save changes. Enter *Fixalert* for branch name and check Create a pull request, then click Commit again.
 
-    ![Image](media/avdlab4n5.png)
+    ![Image](media/advlab4n5.png)
 
     >Note: This step is necessary since the main branch is protected by a pull request pipeline.
 
