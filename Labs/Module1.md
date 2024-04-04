@@ -10,14 +10,13 @@
 
       ![setup](media/last99.png)
 
-
 1. Navigate to [https://azuredevopsdemogenerator.azurewebsites.net](https://azuredevopsdemogenerator.azurewebsites.net/). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. For more information on the site, please see [https://docs.microsoft.com/en-us/azure/devops/demo-gen](https://docs.microsoft.com/en-us/azure/devops/demo-gen).
 
 1. Click on **Sign in** and log in using the Microsoft account associated with your Azure DevOps subscription.
 
     ![](media/lab1-image2.png)
 
-1. Click on **Accept** the permission requests for accessing your subscription.
+1. Please click on **Accept** to grant permission for accessing your subscription.
 
 1. Click **Choose Template**.
 
@@ -27,12 +26,13 @@
 
     ![](media/lab1-image4.png)
 
-1. Provide a project name **eShopOnWeb**.and choose your Organization then click **Create Project** and wait for the process to complete.
+1. Provide a project name **eShopOnWeb**.and choose your **Organization** then click **Create Project** and wait for the process to complete.
 
    ![](media/lab1-image5.png)
 
 1. Once proccess complete click on **Navigate to project**
-    ![](media/lab1-image6.png)
+
+   ![](media/lab1-image6.png)
 
 ### Task 2: Enable Advanced Security from Portal
 
@@ -44,7 +44,7 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
     ![](media/lab1-image7.png)
 
-1. From the left navigation pane select **Billing** and click **Setup billing** and on the right-hand side of the screen select the **Existing subscription** listed and click **Save** to link the subscription with the organization.
+1. From the left navigation pane select **Billing** and click **Set up billing** and on the right-hand side of the screen select the **Existing subscription** listed and click **Save** to link the subscription with the organization.
 
    ![](media/lab1-image8.png)
 
@@ -84,21 +84,23 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
 In this task, you will configure Advanced Security permissions for the eShopOnWeb repository in Azure DevOps. This involves granting specific permissions to Project Administrators to manage security alerts and settings related to the repository.
 
-1.	In the lower-left corner, click on **Project Settings**. In the left menu area under Repos, click **Repositories**.
+1. In the lower-left corner, click on **Project Settings**. In the left menu area under **Repos** section, click **Repositories**.
 
-1.	Click on the **eShopOnWeb** repository.
+      ![](media/lab1-image12.png)
+  	
+1. Click on the **eShopOnWeb** repository.
 
-1.	Select **Security** and click on **Project Administrators**.
+1. Select **Security** and click on **Project Administrators**.
 
-2.	Next to Advanced Security: manage and dismiss alerts, click the dropdown and select  **Allow**.
+1. Next to Advanced Security: manage and dismiss alerts, click the dropdown and select  **Allow**.
 
-3.	Next to Advanced Security: manage settings, click the dropdown and select **Allow**.
+1. Next to Advanced Security: manage settings, click the dropdown and select **Allow**.
 
-4.	Next to Advanced Security: view alerts, click the dropdown and select **Allow**.
+1. Next to Advanced Security: view alerts, click the dropdown and select **Allow**.
 
       ![allow-permissions](media/last1.png)
 
-5.	If successful, a green checkmark ✅ appears next to the selected permission.
+1. Make sure successful, a green checkmark ✅ appears next to the selected permission.
   
 
 
