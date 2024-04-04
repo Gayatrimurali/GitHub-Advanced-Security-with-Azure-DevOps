@@ -10,13 +10,13 @@ Dependency Scanning scans your project's dependencies such as libraries, framewo
 
 1. Locate the task *Advanced Security Dependency Scanning*(AdvancedSecurity-Dependency-Scanning@1) which already included in the YAML pipeline file.
 
-1.	 ```
+    ```
       - task: ms.advancedsecurity-tasks.dependency-scanning.AdvancedSecurity-Dependency-Scanning@1
         condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
         displayName: 'Dependency Scanning'
      ```
 
-     ![alert_detected](media/advlab32.png)
+    ![alert_detected](media/advlab32.png)
 
 1. Click **Run** to run the pipeline configuration file which will setup the dependency scanning
 
