@@ -106,7 +106,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     >**ProTip!** Squash Merge is important. If we just commit, the exposed credential will still be in the history. To avoid this, fix code, use a Squash Merge, push it to repo, and you're done!
 
-### Task 3: Dismissing dependency scanning alerts
+### Task 4: Dismissing dependency scanning alerts
 
 1.	Once the pipeline has been completed, **eShopOnWeb**, go to the Azure DevOps Advanced Security dashboard and click on Dependencies.
 
