@@ -4,17 +4,15 @@
 
 Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the code in an Azure DevOps repository to find security vulnerabilities and coding errors. Any problems identified by the analysis are raised as an alert. Code scanning uses CodeQL to identify vulnerabilities.
 
-1.	Select and Edit the pipeline you want to add scanning to, **eShopOnweb**
+1.	Select the pipeline **eShopOnweb**
 
-1.	Locate the section where the build steps are defined, hint: look for *- task: DotNetCoreCLI@2*.
+    ![alert_detected](media/advlab33.png)
 
-1.	Add the task *Initialize CodeQL*(ms.advancedsecurity-tasks.codeql.init.AdvancedSecurity-Codeql-Init@1) directly to your YAML pipeline file. This task will be added before the Dotnet build.
+1.	Locate the tasks related to *Advanced Security Code Scanning** which already included in the YAML pipeline file.
 
-1.	 *- task: ms.advancedsecurity-tasks.codeql.init.AdvancedSecurity-Codeql-Init@1*
-
-     *- task: ms.advancedsecurity-tasks.codeql.analyze.AdvancedSecurity-Codeql-Analyze@1*. Add this task after dependency scanning.
+    ![alert_detected](media/advlab41.png)
  
-1.	Click **Save** to save the pipeline configuration file.
+1.	Do not run the pipeline, code scanning set up already initiated along with dependency scanning performed in the previous lab.
 
 ### Task 2: Review Code Scanning Alert (Gain Insights)
 
