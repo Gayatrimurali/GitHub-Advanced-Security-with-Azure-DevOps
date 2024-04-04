@@ -42,13 +42,13 @@ You can follow these steps to update a file.
 
    ![setup](media/lab1-image17.png)
 
-1. On line 9, update the variable name as "STORAGE_ID"and Click Commit to save changes.
+1. On line 9, update the variable name as "STORAGE_ID" and click **Commit** to save changes.
     
-     ![setup](media/lab1-image18.png)
+     ![setup](media/lab1-image14.png)
 
-1. Enter StorageDetails for the branch name and check Create a pull request, then click Commit again.
+1. Enter **StorageDetails** for the branch name and check Create a pull request, then click **Commit** again.
 
-     ![setup](media/lab1-image19.png)
+     ![setup](media/lab1-image15.png)
 
 1. The commit was rejected because the repository has both secret and branch protection enabled. This is a good thing! It's preventing us from checking in the exposed secret. Let's fix this.
    
@@ -68,7 +68,7 @@ You can follow these steps to fix the exposed secret.
 
 1. On line 9, copy the STORAGE_ID value and note it down in a notepad. Now, replace this value with #{STORAGE_ID}#.
 
-    ![Remove STORAGE_ID](media/advsc2.png)
+    ![setup](media/lab1-image18.png)
 
 1. Click Commit to save changes. Enter SecretFix for the branch name and link any work item from the list.
 
