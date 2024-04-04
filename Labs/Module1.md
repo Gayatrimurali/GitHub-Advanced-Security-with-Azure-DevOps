@@ -4,7 +4,7 @@
 
 1. Open Edge browser and navigate to https://dev.azure.com and select **Start Free** and sign in with the credentials provided in the Environment variables.
 
-      ![setup](media/last5.png)
+      ![setup](media/lab1-image1.png)
 
 1. On **Get Started with Azure DevOps** page, ensure that Project visibility is set to **Private** and enter the provided **captcha** click on **Continue**
 
@@ -13,21 +13,23 @@
 
 1. Navigate to [https://azuredevopsdemogenerator.azurewebsites.net](https://azuredevopsdemogenerator.azurewebsites.net/). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. For more information on the site, please see [https://docs.microsoft.com/en-us/azure/devops/demo-gen](https://docs.microsoft.com/en-us/azure/devops/demo-gen).
 
-1. Sign in using the Microsoft account associated with your Azure DevOps subscription.
+1. Click on **Sign in** and log in using the Microsoft account associated with your Azure DevOps subscription.
 
-    ![](media/pre01.png)
+    ![](media/lab1-image2.png)
 
-1. **Accept** the permission requests for accessing your subscription.
+1. Click on **Accept** the permission requests for accessing your subscription.
 
-1. Select your Azure DevOps organization and enter the project name **"eShopOnWeb"**. Click **Choose Template**.
+1. Click **Choose Template**.
 
-    ![](media/choose_tempalte.png)
+    ![](media/lab1-image3.png)
 
 1. Select the **eShopOnWeb** template and click **Select Template**.
 
-    #Need to update image
-    ![](media/select_eshop.png)
-1. Provide a project name and choose your Organization.
+    ![](media/lab1-image4.png)
+
+1. Provide a project name **eShopOnWeb**.and choose your Organization.
+
+   ![](media/lab1-image2.png)
 
 1. Click **Create Project** and wait for the process to complete.
 
