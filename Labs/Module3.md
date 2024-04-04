@@ -4,44 +4,44 @@
 
 Dependency Scanning scans your project's dependencies such as libraries, frameworks, and packages, to identify any known security vulnerabilities or outdated versions that may pose a risk to your application
 
-1.	Select the pipeline **eShopOnweb**
+1. Select the pipeline **eShopOnweb**
 
     ![alert_detected](media/advlab33.png)
 
-1.	Locate the task *Advanced Security Dependency Scanning*(AdvancedSecurity-Dependency-Scanning@1) which already included in the YAML pipeline file.
+1. Locate the task *Advanced Security Dependency Scanning*(AdvancedSecurity-Dependency-Scanning@1) which already included in the YAML pipeline file.
 
-1.	      ```
+1.	 ```
             - task: ms.advancedsecurity-tasks.dependency-scanning.AdvancedSecurity-Dependency-Scanning@1
             condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
             displayName: 'Dependency Scanning'
-          ```
+     ```
 
-    ![alert_detected](media/advlab32.png)
+   ![alert_detected](media/advlab32.png)
 
-1.	Click **Run** to run the pipeline configuration file which will setup the dependency scanning
+1. Click **Run** to run the pipeline configuration file which will setup the dependency scanning
 
     ![alert_detected](media/advlab31.png)
 
-1.	The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. Please note that this process may take up to 10 minutes to finish. 
+1. The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. Please note that this process may take up to 10 minutes to finish. 
 
 ### Task 2: Viewing alerts of repository
 
-1.	Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
+1. Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
 
-1.	Click on **Dependencies** to see a list of all the dependencies alerts that have been found. This includes the Alert, Vulnerable package, and First detected date. We can easily clean up the dependencies.
+1. Click on **Dependencies** to see a list of all the dependencies alerts that have been found. This includes the Alert, Vulnerable package, and First detected date. We can easily clean up the dependencies.
 
 #### Dependency Scanning Alert Details
 
-1.	Click on the item ***Improper Input Validation in IpMatcher...*** to see the details about this alert.
+1. Click on the item ***Improper Input Validation in IpMatcher...*** to see the details about this alert.
 
-2.	This includes the Recommendation, Locations found,  Description, Severity, and the Date it was first detected. We can easily clean up the dependencies. 
+1. This includes the Recommendation, Locations found,  Description, Severity, and the Date it was first detected. We can easily clean up the dependencies. 
 
-    ![alert_detected](media/advlab33.png)
+   ![alert_detected](media/advlab33.png)
 
-3.	You can also view the code that triggered the alert and what build detected it.
+3. You can also view the code that triggered the alert and what build detected it.
     ![where_detected](media/advlab34.png)
 
-4.	Click on Detections to see the different builds that detected this alert.
+4. Click on Detections to see the different builds that detected this alert.
 
     > **Note**  
     When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to Closed. To see these resolved alerts, you can use the State filter in the main toolbar and select Closed.
@@ -62,15 +62,15 @@ You can follow the recommended steps to manually update dependencies.
 
 When a Dependency Alert is created in Azure DevOps Advanced Security, it will contain details about the vulnerability and steps you can take to resolve it.
 
-1.	To view the alert, go to the Azure DevOps Advanced Security dashboard, scroll down and click on the alert  *Improper Input Validation in IpMatcher....*
+1. To view the alert, go to the Azure DevOps Advanced Security dashboard, scroll down and click on the alert  *Improper Input Validation in IpMatcher....*
 
-1.	Review Recommendation, Location, Description, and Severity to understand the vulnerability and how to resolve it.
+1. Review Recommendation, Location, Description, and Severity to understand the vulnerability and how to resolve it.
 
    {% include tip.html content= "The recommendation will provide you with the steps to resolve the vulnerability. For this one, simply update the package version from 1.0.4.1 to 1.0.4.2 to fix the vulnerability." %}
 
-1.	Click on the Locations to see the code that triggered the alert.
+1. Click on the Locations to see the code that triggered the alert.
  
-1.	From the code editor, update the package to 1.0.4.2. To do that, here we will use Visual Studio. 
+1. From the code editor, update the package to 1.0.4.2. To do that, here we will use Visual Studio. 
 
 1. Copy the repo URL from Azure DevOps and note it in the notepad.
 
@@ -89,7 +89,6 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
     ![Dependencies](media/vs3.png)
 
     ![Dependencies](media/vs4.png)
-
 
 1. While cloning the repo, Git-credentials Manager pops-up, enter the same credentials provided in the environment details tab.
 
@@ -155,9 +154,9 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 ### Task 4: Dismissing dependency scanning alerts
 
-1.	Once the pipeline has been completed, **eShopOnWeb**, go to the Azure DevOps Advanced Security dashboard and click on Dependencies.
+1. Once the pipeline has been completed, **eShopOnWeb**, go to the Azure DevOps Advanced Security dashboard and click on Dependencies.
 
-1.	You will see that the alert *Improper Input Validation in IpMatcher....*... no longer exists, as it is now closed.
+1. You will see that the alert *Improper Input Validation in IpMatcher....*... no longer exists, as it is now closed.
 
 > **Note:**
     This is a great way to ensure you are using the latest and greatest versions of your dependencies, and also, ensure you are not using any vulnerable versions.
