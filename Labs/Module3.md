@@ -36,10 +36,10 @@ Dependency Scanning scans your project's dependencies such as libraries, framewo
 
 2.	This includes the Recommendation, Locations found,  Description, Severity, and the Date it was first detected. We can easily clean up the dependencies. 
 
-    ![alert_detected](media/Alert_detected.png)
+    ![alert_detected](media/advlab33.png)
 
 3.	You can also view the code that triggered the alert and what build detected it.
-    ![where_detected](media/Where_Alert_detected.png)
+    ![where_detected](media/advlab34.png)
 
 4.	Click on Detections to see the different builds that detected this alert.
 
@@ -81,19 +81,19 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1. Once the source code is opened in Solution Explorer, navigate to the **Dependencies** section under Web.
 
-    ![Dependencies](media/Dependencies-VS.png)
+    ![Dependencies](media/advlab35.png)
 
 1. Right-click on Dependencies and choose *Manage Nuget Packages...*
 
-    ![Manage Nuget](media/manage-nuget.png)
+    ![Manage Nuget](media/advlab36.png)
 
 1. Click on IpMatcher and you will be able to see a warning regarding the vulnerability in that specific version.
 
-    ![IpMatcher](media/ipmatcher-nuget.png)
+    ![IpMatcher](media/advlab37.png)
 
 1. Change the version as per the suggestion that is 1.0.4.2 and Update
 
-    ![Update the Package](media/ipmatcher-update.png)
+    ![Update the Package](media/advlab38.png)
 
 1.	Now, create the commit and push the changes to remote. Later, create  a pull request from *fixalert* to the *main*
 
