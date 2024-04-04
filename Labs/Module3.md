@@ -70,39 +70,86 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1.	Click on the Locations to see the code that triggered the alert.
  
-1.	From the code editor, update the package to 1.0.4.2. To do that, here we will use Visual Studio. Locate the visual studio which was installed in the LabVM.
+1.	From the code editor, update the package to 1.0.4.2. To do that, here we will use Visual Studio. 
 
-1.	Clone the repository in Visual Studio and switch the *SecretFix* branch
+1. Copy the repo URL from Azure DevOps and note it in the notepad.
 
-  
+    ![Dependencies](media/clone1.png)
+
+    ![Dependencies](media/clone2.png)
+
+1. **Sign in** to the Visual studio with the credentials available in Environment details tab through desktop icon and later select **Start Visual studio**
+
+    ![Dependencies](media/vs1.png)
+
+    ![Dependencies](media/vs2.png)
+
+1. Select **Clone a repository** under get started and enter the clone URL under **Repository location** which is copied earlier and click **Clone**	
+
+    ![Dependencies](media/vs3.png)
+
+    ![Dependencies](media/vs4.png)
+
+
+1. While cloning the repo, Git-credentials Manager pops-up, enter the same credentials provided in the environment details tab.
+
+1. Create a new branch to make the necesaary changes, select the **main** branch from the lower right corner and select **New branch**
+
+    ![Dependencies](media/vs6.png)
+
     > **Note:**
     This step is necessary since the main branch is protected by a pull request pipeline.
 
+1. On a create a new branch window, enter **codefix** and click **create**
 
-1. Once the source code is opened in Solution Explorer, navigate to the **Dependencies** section under Web.
+    ![Dependencies](media/vs7.png)
+
+1. Double click the **eShopOnWeb.sln** solution file  
+
+    ![Dependencies](media/vs5.png)
+
+1. Once the source code is opened in Solution Explorer, navigate to the **Dependencies** section under Web.(SRC>Web)
 
     ![Dependencies](media/advlab35.png)
 
-1. Right-click on Dependencies and choose *Manage Nuget Packages...*
+1. Right-click on **Dependencies** and choose *Manage Nuget Packages...*
 
     ![Manage Nuget](media/advlab36.png)
 
-1. Click on IpMatcher and you will be able to see a warning regarding the vulnerability in that specific version.
+1. Click on **IpMatcher** and you will be able to see a warning regarding the vulnerability in that specific version.
 
     ![IpMatcher](media/advlab37.png)
 
-1. Change the version as per the suggestion that is 1.0.4.2 and Update
+1. Change the version as per the suggestion that is **1.0.4.2** and select **Update**
 
     ![Update the Package](media/advlab38.png)
 
-1.	Now, create the commit and push the changes to remote. Later, create  a pull request from *fixalert* to the *main*
+1. Switch to **Gitchanges** tab and select **Configure** to add the username and email address which is required before committing changes.
 
-1. Make sure to follow the policies and changes are merged in the *main*
+    ![Dependencies](media/vs8.png)
 
+1. Click on **Save**
+
+    ![Dependencies](media/vs9.png)
+
+1. Add the required **description** and select the **Commit All and Push** option to push the changes to Origin.
+
+    ![Dependencies](media/vs10.png)
+
+1.	Naviagte to Azure DevOps and click on **Repos** and select **Pull requests** and select **create a pull request** to push the commits from *codefix* to the *main*.
+
+    ![Dependencies](media/vs11.png)
+
+1. On the **New Pull request** page, add any work item from the list(which is mandatory) and click on **Create**
+
+    ![Dependencies](media/vs12.png)
 
     > **Note:**
     The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security and alert automatically closed.
 
+1. Once the **eShoponWeb** pipeline has been completed, click **Approve** and then click **Complete**.
+
+1. Change Merge Type to **Squash commit** and check box Delete SecretFix after merging, to merge changes into the main branch.
 
     >**ProTip!** Squash Merge is important. If we just commit, the exposed credential will still be in the history. To avoid this, fix code, use a Squash Merge, push it to repo, and you're done!
 
