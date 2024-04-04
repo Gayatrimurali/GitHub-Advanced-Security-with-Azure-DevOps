@@ -24,7 +24,7 @@ Dependency Scanning scans your project's dependencies such as libraries, framewo
 
 1.	The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. Please note that this process may take up to 10 minutes to finish. 
 
-### Task 2: Resolution of Dependency Detections
+### Task 2: Viewing alerts of repository
 
 1.	Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
 
@@ -56,7 +56,7 @@ In your repository, there are two types of dependencies: direct and transi
 - **Transitive dependencies** are components used by direct dependencies.
 
 
-#### Fixing Dependency Alerts
+### Task 3: Fixing dependency scanning alerts
 
 You can follow the recommended steps to manually update dependencies.
 
@@ -106,6 +106,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     >**ProTip!** Squash Merge is important. If we just commit, the exposed credential will still be in the history. To avoid this, fix code, use a Squash Merge, push it to repo, and you're done!
 
+### Task 3: Dismissing dependency scanning alerts
 
 1.	Once the pipeline has been completed, **eShopOnWeb**, go to the Azure DevOps Advanced Security dashboard and click on Dependencies.
 
