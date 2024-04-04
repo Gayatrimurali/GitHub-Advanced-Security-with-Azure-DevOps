@@ -40,36 +40,45 @@ GitHub Advanced Security for Azure DevOps includes extra permissions for more le
 
 To ensure Azure DevOps Advanced Security is enabled in your organization, you can follow these steps:
 
-1. At the **Organization settings** screen click **Billing** (opening this screen takes a few seconds).
+1. On the **Azure DevOps** page at button left click on **Organization settings** then select **Billing** (opening this screen takes a few seconds).
 
-1. Click **Setup billing** and on the right-hand side of the screen select the **Existing subscription** listed and click **Save** to link the subscription with the organization.
+    ![](media/lab1-image7.png)
+
+1. From the left navigation pane select **Billing** and click **Setup billing** and on the right-hand side of the screen select the **Existing subscription** listed and click **Save** to link the subscription with the organization.
+
+   ![](media/lab1-image8.png)
+
+   ![](media/lab1-image9.png)
 
 1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then click the **SAVE** button at the bottom.
 
-1. In **Organization Settings**, go to section **Security** and click **Policies**.
+   ![](media/lab1-image10.png)
 
-1. Toggle the switch to **On** for **Third-party application access via OAuth**
-    > Note: The OAuth setting helps enable tools such as the DemoDevOpsGenerator to register extensions. Without this, several labs may fail due to a lack of the required extensions.
+1. In **Organization Settings** page, navigate to **Security** section and click **Policies**. Turn on the **Toggle** for **Third-party application access via OAuth**
 
-1. Toggle the switch to **On** for **Allow public projects**
-    > Note: Extensions used in some labs might require a public project to allow using the free version.
+     ![](media/lab1-image11.png)
+   
+      > **Note:** The OAuth setting helps enable tools such as the DemoDevOpsGenerator to register extensions. Without this, several labs may fail due to a lack of the required extensions.
 
-1.	Open the **eShopOnWeb** project and click on **Project Settings** available in the lower left corner. In the left menu area under Repos, click **Repositories**.
+1. Toggle the switch to **On** for **Allow public projects** and click on **Save** when **change policy setting** prompted.
 
-1.	Click on the **eShopOnWeb** repository.
+     > **Note:** Extensions used in some labs might require a public project to allow using the free version.
 
-1.	Click on Settings, then click **Advanced Security**, On to turn it on.
+1. Open the **eShopOnWeb** project and click on **Project Settings** available in the lower left corner. In the left menu area under Repos, click **Repositories**.
 
-      ![setup](media/last2.png)
+1. Click on the **eShopOnWeb** repository.
 
-1.	Click Begin **Billing**.
+1. Click on Settings, then click **Advanced Security**, On to turn it on.
 
-      ![enable-billing](media/last3.png)
+    ![setup](media/last2.png)
 
-1.	Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well
+1. Click **Begin Billing**.
+
+    ![](media/lab1-image12.png)
+
+1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well
  
-
-   {% include note.html content= "GitHub Advanced Security for Azure DevOps includes extra permissions for more levels of control around Advanced Security results and management. Be sure to adjust individual permissions for your repository." %}
+    {% include note.html content= "GitHub Advanced Security for Azure DevOps includes extra permissions for more levels of control around Advanced Security results and management. Be sure to adjust individual permissions for your repository." %}
 
 ### Task 3: Setup Advanced Security permissions
 
