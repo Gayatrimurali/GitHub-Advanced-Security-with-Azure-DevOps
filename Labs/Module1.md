@@ -6,7 +6,7 @@
 
       ![setup](media/lab1-image1.png)
 
-1. On **Get Started with Azure DevOps** page, ensure that Project visibility is set to **Private** and enter the provided **captcha** click on **Continue**
+1. On **Get Started with Azure DevOps** page, ensure that Project visibility is set to **Private** and enter the provided **captcha** click on **Continue**.
 
       ![setup](media/last99.png)
 
@@ -26,7 +26,7 @@
 
     ![](media/lab1-image4.png)
 
-1. Provide a project name **eShopOnWeb**.and choose your **Organization** then click **Create Project** and wait for the process to complete.
+1. Provide a project name **eShopOnWeb** and choose your **Organization** then click **Create Project** and wait for the process to complete.
 
    ![](media/lab1-image5.png)
 
