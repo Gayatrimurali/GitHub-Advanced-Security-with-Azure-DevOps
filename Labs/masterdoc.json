@@ -23,6 +23,10 @@
       {
         "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module4.md",
         "Order": 5
+      },
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Module5.md",
+        "Order": 6
       }
     ]
   }
