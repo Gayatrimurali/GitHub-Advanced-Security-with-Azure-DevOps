@@ -52,8 +52,8 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Maybe Later" to skip the tour.
  
-6. Click "Next" from the bottom right corner to embark on your Lab journey!
+6. Click "Next" from the bottom right corner to embark on your Lab journey!.
  
-   ![Start Your Azure Journey](media/sc900-image(3).png)
+      ![Start Your Azure Journey](media/sc900-image(3).png)
  
 Now you're all set to explore the powerful world of technology. Feel free to reach out if you have any questions along the way. Enjoy your workshop!
