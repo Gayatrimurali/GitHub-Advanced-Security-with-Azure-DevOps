@@ -4,35 +4,35 @@
 
 Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the code in an Azure DevOps repository to find security vulnerabilities and coding errors. Any problems identified by the analysis are raised as an alert. Code scanning uses CodeQL to identify vulnerabilities.
 
-1.	Select the pipeline **eShopOnweb**
+1. Select the pipeline **eShopOnweb**
 
-    ![alert_detected](media/advlab33.png)
+   ![alert_detected](media/advlab33.png)
 
-1.	Locate the tasks related to *Advanced Security Code Scanning** which already included in the YAML pipeline file.
+1. Locate the tasks related to *Advanced Security Code Scanning** which already included in the YAML pipeline file.
 
-    ![alert_detected](media/advlab41.png)
+   ![alert_detected](media/advlab41.png)
  
-1.	Do not run the pipeline, code scanning set up already initiated along with dependency scanning performed in the previous lab.
+1. Do not run the pipeline, code scanning set up already initiated along with dependency scanning performed in the previous lab.
 
 ### Task 2: Review Code Scanning Alert (Gain Insights)
 
-1.	Go to the **Repos** tab and click on the Advanced Security menu item at the bottom.
+1. Go to the **Repos** tab and click on the Advanced Security menu item at the bottom.
 
-1.	Click on **Code scanning** to see a list of all the code scanning alerts that have been found. This includes the Alert, Vulnerable code details, and First detected date.
+1. Click on **Code scanning** to see a list of all the code scanning alerts that have been found. This includes the Alert, Vulnerable code details, and First detected date.
 
 #### Code scanning Alert Details
 
-1.	Click on the item ***Uncontrolled command line...*** to see the details about this alert.
+1. Click on the item ***Uncontrolled command line...*** to see the details about this alert.
 
-2.	This includes the Recommendation, Locations found,  Description, Severity, and the Date it was first detected. We can easily fix this threat. 
+1. This includes the Recommendation, Locations found,  Description, Severity, and the Date it was first detected. We can easily fix this threat. 
 
-    ![code_alert_detected](media/advlab4n2.png)
+   ![code_alert_detected](media/advlab4n2.png)
 
-3.	You can also view the code that triggered the alert and what build detected it.
+1. You can also view the code that triggered the alert and what build detected it.
    
-    ![where_detected](media/advlab4n1.png)
+   ![where_detected](media/advlab4n1.png)
 
-4.	Click on Detections to see the different builds that detected this alert.
+1. Click on Detections to see the different builds that detected this alert.
 
 
     > ProTip!
@@ -40,13 +40,13 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
 ### Task 3: Fixing the Code to resolve the alert
 
-1.	This is simple to fix using the method using parameters with dynamic SQL described in the Remediation steps.
+1. This is simple to fix using the method using parameters with dynamic SQL described in the Remediation steps.
 
-1.	Click on Locations found to see the code that triggered the alert.
+1. Click on Locations found to see the code that triggered the alert.
 
-    ![Image](media/advlab4n6.png)
+   ![Image](media/advlab4n6.png)
 
-1.	Click on the Edit button to edit the file. Line number 20 is highlighted here. 
+1. Click on the Edit button to edit the file. Line number 20 is highlighted here. 
 
 1. The value of __{drive}__ is getting red from the line number 20.
 
