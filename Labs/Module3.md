@@ -6,7 +6,7 @@ Dependency Scanning scans your project's dependencies such as libraries, framewo
 
 1.	Select the pipeline **eShopOnweb**
 
-    ![alert_detected](media/Alert_detected.png)
+    ![alert_detected](media/advlab33.png)
 
 1.	Locate the task *Advanced Security Dependency Scanning*(AdvancedSecurity-Dependency-Scanning@1) which already included in the YAML pipeline file.
 
