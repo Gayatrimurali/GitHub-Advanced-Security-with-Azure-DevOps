@@ -86,7 +86,7 @@ In this task, you will configure Advanced Security permissions for the eShopOnWe
 
 1. In the lower-left corner, click on **Project Settings**. In the left menu area under **Repos** section, click **Repositories**.
 
-      ![](media/lab1-image12.png)
+      ![](media/lab1-image13.png)
   	
 1. Click on the **eShopOnWeb** repository.
 
