@@ -32,7 +32,7 @@
    ![](media/lab1-image5.png)
 
 1. Once proccess complete click on **Navigate to project**
-    ![](media/lab1-image5.png)
+    ![](media/lab1-image6.png)
 
 ### Task 2: Enable Advanced Security from Portal
 
