@@ -27,16 +27,12 @@
 
     ![](media/lab1-image4.png)
 
-1. Provide a project name **eShopOnWeb**.and choose your Organization.
+1. Provide a project name **eShopOnWeb**.and choose your Organization then click **Create Project** and wait for the process to complete.
 
-   ![](media/lab1-image2.png)
+   ![](media/lab1-image5.png)
 
-1. Click **Create Project** and wait for the process to complete.
-
-    ![](media/create_project.png)
-
-
-1. Navigate to your eShopOnWeb project on Azure DevOps. It will be something like [https://dev.azure.com/YOURACCOUNT/eShopOnWeb]()
+1. Once proccess complete click on **Navigate to project**
+    ![](media/lab1-image5.png)
 
 ### Task 2: Enable Advanced Security from Portal
 
