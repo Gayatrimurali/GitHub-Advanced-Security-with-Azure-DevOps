@@ -46,7 +46,7 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
     ![Image](media/advlab4n6.png)
 
-1.	Click on the Edit button to edit the file. Line number 23 is highlighted here. 
+1.	Click on the Edit button to edit the file. Line number 20 is highlighted here. 
 
 1. The value of __{drive}__ is getting red from the line number 20.
 
