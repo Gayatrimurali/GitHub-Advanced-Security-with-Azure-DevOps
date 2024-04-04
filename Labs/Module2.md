@@ -87,7 +87,7 @@ You can follow these steps to fix the exposed secret.
 
 1. Click Keep this value secret to hide the value, then click OK and Save. Next, we need to edit the pipeline and add a new build task to replace the #{STORAGE_ID}# with the actual value.
 
-1. While still in edit mode, add the following task between the Checkout and Restore tasks, around line 15. This will replace the #{STORAGE_ID}# with the actual value in the src/Web/Constants.cs file.
+1. While still in edit mode, add the following task between the Checkout and Restore tasks, around line 17. This will replace the #{STORAGE_ID}# with the actual value in the src/Web/Constants.cs file.
 
     ``` YAML
 
@@ -103,11 +103,15 @@ You can follow these steps to fix the exposed secret.
 
     ```
     
-    ![Replace Token Task](media/replace-token-task.png)
+    ![Replace Token Task](media/advlab23.png)
 
 1. Select **Validate and save** and ensure that check box is marked at commit directly to the SecretFix branch setting, then click **Save**.
 
     ![Pipeline Save](media/advlab21.png)
+
+    >**Note**: If you face similar error - **A task is missing. The pipeline references a task called 'qetza.replacetokens.replacetokens-taskreplacetokens'. This usually indicates the task isn't installed, and you may be able to install it from the Marketplace:
+https://marketplace.visualstudio.com.
+(Task version 5, job 'Build', step ''.)** while validating, you can install it using this link [replacetoken](https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens)
 
 1. Once the commit is saved, click on **Repos**, click **Pull Requests**, and click **New pull request** to merge the changes from branch **SecretFix** into branch **main**. 
 
