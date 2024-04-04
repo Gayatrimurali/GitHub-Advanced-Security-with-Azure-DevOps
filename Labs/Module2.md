@@ -75,13 +75,13 @@ You can follow these steps to fix the exposed secret.
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline
 
-1. Next, we need to update the build pipeline to add a variable. Click on Pipelines and click on eShoponWeb.
+1. Next, we need to update the build pipeline to add a variable. Click on Pipelines and click on **eShoponWeb**.
 
-1. Click on *Edit* to edit the pipeline. Change to the SecretFix branch.
+1. Click on *Edit* to edit the pipeline. Change to the **SecretFix** branch.
     
      ![Remove STORAGE_ID](media/advsc44.png)
  
-1. Click on Variables and click + New Variable. Enter STORAGE_ID for the name and paste the URL from Notepad into the value field.
+1. Click on Variables and click + New Variable. Enter **STORAGE_ID** for the name and paste the secret value from Notepad into the value field.
 
      ![Add Value_storageid](media/advsc5.png)
 
@@ -105,17 +105,19 @@ You can follow these steps to fix the exposed secret.
     
     ![Replace Token Task](media/replace-token-task.png)
 
-1. Select Commit directly to the SecretFix branch, then click Save.
+1. Select **Validate and save** and ensure that check box is marked at commit directly to the SecretFix branch setting, then click **Save**.
 
-    ![Pipeline Save](media/pipeline-save.png)
+    ![Pipeline Save](media/advlab21.png)
 
-1. Once the commit is saved, click on Repos, click Pull Requests, and click Create a pull request to merge the changes from branch SecretFix into branch main. 
+1. Once the commit is saved, click on **Repos**, click **Pull Requests**, and click **New pull request** to merge the changes from branch **SecretFix** into branch **main**. 
 
-1. For the Title, enter the Fixed secret by adding a build token, and click Create. This will run the eShoponWeb pipeline to validate changes. 
+1. For the Title, enter the **Fixed secret** and click **Create**. This will run the **eShoponWeb** pipeline to validate changes. 
 
-1. Once the eShoponWeb pipeline has been completed, click Approve and Complete.
+    ![Pipeline Save](media/advlab22.png)
 
-1. Change Merge Type to Squash commit and check box Delete SecretFix after merging, to merge changes into the main branch.
+1. Once the **eShoponWeb** pipeline has been completed, click **Approve** and then click **Complete**.
+
+1. Change Merge Type to **Squash commit** and check box Delete SecretFix after merging, to merge changes into the main branch.
 
     ![Completing merge](media/completing-merge.png)
 
