@@ -4,7 +4,7 @@
 
 Dependency Scanning scans your project's dependencies such as libraries, frameworks, and packages, to identify any known security vulnerabilities or outdated versions that may pose a risk to your application
 
-1. Select the pipeline **eShopOnweb**
+1. Select the pipeline **eShopOnweb** and click on **Edit**.
 
     ![alert_detected](media/advlab33.png)
 
