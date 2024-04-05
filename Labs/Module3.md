@@ -75,7 +75,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
  
 1. From the code editor, update the package to 1.0.4.2. To do that, here we will use Visual Studio. 
 
-1. Copy the repo URL from Azure DevOps and note it in the notepad.
+1. Copy the repo URL from Azure DevOps by navigating to the **Repos** section from the left navigation pane and click on **Clone** to get the repo URL and note it in the notepad.
 
     ![Dependencies](media/clone1.png)
 
