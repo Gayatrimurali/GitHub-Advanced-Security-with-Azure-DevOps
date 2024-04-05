@@ -1,4 +1,4 @@
-## Lab 04: Code scanning
+### Lab 04: Code scanning
 
 ### Task 1: Setup Code Scanning
 
@@ -70,9 +70,9 @@ __{drive}__ using a query, we can directly define it as __C__.
 
 1.  This will run the **eShopOnWeb** pipeline.
 
-    >Note: The build will run automatically, initiating the code scanning task and publishing the results to Advanced Security.
+    > **Note**: The build will run automatically, initiating the code scanning task and publishing the results to Advanced Security.
 
 ### Task 4: Dismissing the code scanning alerts 
 
-1. Once after the completion of the build, if you navigate to the __Code scanning__ section of __Advanced Security__. You find the alert is closed automatically
+ Once after the completion of the build, if you navigate to the __Code scanning__ section of __Advanced Security__. You find the alert is closed automatically
 
