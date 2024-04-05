@@ -1,4 +1,4 @@
-## Lab 02: Secret Scanning 
+# Lab 02: Secret Scanning 
 
 Secret Scanning scans your codebase and other resources to identify potential secrets that may have been inadvertently committed and provides alerts to mitigate the risk of exposure. Push protection also prevents any credentials from being leaked in the first place.
 
