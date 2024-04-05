@@ -153,7 +153,7 @@ You can follow these steps to dismiss the alert.
 
     >**Note**: Once the code is merged into main, GHAzDO starts off a background scan of this repo and looks for exposed credentials. The scan doesn't just look at tip of main either, since attackers would look through all the branches and entire commit history.
 
-1. Go to the Azure DevOps Advanced Security dashboard and click on Secrets, you will see a list of other exposed Secrets alerts that have been found. 
+1. Go to the Azure DevOps Advanced Security dashboard and click on Secrets and subsequently click on **View other alerts**, you will see a list of other exposed Secrets alerts that have been found. 
 
 1. You will see that the alert Microsoft Storage account... no longer exists, as it is now revoked.
 
