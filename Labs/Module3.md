@@ -81,7 +81,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/clone2.png)
 
-1. **Sign in** to the Visual studio with the credentials available in Environment details tab through desktop icon and later select **Start Visual studio**
+1. **Sign in** to the Visual studio with the credentials email address: **<inject key="AzureAdUserEmail"></inject>** and  Password:**<inject key="AzureAdUserPassword"></inject>** and later select **Start Visual studio**
 
     ![Dependencies](media/vs1.png)
 
