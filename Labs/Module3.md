@@ -22,7 +22,9 @@ Dependency Scanning scans your project's dependencies such as libraries, framewo
 
     ![alert_detected](media/advlab31.png)
 
-1. The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. Please note that this process may take up to 10 minutes to finish. 
+1. The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. Please note that this process may take up to 15 minutes to finish. 
+
+    **Note:** Once the build is succeeded, you can ignore the permission needed prompt under the **Test Deployment** and proceed with the next task.
 
 ### Task 2: Viewing alerts of repository
 
@@ -36,14 +38,15 @@ Dependency Scanning scans your project's dependencies such as libraries, framewo
 
 1. This includes the Recommendation, Locations found,  Description, Severity, and the Date it was first detected. We can easily clean up the dependencies. 
 
-   ![alert_detected](media/advlab33.png)
+   ![alert_detected](media/do1.png)
 
-3. You can also view the code that triggered the alert and what build detected it.
-    ![where_detected](media/advlab34.png)
+1. You can also view the code that triggered the alert and what build detected it.
 
-4. Click on Detections to see the different builds that detected this alert.
+1. Click on Detections to see the different builds that detected this alert.
 
-    > **Note**  
+   ![where_detected](media/advlab34.png)
+
+   > **Note**  
     When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to Closed. To see these resolved alerts, you can use the State filter in the main toolbar and select Closed.
 
 
@@ -143,8 +146,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs12.png)
 
-    > **Note:**
-    The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security and alert automatically closed.
+    > **Note:** The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security and alert automatically closed.
 
 1. Once the **eShoponWeb** pipeline has been completed, click **Approve** and then click **Complete**.
 
