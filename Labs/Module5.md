@@ -49,3 +49,7 @@
 1. The DevOps security findings and DevOps Inventory table is listed in the page which helps to review the security posture of DevOps.
 
     ![alert_detected](media/advlab56.png)
+
+   >**Note:** It might take time to reflect the real-time status of **Advanced Security Status**.
+
+## You have successfully completed the lab.
