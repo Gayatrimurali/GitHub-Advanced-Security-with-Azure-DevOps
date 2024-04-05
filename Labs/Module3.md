@@ -1,4 +1,4 @@
-## Lab 03: Dependency Scanning
+# Lab 03: Dependency Scanning
 
 ### Task 1: Setup Dependency Scanning
 
