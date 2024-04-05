@@ -34,8 +34,7 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
    ![where_detected](media/advlab4n1.png)
 
-    > ProTip!
-    > When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to Closed. To see these resolved alerts, you can use the State filter in the main toolbar and select Closed.
+    **ProTip!** When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to Closed. To see these resolved alerts, you can use the State filter in the main toolbar and select Closed.
 
 ### Task 3: Fixing the Code to resolve the alert
 
