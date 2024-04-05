@@ -143,7 +143,7 @@ https://marketplace.visualstudio.com.
 
 You can follow these steps to dismiss the alert.
 
-1. Once the pipeline eShoponWeb has been completed, go to the Azure DevOps Advanced Security dashboard and click on Secrets. 
+1. Once the pipeline eShoponWeb has been completed,from the left navigation pane under **Repos**, go to the Azure DevOps **Advanced Security** dashboard and click on Secrets. 
 
 1. Click on the following item, Microsoft Storage account... to see the exposed secret and how we easily dismiss the alert. 
 
