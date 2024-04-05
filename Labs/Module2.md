@@ -125,6 +125,8 @@ https://marketplace.visualstudio.com.
 
     ![Pipeline Save](media/advlab22.png)
 
+    >**Note:** Make sure you add a random workitem link from the dropdown if it is not added automatically in order for the pipeline to run successfully.
+
 1. Once the **eShoponWeb** pipeline has been completed, click **Approve** and then click **Complete**.
 
 1. Change Merge Type to **Squash commit** and check box Delete SecretFix after merging, to merge changes into the main branch.
