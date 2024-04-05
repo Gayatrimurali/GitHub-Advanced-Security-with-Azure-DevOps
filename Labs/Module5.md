@@ -1,4 +1,4 @@
-## Lab 05: Microsoft Defender for Cloud DevOps security
+# Lab 05: Microsoft Defender for Cloud DevOps security
 
 ### Task 1: Connect Azure DevOps Environment to Microsoft Defender for Cloud
 
