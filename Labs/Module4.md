@@ -1,4 +1,4 @@
-### Lab 04: Code scanning
+# Lab 04: Code scanning
 
 ### Task 1: Setup Code Scanning
 
