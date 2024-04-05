@@ -166,7 +166,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1. If you are prompted to allow permission, click on the permission icon and click on **View**
 
-   ![Dependencies](media/do4.png)
+   ![Dependencies](media/d04.png)
 
    ![Dependencies](media/do5.png)
 
