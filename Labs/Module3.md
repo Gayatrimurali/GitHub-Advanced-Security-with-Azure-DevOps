@@ -138,7 +138,9 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs10.png)
 
-1. Naviagte to Azure DevOps and click on **Repos** and select **Pull requests** and select **create a pull request** to push the commits from *codefix* to the *main*.
+1. Navigate to **Azure Devops** and click on Pipelines from the left navigation pane and wait until the build is complete.
+
+1. Once the build is complete, click on **Repos** and select **Pull requests** and select **create a pull request** to push the commits from *codefix* to the *main*.
 
    ![Dependencies](media/vs11.png)
 
@@ -150,7 +152,11 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1. Once the **eShoponWeb** pipeline has been completed, click **Approve** and then click **Complete**.
 
+   ![Dependencies](media/do2.png)
+
 1. Change Merge Type to **Squash commit** and check box Delete SecretFix after merging, to merge changes into the main branch.
+
+   ![Dependencies](media/do3.png)
 
     >**ProTip!** Squash Merge is important. If we just commit, the exposed credential will still be in the history. To avoid this, fix code, use a Squash Merge, push it to repo, and you're done!
 
