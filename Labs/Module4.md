@@ -58,11 +58,11 @@ __{drive}__ using a query, we can directly define it as __C__.
 
     ![Image](media/advlab4n4.png)
 
-1. Click Commit to save changes. Enter *Fixalert* for branch name and check Create a pull request, then click Commit again.
+1. Click Commit to save changes. Enter **Fixalert** for branch name  and link any work item ,check **Create a pull request**, then click Commit again.
 
     ![Image](media/advlab4n5.png)
 
-    >Note: This step is necessary since the main branch is protected by a pull request pipeline.
+    > Note: This step is necessary since the main branch is protected by a pull request pipeline.
 
 1.	Click Create on the New pull request page to merge the changes into the main branch.
 
