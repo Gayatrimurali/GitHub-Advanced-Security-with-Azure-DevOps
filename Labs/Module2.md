@@ -98,16 +98,15 @@ You can follow these steps to fix the exposed secret.
 
     ``` YAML
 
-    - task: qetza.replacetokens.replacetokens-taskreplacetokens@5
-            inputs:
-              targetFiles: '**/*.cs'
-              encoding: 'auto'
-              tokenPattern: 'custom'
-              tokenPrefix: '#{' 
-              tokenSuffix: '}#' 
-              verbosity: 'detailed' 
-              keepToken: false 
-
+    - task: qetza.replacetokens.replacetokens-task.replacetokens@6
+      inputs:
+        targetFiles: '**/*.cs'
+        encoding: 'auto'
+        tokenPattern: 'custom'
+        tokenPrefix: '#{' 
+        tokenSuffix: '}#' 
+        verbosity: 'detailed' 
+        keepToken: false 
     ```
     
     ![Replace Token Task](media/advlab23.png)
