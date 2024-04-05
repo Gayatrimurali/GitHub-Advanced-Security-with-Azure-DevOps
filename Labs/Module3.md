@@ -162,7 +162,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 ### Task 4: Dismissing dependency scanning alerts
 
-1. Navigate to the Pipelines section and wait for it to complete.
+1. Navigate to the Pipelines section and wait for it to complete.It might take upto 20 minutes.
 
 1. If you are prompted to allow permission, click on the permission icon and click on **View**
 
