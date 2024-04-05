@@ -107,7 +107,6 @@ Repeat the same for **Test** environment.
 
 1. Choose the default Subscription and Provide the service connection name as **eShopOnWeb** and select **Save**
 
-
     ![](media/Choose_your_subscription.png)
 
 > Service connection with the same name is already present in the YAML pipeline, no need to modify the pipeline.
