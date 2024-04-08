@@ -6,7 +6,7 @@ In this lab you will configure GitHub Advanced Security (GHAS) in Azure DevOps.
 
 ## Lab Objectives
 In this lab, you will perform:
-- Task 1: Configuring the eShopOnWeb team project
+- Task 1: Sign up and configure the eShopOnWeb team project in Azure DevOps
 - Task 2: Configure the approvals and checks in environments
 - Task 3: Create Azure Resource Manager service connection
 - Task 4: Grant Permission to Pipeline
@@ -15,7 +15,7 @@ In this lab, you will perform:
 
 ## Estimated Timing :45 minutes
 
-### Task 1: Configuring the eShopOnWeb team project
+### Task 1: Sign up and configure the eShopOnWeb team project in Azure DevOps
 
 1. Open Edge browser and navigate to https://dev.azure.com and select **Start Free** and sign in with the credentials provided in the Environment variables.
 
