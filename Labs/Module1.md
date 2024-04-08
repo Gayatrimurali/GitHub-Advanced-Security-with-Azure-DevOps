@@ -1,5 +1,20 @@
 # Lab 01: Configure GHASDO in Azure DevOps
 
+## Lab Scenario
+
+In this lab you will configure GitHub Advanced Security (GHAS) in Azure DevOps.
+
+## Lab Objectives
+In this lab, you will perform:
+- Task 1: Configuring the eShopOnWeb team project
+- Task 2: Configure the approvals and checks in environments
+- Task 3: Create Azure Resource Manager service connection
+- Task 4: Grant Permission to Pipeline
+- Task 5: Enable Advanced Security from Portal
+- Task 6: Setup Advanced Security permissions
+
+## Estimated Timing :45 minutes
+
 ### Task 1: Configuring the eShopOnWeb team project
 
 1. Open Edge browser and navigate to https://dev.azure.com and select **Start Free** and sign in with the credentials provided in the Environment variables.
@@ -193,5 +208,14 @@ In this task, you will configure Advanced Security permissions for the eShopOnWe
 
 1. Make sure successful, a green checkmark ✅ appears next to the selected permission.
   
+## Review
+In this lab you have completed the following:
 
+- Configured the eShopOnWeb team project
+- Configured the approvals and checks in environments
+- Created Azure Resource Manager service connection
+- Granted Permission to Pipeline
+- Enabled Advanced Security from Portal
+- Setup Advanced Security permissions
 
+Click **Next** to proceed with the next lab.
