@@ -1,5 +1,18 @@
 # Lab 02: Secret Scanning 
 
+## Lab Scenario
+
+In this lab you will implement secret scanning to identify and mitigate potential exposures.
+
+## Lab Objectives
+
+In this lab you will perform the following:
+
+- Task 1: Viewing alerts of repository
+- Task 2: Fixing secret scanning alerts
+- Task 3: Dismissing secret scanning alerts
+  
+## Estimated Timing: 30 minutes
 Secret Scanning scans your codebase and other resources to identify potential secrets that may have been inadvertently committed and provides alerts to mitigate the risk of exposure. Push protection also prevents any credentials from being leaked in the first place.
 
 Once this is toggled on, it starts off a background scan of this repo and looks for exposed credentials. The scan doesn't just look at the tip of the main since attackers would look through all the branches and the entire commit history.
@@ -158,3 +171,12 @@ You can follow these steps to dismiss the alert.
 1. You will see that the alert Microsoft Storage account... no longer exists, as it is now revoked.
 
     >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository but only project administrators can dismiss Advanced Security alerts.
+
+## Review
+In this lab you have completed the following:
+
+- Viewed alerts of the repository
+- Fixed secret scanning alerts
+- Dismissed secret scanning alerts
+
+Click **Next** to proceed with the next lab.
