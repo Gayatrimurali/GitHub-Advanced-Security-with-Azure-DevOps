@@ -179,14 +179,6 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1. Navigate to the Pipelines section and wait for it to complete.It might take upto 20 minutes.
 
-1. If you are prompted to allow permission, click on the permission icon and click on **View**
-
-   ![Dependencies](media/d04.png)
-
-   ![Dependencies](media/do5.png)
-
-1. In the pop-up that appears, click **Permit** twice and the pipeline will get succeeded.
-
 1. Once the pipeline has been completed, **eShopOnWeb**, go to the Azure DevOps Advanced Security dashboard and click on Dependencies.
 
 1. You will see that the alert *Improper Input Validation in IpMatcher....*... no longer exists, as it is now closed.
