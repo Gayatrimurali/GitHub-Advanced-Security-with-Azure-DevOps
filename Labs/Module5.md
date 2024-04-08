@@ -72,4 +72,3 @@ In this lab you have completed the following:
 -  Understood your DevOps security
 
 
-## You have successfully completed the lab.
