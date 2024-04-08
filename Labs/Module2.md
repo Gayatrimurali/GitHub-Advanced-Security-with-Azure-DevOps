@@ -107,7 +107,7 @@ You can follow these steps to fix the exposed secret.
 
    ![setup](media/lab1-image22.png)
    
-1. While still in edit mode, add the following task between the Checkout and Restore tasks, around line 17. This will replace the #{STORAGE_ID}# with the actual value in the src/Web/Constants.cs file.
+1. While still in edit mode, add the following task between the Checkout and Restore tasks, around line 17. This task will replace the **#{STORAGE_ID}#** with the actual value in the 'src/Web/Constants.cs' file and also remove the tasks related to test and production deployments (Delete the code from line 79) from the existing pipeline which are not required in our scenario.
 
     ``` YAML
 
@@ -124,6 +124,89 @@ You can follow these steps to fix the exposed secret.
     
     ![Replace Token Task](media/advlab23.png)
 
+1. The Final pipeline should look as below:
+
+   ```YAML
+    trigger:
+    - main
+
+    pool:
+      vmImage: ubuntu latest
+    
+    extends: 
+      template: template.yaml
+      parameters:
+        stages:
+          - stage: Build
+            displayName: 'Build'
+            jobs:
+            - job: Build
+              steps:
+              - checkout: self
+    
+              - task: qetza.replacetokens.replacetokens-task.replacetokens@6
+                inputs:
+                  targetFiles: '**/*.cs'
+                  encoding: 'auto'
+                  tokenPattern: 'custom'
+                  tokenPrefix: '#{' 
+                  tokenSuffix: '}#' 
+                  verbosity: 'detailed' 
+                  keepToken: false
+              - task: DotNetCoreCLI@2
+                displayName: Restore 
+                inputs:
+                  command: restore
+                  projects: '**/*.csproj'
+    
+              - task: ms.advancedsecurity-tasks.codeql.init.AdvancedSecurity-Codeql-Init@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Initialize CodeQL'
+                inputs:
+                  languages: csharp
+                  querysuite: default
+    
+              - task: DotNetCoreCLI@2
+                displayName: Build
+                inputs:
+                  projects: '**/*.csproj'
+                  arguments: '--configuration $(BuildConfiguration)'
+    
+              - task: ms.advancedsecurity-tasks.dependency-scanning.AdvancedSecurity-Dependency-Scanning@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Dependency Scanning'
+    
+              - task: ms.advancedsecurity-tasks.codeql.analyze.AdvancedSecurity-Codeql-Analyze@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Perform CodeQL analysis'
+    
+              - task: ms.advancedsecurity-tasks.codeql.enhance.AdvancedSecurity-Publish@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Publish Results'
+    
+              - task: DotNetCoreCLI@2
+                displayName: Test
+                inputs:
+                  command: test
+                  projects: '[Tt]ests/**/*.csproj'
+                  arguments: '--configuration $(BuildConfiguration) --collect:"Code coverage"'
+    
+              - task: DotNetCoreCLI@2
+                displayName: Publish
+                inputs:
+                  command: publish
+                  publishWebProjects: True
+                  arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+                  zipAfterPublish: True
+    
+              - task: PublishBuildArtifacts@1
+                displayName: 'Publish Artifact'
+                inputs:
+                  PathtoPublish: '$(build.artifactstagingdirectory)'
+                condition: succeededOrFailed()
+              
+    ```
+   
 1. Select **Validate and save** and ensure that check box is marked at commit directly to the SecretFix branch setting, then click **Save**.
 
     ![Pipeline Save](media/advlab21.png)
@@ -145,12 +228,6 @@ https://marketplace.visualstudio.com.
 1. Change Merge Type to **Squash commit** and check box Delete SecretFix after merging, to merge changes into the main branch.
 
     ![Completing merge](media/advlab25.png)
-
-    > **ProTip!**
-    Squash Merge is important. If we just commit, the exposed credential will still be in the history. To avoid this, fix the code, use a Squash Merge, push it to repo, and you're done!
-
-    > **Note**
-    The build will run automatically, initiating the secret scanning task, and publishing the results to Advanced Security, and an alert will automatically be closed. However, the exposed issue will still be in the history and must be dismissed.
 
 ### Task 3: Dismissing secret scanning alerts
 
