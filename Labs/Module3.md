@@ -1,5 +1,20 @@
 # Lab 03: Dependency Scanning
 
+## Lab Scenario
+
+In this lab you will implement  dependency scanning in Azure DevOps to identify and mitigate potential security vulnerabilities
+
+## Lab Objectives
+
+In this lab you will perform the following:
+
+- Task 1: Setup Dependency Scanning
+- Task 2: Viewing alerts of repository
+- Task 3: Fixing dependency scanning alerts
+- Task 4: Dismissing dependency scanning alerts
+
+## Estimated Timing:45 minutes
+
 ### Task 1: Setup Dependency Scanning
 
 Dependency Scanning scans your project's dependencies such as libraries, frameworks, and packages, to identify any known security vulnerabilities or outdated versions that may pose a risk to your application
@@ -178,3 +193,13 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 > **Note:**
     This is a great way to ensure you are using the latest and greatest versions of your dependencies, and also, ensure you are not using any vulnerable versions.
+
+## Review
+In this lab you have completed the following:
+- Setup Dependency Scanning
+- Viewed alerts of repository
+- Fixed dependency scanning alerts
+- Dismissed dependency scanning alerts
+
+Click **Next** to continue with the next lab.
+
