@@ -191,8 +191,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1. You will see that the alert *Improper Input Validation in IpMatcher....*... no longer exists, as it is now closed.
 
-> **Note:**
-    This is a great way to ensure you are using the latest and greatest versions of your dependencies, and also, ensure you are not using any vulnerable versions.
+   > **Note:** This is a great way to ensure you are using the latest and greatest versions of your dependencies, and also, ensure you are not using any vulnerable versions.
 
 ## Review
 In this lab you have completed the following:
