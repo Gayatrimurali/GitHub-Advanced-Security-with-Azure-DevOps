@@ -1,5 +1,20 @@
 # Lab 04: Code scanning
 
+## Lab Scenario
+
+In this lab you will set up code scanning in Azure DevOps using GitHub Advanced Security to analyze code for security vulnerabilities and errors.
+
+## Lab Objectives
+
+In this lab you will perform the following:
+
+- Task 1: Setup Code Scanning
+- Task 2: Review Code Scanning Alert (Gain Insights)
+- Task 3: Fixing the Code to resolve the alert
+- Task 4: Dismissing the code scanning alerts 
+
+## Estimated Timing:45 minutes
+
 ### Task 1: Setup Code Scanning
 
 Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the code in an Azure DevOps repository to find security vulnerabilities and coding errors. Any problems identified by the analysis are raised as an alert. Code scanning uses CodeQL to identify vulnerabilities.
@@ -76,3 +91,12 @@ __{drive}__ using a query, we can directly define it as __C__.
 
  Once after the completion of the build, if you navigate to the __Code scanning__ section of __Advanced Security__. You find the alert is closed automatically
 
+## Review
+In this lab you have completed the following:
+
+- Setup Code Scanning
+- Reviewed Code Scanning Alert (Gain Insights)
+- Fixed the Code to resolve the alert
+- Dismissed the code scanning alerts 
+
+Click **Next** to proceed with the next lab
