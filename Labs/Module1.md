@@ -1,4 +1,4 @@
-# Lab 01: Configure GHASDO in Azure DevOps
+# Lab 01: Configure GHAzDO in Azure DevOps
 
 ## Lab Scenario
 
