@@ -22,3 +22,4 @@ In this lab, you will perform the following:
 
    ![](media/lab1-mod6.png)
 
+## You have successfully completed the lab.
