@@ -81,7 +81,7 @@ You can follow these steps to update a file.
 
 1. It will give an option to **Create a Pull request**.
 
-    ![Commit Bypass](media/commit_bypass2.png)
+    ![Commit Bypass](media/commit_bypass1.png)
 
 #### Fixing Exposed Secrets
 
