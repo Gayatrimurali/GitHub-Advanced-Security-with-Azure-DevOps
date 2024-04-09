@@ -87,7 +87,7 @@ You can follow these steps to update a file.
 
 You can follow these steps to fix the exposed secret. 
 
-1. Click Cancel to return to the code editor.
+1. Click on Edit.
 
     > **Note**: This scenario is all too common. A developer is testing an application locally and needs to connect to a database, so what do they do? Of course, just put the connection string in the appsettings.json file. They forget to remove it before checking in the code. Now the secret is exposed in the repo, and not just the tip. The exposed credential will still be in the history. This is a huge security hole!
 
