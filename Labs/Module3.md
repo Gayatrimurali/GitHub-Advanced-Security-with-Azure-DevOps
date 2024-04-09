@@ -102,7 +102,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs2.png)
 
-1. Select **Clone a repository** under get started and enter the clone URL under **Repository location** which is copied earlier and click **Clone**	
+1. Select **Clone a repository** under get started and enter the clone URL under **Repository location** which is copied earlier and ensure the Path is **C:\Users\azureuser\Source\Repos\eShopOnWeb** and then click **Clone**	
 
     ![Dependencies](media/vs3.png)
 
