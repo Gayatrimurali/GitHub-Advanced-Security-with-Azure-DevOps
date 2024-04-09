@@ -71,6 +71,18 @@ You can follow these steps to update a file.
 
     > **ProTip!** This can't happen during a Pull Request. Once the code has pushed into topic branch, it's too late. PR analysis is best for dependency scanning but not secret push scanning, they are different.
 
+#### Bypass push protection
+
+1. Update your comment with **skip-secret-scanning:true** and click **Commit**.
+
+    ![Commit Bypass](media/commit_bypass2.png)
+
+    >**Note:** Bypassing flagged secrets isn't recommended because bypassing can put company’s security at risk. 
+
+1. It will give an option to **Create a Pull request**.
+
+    ![Commit Bypass](media/commit_bypass2.png)
+
 #### Fixing Exposed Secrets
 
 You can follow these steps to fix the exposed secret. 
