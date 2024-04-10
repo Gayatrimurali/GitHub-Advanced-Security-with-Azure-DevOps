@@ -13,6 +13,11 @@ In this lab you will perform the following:
 - Task 3: Dismissing secret scanning alerts
   
 ## Estimated Timing: 30 minutes
+
+## Architecture Diagram
+
+  ![AD](media/ard02.png)
+  
 Secret Scanning scans your codebase and other resources to identify potential secrets that may have been inadvertently committed and provides alerts to mitigate the risk of exposure. Push protection also prevents any credentials from being leaked in the first place.
 
 Once this is toggled on, it starts off a background scan of this repo and looks for exposed credentials. The scan doesn't just look at the tip of the main since attackers would look through all the branches and the entire commit history.
