@@ -31,7 +31,7 @@ In this lab, you will perform the following:
    -----------|---------
    | Connector name | AzureDevopsconnector |
    | Resource group | LabVM |
-   | Region | EastUS |
+   | Region | Select any supporting region |
 
     ![alert_detected](media/advlab52.png)
 
