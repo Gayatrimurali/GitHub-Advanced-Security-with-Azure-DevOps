@@ -2,7 +2,7 @@
 
 ## Lab Scenario
 
-In this lab you will implement secret scanning to identify and mitigate potential exposures.
+In this lab, we will implement secret scanning in Azure DevOps to identify and mitigate potential exposures. we will learn to view, fix, and dismiss secret scanning alerts, enhancing security measures within their development environment.
 
 ## Lab Objectives
 
