@@ -20,7 +20,11 @@ In this lab, you will perform:
 
 1. On **Get Started with Azure DevOps** page, ensure that Project visibility is set to **Private** and enter the provided **captcha** click on **Continue**.
 
-      ![setup](media/last99.png)
+      ![setup](media/end2.png)
+
+1. On the **Almost done** page, enter the **captcha** and click on **Continue**
+
+      ![setup](media/end1.png)
 
 1. Navigate to [https://azuredevopsdemogenerator.azurewebsites.net](https://azuredevopsdemogenerator.azurewebsites.net/). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. For more information on the site, please see [https://docs.microsoft.com/en-us/azure/devops/demo-gen](https://docs.microsoft.com/en-us/azure/devops/demo-gen).
 
