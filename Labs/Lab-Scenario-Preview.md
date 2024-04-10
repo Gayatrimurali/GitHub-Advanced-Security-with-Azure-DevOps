@@ -26,6 +26,6 @@ In this lab, you will complete the following Modules:
 + Module 4: Code scanning
 + Module 5: Microsoft Defender for Cloud DevOps security
 
-## Estimated timing: 300 minutes
+## Estimated timing: 200 minutes
 ## Solution Architecture
 
