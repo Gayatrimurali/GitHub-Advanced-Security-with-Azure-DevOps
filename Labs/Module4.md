@@ -2,7 +2,7 @@
 
 ## Lab Scenario
 
-In this lab you will set up code scanning in Azure DevOps using GitHub Advanced Security to analyze code for security vulnerabilities and errors.
+In this lab, we set up code scanning in Azure DevOps using GitHub Advanced Security to analyze code for security vulnerabilities and errors. we will review code scanning alerts, fix identified issues in the code, and dismiss resolved alerts, thereby enhancing the security of their codebase.
 
 ## Lab Objectives
 
