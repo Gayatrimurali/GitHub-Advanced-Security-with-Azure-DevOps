@@ -10,7 +10,7 @@ In this lab, you will perform the following:
 
 - Task 1: Remove Subscription from DevOps billing
 
-## Estimated Timing:30 minutes
+## Estimated Timing: 10 minutes
 
 ### Task 1: Remove Subscription from DevOps billing
 
