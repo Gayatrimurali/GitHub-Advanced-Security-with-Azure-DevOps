@@ -2,7 +2,7 @@
 
 ## Lab Scenario
 
-In this lab, you will connect Azure DevOps Environment and remove the subscription from billing
+In this lab, we connect your Azure DevOps environment and remove the subscription from billing. This process helps manage our organization's billing settings effectively.
 
 ## Lab Objectives
 
