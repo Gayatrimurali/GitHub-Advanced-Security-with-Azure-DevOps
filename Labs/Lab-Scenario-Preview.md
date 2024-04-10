@@ -27,5 +27,5 @@ In this lab, you will complete the following Modules:
 + Module 5: Microsoft Defender for Cloud DevOps security
 
 ## Estimated timing: 200 minutes
-## Solution Architecture
+
 
