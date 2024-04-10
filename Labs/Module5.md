@@ -2,7 +2,7 @@
 
 ## Lab Scenario
 
-In this lab, you will connect Azure DevOps Environment to Microsoft Defender for Cloud to enhance DevOps security. 
+In this lab, we connect their Azure DevOps environment to Microsoft Defender for Cloud to enhance DevOps security. we will explore the DevOps security findings and inventory provided by Microsoft Defender for Cloud to review their security posture.
 
 ## Lab Objectives
 
