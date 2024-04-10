@@ -2,7 +2,7 @@
 
 ## Lab Scenario
 
-In this lab you will implement  dependency scanning in Azure DevOps to identify and mitigate potential security vulnerabilities
+In this lab, we implement dependency scanning in Azure DevOps to detect and address potential security vulnerabilities in project dependencies. we configure scanning, view alerts, fix identified vulnerabilities, and dismiss resolved alerts, enhancing the overall security posture of their application.
 
 ## Lab Objectives
 
