@@ -13,6 +13,10 @@ In this lab, you will perform the following:
 
 ## Estimated Timing:30 minutes
 
+## Architecture Diagram
+
+  ![AD](media/ard05.png)
+
 ### Task 1: Connect Azure DevOps Environment to Microsoft Defender for Cloud
 
 1. Sign in to the Azure portal.
