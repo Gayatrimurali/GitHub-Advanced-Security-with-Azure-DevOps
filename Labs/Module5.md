@@ -31,7 +31,7 @@ In this lab, you will perform the following:
    -----------|---------
    | Connector name | AzureDevopsconnector |
    | Resource group | LabVM |
-   | Region | <inject key="Region" enableCopy="false"/> |
+   | Region | EastUS |
 
     ![alert_detected](media/advlab52.png)
 
