@@ -15,6 +15,10 @@ In this lab you will perform the following:
 
 ## Estimated Timing:45 minutes
 
+## Architecture Diagram
+
+  ![AD](media/ard04.png)
+
 ### Task 1: Setup Code Scanning
 
 Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the code in an Azure DevOps repository to find security vulnerabilities and coding errors. Any problems identified by the analysis are raised as an alert. Code scanning uses CodeQL to identify vulnerabilities.
