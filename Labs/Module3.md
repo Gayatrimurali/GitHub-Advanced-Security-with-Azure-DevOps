@@ -15,6 +15,10 @@ In this lab you will perform the following:
 
 ## Estimated Timing:45 minutes
 
+## Architecture Diagram
+
+  ![AD](media/ard03.png)
+
 ### Task 1: Setup Dependency Scanning
 
 Dependency Scanning scans your project's dependencies such as libraries, frameworks, and packages, to identify any known security vulnerabilities or outdated versions that may pose a risk to your application
