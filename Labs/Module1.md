@@ -12,6 +12,10 @@ In this lab, you will perform:
 
 ## Estimated Timing :45 minutes
 
+## Architecture Diagram
+
+  ![AD](media/ard01.png)
+
 ### Task 1: Sign up and configure the eShopOnWeb team project in Azure DevOps
 
 1. Open Edge browser and navigate to https://dev.azure.com and select **Start Free** and sign in with the credentials provided in the Environment variables.
