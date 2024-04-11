@@ -23,13 +23,13 @@ In this lab, you will perform the following:
 
 1. Go to Microsoft Defender for Cloud > Environment settings.
 
-1. Select Add environment.
+1. Select Add Environment.
 
 1. Select Azure DevOps.
 
     ![alert_detected](media/advlab51.png)
 
-1. On **Azure DevOps Connection** page, under Account details, provide the below settings.
+1. On the **Azure DevOps Connection** page, under Account details, provide the below settings.
 
    | Setting  | Value |
    -----------|---------
@@ -53,17 +53,17 @@ In this lab, you will perform the following:
 
 1. Review the information, and then select **Create**.
 
-1. Wait for sometime, to view the connector in the Environment settings page
+1. Wait for some time, to view the connector in the Environment settings page
 
     ![alert_detected](media/advlab54.png)
 
 ### Task 2: Understanding your DevOps security
 
-1. Navigate to the **DevOps Security** under Cloud security
+1. Navigate to the **DevOps Security** under Cloud Security
 
     ![alert_detected](media/advlab55.png)
 
-1. The DevOps security findings and DevOps Inventory table is listed in the page which helps to review the security posture of DevOps.
+1. The DevOps security findings and DevOps Inventory table are listed on the page which helps to review the security posture of DevOps.
 
     ![alert_detected](media/advlab56.png)
 
@@ -74,5 +74,4 @@ In this lab you have completed the following:
 
 -  Connected Azure DevOps Environment to Microsoft Defender for Cloud
 -  Understood your DevOps security
-
 
