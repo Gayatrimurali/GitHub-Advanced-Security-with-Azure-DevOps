@@ -2,13 +2,13 @@
 
 ## Lab Scenario
 
-In this lab, we implement secret scanning in Azure DevOps to identify and mitigate potential exposures. we learn to view, fix, and dismiss secret scanning alerts, enhancing security measures within their development environment.
+In this lab, we implement secret scanning in Azure DevOps to identify and mitigate potential exposures. We learn to view, fix, and dismiss secret scanning alerts, enhancing security measures within their development environment.
 
 ## Lab Objectives
 
 In this lab, you will perform the following:
 
-- Task 1: Viewing alerts of the repository
+- Task 1: Viewing alerts of repository
 - Task 2: Fixing secret scanning alerts
 - Task 3: Dismissing secret scanning alerts
   
@@ -18,31 +18,31 @@ In this lab, you will perform the following:
 
   ![AD](media/ard02.png)
   
-Secret Scanning scans your codebase and other resources to identify potential secrets that may have been inadvertently committed and provides alerts to mitigate the risk of exposure. Push protection also prevents any credentials from being leaked in the first place.
+Secret Scanning scans your codebase and other resources to identify potential secrets that may have been inadvertently committed and provides alerts to mitigate the risk of exposure. Push protection also prevents credentials from being leaked in the first place.
 
-Once this is toggled on, it starts off a background scan of this repo and looks for exposed credentials. The scan doesn't just look at the tip of the main since attackers would look through all the branches and the entire commit history.
+Once this is toggled on, it starts off a background scan of this repo and looks for exposed credentials. The scan doesn't just look at the tip of the main, since attackers would look through all the branches and the entire commit history.
 
 ### Task 1: Viewing alerts of repository 
 
-The Advance Security Alert hub is where all alerts are raised and where we gain insights, specifically under the category of Secrets. When a secret is found, you can click on it to access more information. The secret may be located in different places, including various commits. 
+The Advanced Security Alert Hub is where all alerts are raised and where we gain insights, specifically under the category of Secrets. When a secret is found, you can click on it to access more information. The secret may be located in different places, including various commits. 
 
 1. Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
 
    ![setup](media/lab1-image16.png)
 
-1. Click on **Secrets** to see a list of all the exposed Secrets alerts that have been found. This includes the Alert and Introduced date. Click on the Microsoft Azure Storage account access key identifiable... to see more details about the alert and what you can do to clean up the secret.
+1. Click on **Secrets** to see a list of all the exposed secret alerts that have been found. This includes the alert and introduced dates. Click on the **Microsoft Azure Storage account access key identifiable...** to see more details about the alert and what you can do to clean up the secret.
 
    ![Secrets page](media/advsecurity2.png)
 
-1. Notice this includes the Recommendation, Locations found, Remediation Steps, Severity, and the Date it was first introduced. We can easily clean this up and dismiss the alert.
+1. Notice that this includes the Recommendation, Locations found, Remediation steps, Severity, and the Date it was first introduced. We can easily clean this up and dismiss the alert.
 
    ![Secret Details](media/advsc3.png)
 
 ### Task 2: Fixing secret scanning alerts
 
-Once a credential touches the repo, it's too late. Hackers might have already exploited it. The only way forward is to eliminate these leaks permanently and to find all the places they're being used in production.
+Once a credential touches the repo, it's too late. Hackers might have already exploited it. The only way forward is to permanently eliminate these leaks and find all the places they're being used in production.
 
- **Note:** Good news, GHAzDO focuses on preventing this in the first place. Bad news, these need to be manually fixed. There isn't an Easy Button.
+ **Note:** Good news! GHAzDO focuses on preventing this in the first place. Bad news! These need to be manually fixed. There isn't an easy button.
 
 #### Push Protection
 
@@ -56,25 +56,25 @@ You can follow these steps to update a file.
 
     ![Click on File](media/advsc9.png)
 
-1. Click **Edit** to edit the file. This will open up the code editor and highlight the exact location of the secret. In this case, it's in the .cs file.
+1. Click on **Edit** to edit the file. This will open the code editor and highlight the exact location of the secret. In this case, it's in the .cs file.
 
    ![setup](media/lab1-image17.png)
 
-1. On line 9, update the variable name as "STORAGE_ID" and click **Commit** to save changes.
+1. On line 9, update the variable name to "STORAGE_ID" and click on **Commit** to save changes.
     
      ![setup](media/lab1-image14.png)
 
-1. Enter **StorageDetails** for the branch name and check Create a pull request, then click **Commit** again.
+1. Enter **StorageDetails** for the branch name and check **Create a pull request**, then click on **Commit** again.
 
      ![setup](media/lab1-image15.png)
 
-1. The commit was rejected because the repository has both secret and branch protection enabled. This is a good thing! It's preventing us from checking in the exposed secret. Let's fix this.
+1. The commit was rejected because the repository has both secret and branch protection enabled. This is a good thing! It's preventing us from checking in on the exposed secret. Let's fix this.
    
     ![Commit Rejected](media/commit_rejected.png)
 
-    > **Note:** The code went up to the server, analyzed, then rejected, and not stored anywhere. Using Secret push scanning, it catches secrets right before they become a problem
+    > **Note:** The code went up to the server, was analyzed, rejected, and not stored anywhere. Using Secret push scanning, it catches secrets right before they become a problem.
 
-    > **ProTip!** This can't happen during a Pull Request. Once the code has been pushed into a topic branch, it's too late. PR analysis is best for dependency scanning but not secret push scanning, they are different.
+    > **ProTip!** This can't happen during a Pull Request. Once the code has been pushed into a topic branch, it's too late. PR analysis is best for dependency scanning but not secret push scanning. They are different.
 
 #### Bypass push protection
 
@@ -92,19 +92,19 @@ You can follow these steps to update a file.
 
 You can follow these steps to fix the exposed secret. 
 
-1. Click on Edit.
+1. Click on **Edit**.
 
-    > **Note**: This scenario is all too common. A developer is testing an application locally and needs to connect to a database, so what do they do? Of course, just put the connection string in the appsettings.json file. They forget to remove it before checking in the code. Now the secret is exposed in the repo, and not just the tip. The exposed credential will still be in history. This is a huge security hole!
+    > **Note**: This scenario is all too common. A developer is testing an application locally and needs to connect to a database, so what do they do? Of course, just put the connection string in the appsettings.json file. They forget to remove it before checking in the code. Now, the secret is exposed in the repo, not just the tip. The exposed credentials will still be in history. This is a huge security hole!
 
-1. On line 9, copy the STORAGE_ID value and note it down in a notepad. Now, replace this value with #{STORAGE_ID}#.
+1. On line 9, copy the **STORAGE_ID value** and note it down in a notepad. Now replace this value with **#{STORAGE_ID}#**.
 
     ![setup](media/lab1-image18.png)
 
-1. Click Commit to save changes. Enter SecretFix for the branch name and link any work item from the list.
+1. Click on **Commit** to save changes. Enter **SecretFix** for the branch name and link any work item from the list.
 
     ![Remove STORAGE_ID](media/advsc66.png)
 
-    > **Note:** This step is necessary since the main branch is protected by a pull request pipeline
+    > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
 1. Next, we need to update the build pipeline to add a variable. Click on **Pipelines** and select **eShoponWeb**.
 
@@ -116,15 +116,15 @@ You can follow these steps to fix the exposed secret.
    
      ![Remove STORAGE_ID](media/advsc44.png)
  
-1. Click on Variables and click **+** New Variable. 
+1. Click on **Variables** and click on **+** New Variable. 
 
      ![setup](media/lab1-image21.png)
 
-1. Enter **STORAGE_ID** for the name and paste the secret value from Notepad into the value field. Click Keep this value secret to hide the value, then click OK and Save. Next, we need to edit the pipeline and add a new build task to replace the #{STORAGE_ID}# with the actual value.
+1. Enter **STORAGE_ID** for the name and paste the secret value from Notepad into the value field. Click on **Keep this value secret to hide the value**, then click **OK** and **Save**. Next, we need to edit the pipeline and add a new build task to replace the **#{STORAGE_ID}#** with the actual value.
 
    ![setup](media/lab1-image22.png)
    
-1. While still in edit mode, add the following task between the Checkout and Restore tasks, around line 17. This task will replace the **#{STORAGE_ID}#** with the actual value in the 'src/Web/Constants.cs' file and also remove the tasks related to test and production deployments (Delete the code from line 79) from the existing pipeline which is not required in our scenario.
+1. While still in edit mode, add the following task between the Checkout and Restore tasks around line 17. This task will replace the **#{STORAGE_ID}#** with the actual value in the **'src/Web/Constants.cs'** file and also remove the tasks related to test and production deployments (Delete the code from line 79) from the existing pipeline, which is not required in our scenario.
 
     ``` YAML
 
@@ -141,7 +141,7 @@ You can follow these steps to fix the exposed secret.
     
     ![Replace Token Task](media/advlab23.png)
 
-1. The Final pipeline should look as below:
+1. The final pipeline should look as below:
 
    ```YAML
     trigger:
@@ -224,25 +224,25 @@ You can follow these steps to fix the exposed secret.
               
     ```
    
-1. Select **Validate and save** and ensure that the check box is marked at commit directly to the SecretFix branch setting, then click **Save**.
+1. Select **Validate and save**, and ensure that the check box is marked at commit directly to the **SecretFix** branch setting, then click on **Save**.
 
     ![Pipeline Save](media/advlab21.png)
 
-    >**Note**: If you face similar error - **A task is missing. The pipeline references a task called 'qetza.replacetokens.replacetokens-taskreplacetokens'. This usually indicates the task isn't installed, and you may be able to install it from the Marketplace:
+    >**Note**: If you face a similar error, - **A task is missing. The pipeline references a task called 'qetza.replacetokens.replacetokens-taskreplacetokens'. This usually indicates the task isn't installed, and you may be able to install it from the Marketplace:
 https://marketplace.visualstudio.com.
 (Task version 5, job 'Build', step ''.)** While validating, you can install it using this link [replacetoken](https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens)
 
-1. Once the commit is saved, click on **Repos**, click **Pull Requests**, and click **New pull request** to merge the changes from branch **SecretFix** into branch **main**. 
+1. Once the commit is saved, click on **Repos**, click **Pull Requests**, and click on **New pull request** to merge the changes from branch **SecretFix** into branch **main**. 
 
-1. For the Title, enter the **Fixed secret** and click **Create**. This will run the **eShoponWeb** pipeline to validate changes. 
+1. For the title, enter the **Fixed secret** and click on **Create**. This will run the **eShoponWeb** pipeline to validate changes. 
 
     ![Pipeline Save](media/advlab22.png)
 
     >**Note:** Make sure you add a random workitem link from the dropdown if it is not added automatically for the pipeline to run successfully.
 
-1. Once the **eShoponWeb** pipeline has been completed, click **Approve** and then click **Complete**.
+1. Once the **eShoponWeb** pipeline has been completed, click **Approve**, and then click on **Complete**.
 
-1. Change Merge Type to **Squash commit** and check the box Delete SecretFix after merging, to merge changes into the main branch.
+1. Change **Merge Type** to **Squash commit** and check the box **Delete SecretFix after merging**, to merge changes into the main branch.
 
     ![Completing merge](media/advlab25.png)
 
@@ -250,27 +250,27 @@ https://marketplace.visualstudio.com.
 
 You can follow these steps to dismiss the alert.
 
-1. Once the pipeline eShoponWeb has been completed, from the left navigation pane under **Repos**, go to the Azure DevOps **Advanced Security** dashboard and click on Secrets. 
+1. Once the pipeline eShoponWeb has been completed, from the left navigation pane under **Repos**, go to the Azure DevOps **Advanced Security** dashboard and click on **Secrets**. 
 
-1. Click on the following item, Microsoft Storage account... to see the exposed secret and how we easily dismiss the alert. 
+1. Click on the following item, **Microsoft Storage account...** to see the exposed secret and how we easily dismiss the alert. 
 
-1. Click on Close alert to dismiss the alert, select Revoked, then click Close.
+1. Click on **Close alert** to dismiss the alert. Select **Revoked**, and then click on **Close**.
     
     ![Closing Alert](media/advlab24.png)
 
-    >**Note**: Once the code is merged into the main, GHAzDO starts a background scan of this repo and looks for exposed credentials. The scan doesn't just look at the tip of the main either, since attackers would look through all the branches and the entire commit history.
+    >**Note**: Once the code is merged into the main, GHAzDO starts a background scan of this repo and looks for exposed credentials. The scan doesn't just look at the tip of the main, since attackers would look through all the branches and the entire commit history.
 
-1. Go to the Azure DevOps Advanced Security dashboard, click on Secrets, and subsequently click on **View other alerts**, you will see a list of other exposed Secrets alerts that have been found. 
+1. Go to the Azure DevOps Advanced Security dashboard, click on **Secrets**, and subsequently click on **View other alerts**. You will see a list of other exposed secret alerts that have been found. 
 
-1. You will see that the alert Microsoft Storage account... no longer exists, as it is now revoked.
+1. You will see that the alert **Microsoft Storage account...** no longer exists, as it is now revoked.
 
-    >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository but only project administrators can dismiss Advanced Security alerts.
+    >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository, but only project administrators can dismiss Advanced Security alerts.
 
 ## Review
-In this lab you have completed the following:
+In this lab, you have completed the following:
 
-- Viewed alerts of the repository
-- Fixed secret scanning alerts
-- Dismissed secret scanning alerts
+- Viewed alerts of the repository.
+- Fixed secret scanning alerts.
+- Dismissed secret scanning alerts.
 
 Click **Next** to proceed with the next lab.
