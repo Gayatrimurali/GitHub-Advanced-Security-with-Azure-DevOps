@@ -100,7 +100,7 @@ You can follow these steps to fix the exposed secret.
 
     ![setup](media/lab1-image18.png)
 
-1. Click on **Commit** to save changes. Enter **SecretFix** for the branch name and link the work item created earlier from the list.
+1. Click on **Commit** to save changes. Enter **SecretFix** for the branch name and link the **Work item** created earlier from the list.
 
     ![Remove STORAGE_ID](media/advsc66.png)
 
