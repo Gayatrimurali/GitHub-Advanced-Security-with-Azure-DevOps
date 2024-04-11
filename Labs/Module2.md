@@ -273,4 +273,4 @@ In this lab, you have completed the following:
 - Fixed secret scanning alerts.
 - Dismissed secret scanning alerts.
 
-Click **Next** to proceed with the next lab.
+Click on **Next** to proceed with the next lab.
