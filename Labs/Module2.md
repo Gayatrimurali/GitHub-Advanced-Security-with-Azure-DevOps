@@ -148,7 +148,7 @@ You can follow these steps to fix the exposed secret.
     - main
 
     pool:
-      vmImage: ubuntu latest
+      vmImage: ubuntu-latest
     
     extends: 
       template: template.yaml
@@ -236,7 +236,7 @@ https://marketplace.visualstudio.com.
 
 1. For the title, enter the **Fixed secret** and click on **Create**. This will run the **eShoponWeb** pipeline to validate changes. 
 
-    ![Pipeline Save](media/advlab22.png)
+    ![Pipeline Save](media/nls12.png)
 
     >**Note:** Make sure you add a random workitem link from the dropdown if it is not added automatically for the pipeline to run successfully.
 
