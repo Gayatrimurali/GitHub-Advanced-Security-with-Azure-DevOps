@@ -157,9 +157,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs10.png)
 
-1. Navigate to **Azure DevOps** click on Pipelines from the left navigation pane and wait until the build is complete.
-
-1. Once the build is complete, click on **Repos** and select **Pull requests** and select **create a pull request** to push the commits from *codefix* to the *main*.
+1. Navigate to **Azure DevOps** click on **Repos** and select **Pull requests** and select **create a pull request** to push the commits from *codefix* to the *main*.
 
    ![Dependencies](media/vs11.png)
 
