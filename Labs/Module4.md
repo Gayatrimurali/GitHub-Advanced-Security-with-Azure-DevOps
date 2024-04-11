@@ -29,7 +29,7 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
 1. Locate the tasks related to **Advanced Security Code Scanning** that are already included in the YAML pipeline file.
 
-   ![alert_detected](media/advlab41.png)
+   ![alert_detected](media/nls6.png)
  
 1. Do not run the pipeline. The code scanning setup has already been initiated, along with dependency scanning performed in the previous lab.
 
@@ -45,13 +45,13 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
 1. This includes the Recommendation, Locations found, Description, Severity, and the Date it was first detected. We can easily fix this threat. 
 
-   ![code_alert_detected](media/advlab4n2.png)
+   ![code_alert_detected](media/nls7.png)
 
 1. You can also view the code that triggered the alert and what build detected it.
    
 1. Click on **Detections** to see the different builds that detected this alert.
 
-   ![where_detected](media/advlab4n1.png)
+   ![where_detected](media/nls8.png)
 
     **ProTip!** When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to Closed. To see these resolved alerts, you can use the **State filter** in the main toolbar and select **Closed**.
 
@@ -63,14 +63,14 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
    ![Image](media/advlab4n6.png)
 
-1. Click on the **Edit** button to edit the file. Line number 20 is highlighted here. 
+1. Click on the **Edit** button to edit the file. Line number 23 is highlighted here. 
 
-1. The value of __{drive}__ is getting red from line number 20.
+1. The value of __{drive}__ is getting highlighted from line number 23.
 
-    ![Image](media/advlab4n3.png)
+    ![Image](media/nls9.png)
 
 1. Instead of getting the value of 
-__{drive}__ using a query, we can directly define it as __C__.
+__{drive}__ using a query, we can directly define it as __C__ for the string drive variable in the line 20.
     ```C#
     string drive = "C";
     ```
@@ -79,7 +79,7 @@ __{drive}__ using a query, we can directly define it as __C__.
 
 1. Click on **Commit** to save changes. Enter **Fixalert** for the branch name and link any work item. Check **Create a pull request**, and then click on **Commit** again.
 
-    ![Image](media/d06.png)
+    ![Image](media/nls10.png)
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
