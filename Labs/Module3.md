@@ -63,7 +63,7 @@ Dependency Scanning scans your project's dependencies, such as libraries, framew
 
 1. Click on **Detections** to see the different builds that detected this alert.
 
-   ![where_detected](media/advlab34.png)
+   ![where_detected](media/nls8.png)
 
    > **Note**  
     When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to closed. To see these resolved alerts, you can use the **State filter** in the main toolbar and select **Closed**.
