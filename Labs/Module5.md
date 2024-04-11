@@ -34,8 +34,9 @@ In this lab, you will perform the following:
    | Setting  | Value |
    -----------|---------
    | Connector name | AzureDevopsconnector |
-   | Resource group | LabVM |
-   | Region | Select any supporting region |
+   | Subscription | Choose the default subscription |
+   | Resource group | Lab-VM |
+   | Location | Select any supporting region |
 
     ![alert_detected](media/advlab52.png)
 
