@@ -75,7 +75,7 @@ __{drive}__ using a query, we can directly define it as __C__ for the string dri
     string drive = "C";
     ```
 
-    ![Image](media/advlab4n4.png)
+    ![Image](media/nls11.png)
 
 1. Click on **Commit** to save changes. Enter **Fixalert** for the branch name and link any work item. Check **Create a pull request**, and then click on **Commit** again.
 
