@@ -120,7 +120,25 @@ In this task, you will configure advanced security permissions for the eShopOnWe
       ![allow-permissions](media/last1.png)
 
 1. Make sure a green checkmark ✅ appears next to the selected permission.
-  
+
+## Create Work item
+
+You can follow these steps to create a work item to link while committing the changes.
+
+1. Navigate to the **eShopOnWeb** project and select **Boards** from the left menu and select **Work items**
+
+      ![allow-permissions](media/nls3.png)
+
+1. On the **Work items** page, select **+New Work Item** and select **Issue** from the drop-down menu.
+
+      ![allow-permissions](media/nls5.png)
+
+1. Enter **Advanced security related events** in the Title box
+
+1. Enter **Work item to link for all the commits related to Advanced security events** in the description box and click on **Save**
+
+      ![allow-permissions](media/nls4.png)
+
 ## Review
 In this lab, you have completed the following:
 
