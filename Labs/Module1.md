@@ -36,7 +36,7 @@ In this lab, you will perform:
 
     ![](media/lab1-image2.png)
 
-1. Please click on **Accept** to grant permission for accessing your subscription.
+1. Please click on **Accept** to grant permission to access your subscription.
 
 1. Click **Choose Template**.
 
@@ -50,7 +50,7 @@ In this lab, you will perform:
 
    ![](media/lab1-image5.png)
 
-1. Once proccess complete click on **Navigate to project**
+1. Once the process is complete click on **Navigate to the project**
 
    ![](media/lab1-image6.png)
 
@@ -84,19 +84,19 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
      > **Note:** Extensions used in some labs might require a public project to allow using the free version.
 
-1. Open the **eShopOnWeb** project and click on **Project Settings** available in the lower left corner. In the left menu area under Repos, click **Repositories**.
+1. Open the **eShopOnWeb** project and click on **Project Settings** available in the lower left corner. In the left menu area under Repos, click **Repositories**.
 
 1. Click on the **eShopOnWeb** repository.
 
-1. Click on Settings, then click **Advanced Security**, On to turn it on.
+1. Click on Settings, then click **Advanced Security**, On to turn it on.
 
     ![setup](media/last2.png)
 
-1. Click **Begin Billing**.
+1. Click **Begin Billing**.
 
     ![](media/lab1-image12.png)
 
-1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well
+1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well
  
     {% include note.html content= "GitHub Advanced Security for Azure DevOps includes extra permissions for more levels of control around Advanced Security results and management. Be sure to adjust individual permissions for your repository." %}
 
@@ -104,7 +104,7 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
 In this task, you will configure Advanced Security permissions for the eShopOnWeb repository in Azure DevOps. This involves granting specific permissions to Project Administrators to manage security alerts and settings related to the repository.
 
-1. In the lower-left corner, click on **Project Settings**. In the left menu area under **Repos** section, click **Repositories**.
+1. In the lower-left corner, click on **Project Settings**. In the left menu area under the **Repos** section, click **Repositories**.
 
       ![](media/lab1-image13.png)
   	
@@ -112,15 +112,15 @@ In this task, you will configure Advanced Security permissions for the eShopOnWe
 
 1. Select **Security** and click on **Project Administrators**.
 
-1. Next to Advanced Security: manage and dismiss alerts, click the dropdown and select  **Allow**.
+1. Next to Advanced Security: manage and dismiss alerts, click the dropdown, and select  **Allow**.
 
-1. Next to Advanced Security: manage settings, click the dropdown and select **Allow**.
+1. Next to Advanced Security: manage settings, click the dropdown, and select **Allow**.
 
-1. Next to Advanced Security: view alerts, click the dropdown and select **Allow**.
+1. Next to Advanced Security: view alerts, click the dropdown, and select **Allow**.
 
       ![allow-permissions](media/last1.png)
 
-1. Make sure successful, a green checkmark ✅ appears next to the selected permission.
+1. Make sure successful, a green checkmark ✅ appears next to the selected permission.
   
 ## Review
 In this lab you have completed the following:
