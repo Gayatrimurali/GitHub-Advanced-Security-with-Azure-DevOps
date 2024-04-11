@@ -88,8 +88,6 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1. Review Recommendation, Location, Description, and Severity to understand the vulnerability and how to resolve it.
 
-   {% include tip.html content= "The recommendation will provide you with the steps to resolve the vulnerability. For this one, simply update the package version from 1.0.4.1 to 1.0.4.2 to fix the vulnerability." %}
-
 1. Click on the **Locations** to see the code that triggered the alert.
  
 1. From the code editor, **update the package to 1.0.4.2**. To do that, here we will use Visual Studio. 
