@@ -31,7 +31,7 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
    ![alert_detected](media/advlab41.png)
  
-1. Do not run the pipeline, code scanning setup up already initiated along with dependency scanning performed in the previous lab.
+1. Do not run the pipeline, code scanning setup already initiated along with dependency scanning performed in the previous lab.
 
 ### Task 2: Review Code Scanning Alert (Gain Insights)
 
