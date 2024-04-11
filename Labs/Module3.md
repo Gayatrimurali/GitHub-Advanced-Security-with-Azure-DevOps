@@ -187,9 +187,9 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 ## Review
 In this lab, you have completed the following:
-- Setup Dependency Scanning
-- Viewed alerts of the repository
-- Fixed dependency scanning alerts
-- Dismissed dependency scanning alerts
+- Setup Dependency Scanning.
+- Viewed alerts of the repository.
+- Fixed dependency scanning alerts.
+- Dismissed dependency scanning alerts.
 
 Click on **Next** to continue with the next lab.
