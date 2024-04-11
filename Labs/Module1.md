@@ -22,7 +22,7 @@ In this lab, you will perform:
 
       ![setup](media/lab1-image1.png)
 
-1. On **Get Started with Azure DevOps** page, ensure that Project visibility is set to **Private** and enter the provided **captcha** click on **Continue**.
+1. On **Get Started with Azure DevOps** page, click on **Continue**.
 
       ![setup](media/end2.png)
 
