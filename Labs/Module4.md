@@ -6,7 +6,7 @@ In this lab, we set up code scanning in Azure DevOps using GitHub Advanced Secur
 
 ## Lab Objectives
 
-In this lab you will perform the following:
+In this lab, you will perform the following:
 
 - Task 1: Setup Code Scanning
 - Task 2: Review Code Scanning Alert (Gain Insights)
@@ -27,33 +27,33 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
    ![alert_detected](media/advlab33.png)
 
-1. Locate the tasks related to *Advanced Security Code Scanning** which already included in the YAML pipeline file.
+1. Locate the tasks related to *Advanced Security Code Scanning** which are already included in the YAML pipeline file.
 
    ![alert_detected](media/advlab41.png)
  
-1. Do not run the pipeline, code scanning set up already initiated along with dependency scanning performed in the previous lab.
+1. Do not run the pipeline, code scanning setup up already initiated along with dependency scanning performed in the previous lab.
 
 ### Task 2: Review Code Scanning Alert (Gain Insights)
 
-1. Go to the **Repos** tab and click on the Advanced Security menu item at the bottom.
+1. Go to the **Repos** tab and click on the Advanced Security menu item at the bottom.
 
-1. Click on **Code scanning** to see a list of all the code scanning alerts that have been found. This includes the Alert, Vulnerable code details, and First detected date.
+1. Click on **Code scanning** to see a list of all the code scanning alerts that have been found. This includes the Alert, Vulnerable code details, and First detected date.
 
 #### Code scanning Alert Details
 
-1. Click on the item ***Uncontrolled command line...*** to see the details about this alert.
+1. Click on the item ***Uncontrolled command line...*** to see the details about this alert.
 
-1. This includes the Recommendation, Locations found,  Description, Severity, and the Date it was first detected. We can easily fix this threat. 
+1. This includes the Recommendation, Locations found,  Description, Severity, and the Date it was first detected. We can easily fix this threat. 
 
    ![code_alert_detected](media/advlab4n2.png)
 
 1. You can also view the code that triggered the alert and what build detected it.
    
-1. Click on Detections to see the different builds that detected this alert.
+1. Click on Detections to see the different builds that detected this alert.
 
    ![where_detected](media/advlab4n1.png)
 
-    **ProTip!** When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to Closed. To see these resolved alerts, you can use the State filter in the main toolbar and select Closed.
+    **ProTip!** When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to Closed. To see these resolved alerts, you can use the State filter in the main toolbar and select Closed.
 
 ### Task 3: Fixing the Code to resolve the alert
 
@@ -77,7 +77,7 @@ __{drive}__ using a query, we can directly define it as __C__.
 
     ![Image](media/advlab4n4.png)
 
-1. Click Commit to save changes. Enter **Fixalert** for branch name  and link any work item ,check **Create a pull request**, then click Commit again.
+1. Click Commit to save changes. Enter **Fixalert** for the branch name and link any work item, check **Create a pull request**, then click Commit again.
 
     ![Image](media/d06.png)
 
