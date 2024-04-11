@@ -1,6 +1,6 @@
 # Getting Started with Your GitHub Advanced Security with Azure DevOps
  
-Welcome to your GitHub Advanced Security with Azure DevOps workshop! We've prepared a seamless environment for you to explore and learn about enabling, configuring, and managing security features across various tasks such as secret scanning, dependency scanning, and code scanning. Let's begin by making the most of this experience:
+Welcome to your GitHub Advanced Security with Azure DevOps workshop! We've prepared a seamless environment for you to explore and learn about enabling, configuring, and managing security features across various tasks, such as secret scanning, dependency scanning, and code scanning. Let's begin by making the most of this experience:
  
 ## Accessing Your Lab Environment
  
@@ -20,7 +20,7 @@ To get a better understanding of your lab resources and credentials, navigate to
  
 ## Utilizing the Split Window Feature
  
-For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
  
 ![Use the Split Window Feature](media/spl.png)
  
@@ -30,7 +30,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
    ![Manage Your Virtual Machine](media/res.png)
  
-## Let's Get Started with Azure Portal
+## Let's Get Started with the Azure Portal
  
 1. On your virtual machine, click on the Azure Portal icon as shown below:
  
@@ -48,12 +48,12 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
       ![Enter Your Password](media/sc900-image-2.png)
  
-4. If prompted to stay signed in, you can click "No."
+4. If prompted to stay signed in, you can click **"No**."
  
-5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Maybe Later" to skip the tour.
+5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **"Maybe Later"** to skip the tour.
  
-6. Click "Next" from the bottom right corner to embark on your Lab journey!.
+6. Click on **"Next"** from the bottom right corner to embark on your lab journey!
  
       ![Start Your Azure Journey](media/sc900-image(3).png)
  
-Now you're all set to explore the powerful world of technology. Feel free to reach out if you have any questions along the way. Enjoy your workshop!
+Now, you're all set to explore the powerful world of technology. Feel free to reach out if you've got any questions along the way. Enjoy your workshop!
