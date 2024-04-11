@@ -23,13 +23,37 @@ In this lab, you will perform:
 
       ![setup](media/lab1-image1.png)
 
-1. On the **Get Started with Azure DevOps** page, ensure that project visibility is set to **Private** and enter the provided **captcha**. Click on **Continue**.
+1. On the **Get Started with Azure DevOps** page, click on **Continue**.
 
       ![setup](media/end2.png)
 
 1. On the **Almost done** page, enter the **captcha** and click on **Continue**.
 
       ![setup](media/end1.png)
+
+1. On the **Azure DevOps** page, at the button left, click on **Organization settings**. then select **Billing** (opening this screen takes a few seconds).
+
+    ![](media/nls2.png)
+
+1. From the left navigation pane, select **Billing** and click **Set up billing**. On the right-hand side of the screen, select the **Existing subscription** listed and click **Save** to link the subscription with the organization.
+
+   ![](media/lab1-image8.png)
+
+   ![](media/lab1-image9.png)
+
+1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then click the **SAVE** button at the bottom.
+
+   ![](media/lab1-image10.png)
+
+1. On the **Organization Settings** page, navigate to the **Security** section and click **Policies**. Turn on the **Toggle** for **Third-party application access via OAuth**.
+
+     ![](media/nls1.png)
+   
+      > **Note:** The OAuth setting helps enable tools such as the DemoDevOpsGenerator to register extensions. Without this, several labs may fail due to a lack of the required extensions.
+
+1. Toggle the switch to **On** for **Allow public projects** and click on **Save** when the **change policy setting** is prompted.
+
+     > **Note:** Extensions used in some labs might require a public project to allow using the free version.
 
 1. Navigate to [https://azuredevopsdemogenerator.azurewebsites.net](https://azuredevopsdemogenerator.azurewebsites.net/). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. For more information on the site, please see [https://docs.microsoft.com/en-us/azure/devops/demo-gen](https://docs.microsoft.com/en-us/azure/devops/demo-gen).
 
@@ -61,30 +85,6 @@ GitHub Advanced Security for Azure DevOps includes extra permissions for more le
 
 To ensure Azure DevOps Advanced Security is enabled in your organization, you can follow these steps:
 
-1. On the **Azure DevOps** page, at the button left, click on **Organization settings**. then select **Billing** (opening this screen takes a few seconds).
-
-    ![](media/lab1-image7.png)
-
-1. From the left navigation pane, select **Billing** and click **Set up billing**. On the right-hand side of the screen, select the **Existing subscription** listed and click **Save** to link the subscription with the organization.
-
-   ![](media/lab1-image8.png)
-
-   ![](media/lab1-image9.png)
-
-1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then click the **SAVE** button at the bottom.
-
-   ![](media/lab1-image10.png)
-
-1. On the **Organization Settings** page, navigate to the **Security** section and click **Policies**. Turn on the **Toggle** for **Third-party application access via OAuth**.
-
-     ![](media/lab1-image11.png)
-   
-      > **Note:** The OAuth setting helps enable tools such as the DemoDevOpsGenerator to register extensions. Without this, several labs may fail due to a lack of the required extensions.
-
-1. Toggle the switch to **On** for **Allow public projects** and click on **Save** when the **change policy setting** is prompted.
-
-     > **Note:** Extensions used in some labs might require a public project to allow using the free version.
-
 1. Open the **eShopOnWeb** project and click on **Project Settings** available in the lower left corner. In the left menu area under Repos, click **Repositories**.
 
 1. Click on the **eShopOnWeb** repository.
@@ -99,8 +99,6 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
 1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well.
  
-    {% include note.html content= "GitHub Advanced Security for Azure DevOps includes extra permissions for more levels of control around Advanced Security results and management. Be sure to adjust individual permissions for your repository." %}
-
 ### Task 3: Setup Advanced Security permissions
 
 In this task, you will configure advanced security permissions for the eShopOnWeb repository in Azure DevOps. This involves granting specific permissions to project administrators to manage security alerts and settings related to the repository.
