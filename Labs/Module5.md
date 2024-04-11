@@ -19,13 +19,21 @@ In this lab, you will perform the following:
 
 ### Task 1: Connect Azure DevOps Environment to Microsoft Defender for Cloud
 
-1. Sign in to the Azure portal.
+1. Sign in to the Azure portal, using the below credentials
 
-1. Go to **Microsoft Defender for Cloud** > **Environment settings**.
+   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-1. Select **Add Environment**.
+   - **Password:** <inject key="AzureAdUserPassword"></inject>
 
-1. Select **Azure DevOps**.
+1. Search and select **Microsoft Defender for Cloud** from the portal
+
+    ![alert_detected](media/mls2.png)
+
+1. Select **skip** on **Getting started** tab.
+
+    ![alert_detected](media/mls1.png)
+
+1. Select **Environment settings** under Management > **+Add environment** > **Azure DevOps**
 
     ![alert_detected](media/advlab51.png)
 
