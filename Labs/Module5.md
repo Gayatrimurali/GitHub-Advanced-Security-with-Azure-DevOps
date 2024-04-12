@@ -72,11 +72,25 @@ In this lab, you will perform the following:
 
     ![alert_detected](media/advlab55.png)
 
-1. The DevOps security findings and DevOps Inventory table are listed on the page, which helps to review the DevOps security posture.
+1. The **DevOps security findings** and **DevOps security results** are listed on the page, which helps to review the DevOps security posture.
 
-    ![alert_detected](media/advlab56.png)
+    ![alert_detected](media/m51.png)
 
-   >**Note:** It might take time to reflect the real-time status of **Advanced Security Status**.
+   >**Note:** It might take upto 8hrs to reflect the real-time status.
+
+1. Navigate to **DevOps workbook** and change the toggle to **Yes**, which provides an overview of the tabs provided below
+
+    ![alert_detected](media/m55.png)
+
+    ![alert_detected](media/m52.png)
+
+1. Navigate to the **Code** tab and scroll down, click on the **Severity** section to open the individual findings, and click on **Information** which in turn provides detailed findings and the issue location.
+
+    ![alert_detected](media/m53.png)
+
+1. Similarly, navigate to the **OSS Vulnerabilities** tab and identify the issues, then take note of the recommendations provided to resolve the issues.
+
+    ![alert_detected](media/m54.png)
 
 ## Review
 In this lab, you have completed the following:
