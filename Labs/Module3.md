@@ -169,7 +169,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
    ![Dependencies](media/do2.png)
 
-1. Change **Merge Type** to **Squash commit** and check the box **Delete SecretFix** after merging to merge changes into the main branch.
+1. Change **Merge Type** to **Squash commit** and check the box **Delete Codefix** after merging to merge changes into the main branch.
 
    ![Dependencies](media/do3.png)
 
