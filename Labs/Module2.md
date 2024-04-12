@@ -264,7 +264,9 @@ You can follow these steps to dismiss the alert.
 
 1. You will see that the alert **Microsoft Storage account...** no longer exists, as it is now revoked.
 
-    >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository, but only project administrators can dismiss Advanced Security alerts.
+    ![Closing Alert](media/mls44.png)
+
+    >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository, but only project administrator and project collection administrator  can dismiss Advanced Security alerts.
 
 ## Review
 In this lab, you have completed the following:
