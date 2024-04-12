@@ -1,0 +1,13 @@
+[
+  {
+    "Name": "Lab Scenario Preview: GitHub Advanced Security with Azure DevOps",
+    "Language": "English",
+    "BaseURL": "https://github.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps",
+    "Files": [
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/GitHub-Advanced-Security-with-Azure-DevOps/main/Labs/Lab-Scenario-Preview.md",
+        "Order": 1
+      }
+    ]
+  }
+]
