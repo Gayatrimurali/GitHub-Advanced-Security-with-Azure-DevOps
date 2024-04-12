@@ -83,13 +83,19 @@ __{drive}__ using a query, we can directly define it as __C__ for the string dri
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
-1. Navigate to Azure DevOps, click on **Repos**, select **Pull requests** and select Create a pull request to push the commits from **Fixalert** to the **main**.
+1. Navigate to Azure DevOps, click on **Repos**, select **Pull requests** and select **Create a pull request** to push the commits from **Fixalert** to the **main**.
 
 1. On the **New pull request** page, click on **Create**.
 
+    ![Image](media/mls3.png)
+
 1. Once the **eShoponWeb** pipeline has been completed, click on **Approve** and then click on **Complete**.
 
+    ![Image](media/mls4.png)
+
 1. Change **Merge Type** to **Squash commit** and check the box **Delete Fixalert after merging** to merge changes into the main branch.
+
+    ![Image](media/mls5.png)
 
     > **Note**: The build will run automatically, initiating the code scanning task and publishing the results to Advanced Security.
 
