@@ -159,7 +159,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
    ![Dependencies](media/vs11.png)
 
-1. On the **New pull request** page, add any work item from the list (which is mandatory) and click on **Create**.
+1. On the **New pull request** page, add the work item from the list and click on **Create**.
 
     ![Dependencies](media/vs12.png)
 
