@@ -146,6 +146,29 @@ You can follow these steps to create a work item to link while committing the ch
 
       ![allow-permissions](media/nls4.png)
 
+## Install extension
+
+You can follow these steps to install an extension which is needed in upcoming tasks.
+
+1. Select the **Marketplace** icon from the top right corner and select **Browse marketplace** from the list
+
+      ![allow-permissions](media/ext1.png)
+
+1. On the **Marketplace** window, under **Azure DevOps** search and select **replace tokens**
+
+      ![allow-permissions](media/ext2.png)
+
+1. Select **Get it free**
+
+      ![allow-permissions](media/ext3.png)
+
+1. Select **Install**
+
+      ![allow-permissions](media/ext4.png)
+
+1. Select **Proceed to Organization** to navigate back to **Azure DevOps**
+
+      ![allow-permissions](media/ext5.png)
 ## Review
 In this lab, you have completed the following:
 
