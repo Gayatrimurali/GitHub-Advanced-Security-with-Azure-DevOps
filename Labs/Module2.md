@@ -228,10 +228,6 @@ You can follow these steps to fix the exposed secret.
 
     ![Pipeline Save](media/advlab21.png)
 
-    >**Note**: If you face a similar error, - **A task is missing. The pipeline references a task called 'qetza.replacetokens.replacetokens-taskreplacetokens'. This usually indicates the task isn't installed, and you may be able to install it from the Marketplace:
-https://marketplace.visualstudio.com.
-(Task version 5, job 'Build', step ''.)** While validating, you can install it using this link [replacetoken](https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens)
-
 1. Once the commit is saved, click on **Repos**, click **Pull Requests**, and click on **New pull request** to merge the changes from branch **SecretFix** into branch **main**. 
 
 1. For the title, enter the **Fixed secret** and click on **Create**. This will run the **eShoponWeb** pipeline to validate changes. 
