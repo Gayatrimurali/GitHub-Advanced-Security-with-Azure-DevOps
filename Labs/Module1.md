@@ -19,8 +19,11 @@ In this lab, you will perform:
 
 ### Task 1: Sign up and configure the eShopOnWeb team project in Azure DevOps
 
-1. Open the **Edge browser**, and navigate to **https://dev.azure.com**. Select **Start Free**, and sign in with the credentials provided in the Environment variables.
+1. Open the **Edge browser**, and navigate to **Azure DevOps** using the link below. Select **Start Free**, and sign in with the credentials provided in the Environment variables.
 
+   ```
+    https://dev.azure.com
+   ```
       ![setup](media/lab1-image1.png)
 
 1. On the **Get Started with Azure DevOps** page, click on **Continue**.
@@ -55,8 +58,12 @@ In this lab, you will perform:
 
      > **Note:** Extensions used in some labs might require a public project to allow using the free version.
 
-1. Navigate to [https://azuredevopsdemogenerator.azurewebsites.net](https://azuredevopsdemogenerator.azurewebsites.net/). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. For more information on the site, please see [https://docs.microsoft.com/en-us/azure/devops/demo-gen](https://docs.microsoft.com/en-us/azure/devops/demo-gen).
+1. Navigate to **azuredevopsdemogenerator** using the link below. This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. For more information on the site, please see [https://docs.microsoft.com/en-us/azure/devops/demo-gen](https://docs.microsoft.com/en-us/azure/devops/demo-gen).
 
+   ```
+   https://azuredevopsdemogenerator.azurewebsites.net/
+   ```
+  
 1. Click on **Sign in** and log in using the Microsoft account associated with your Azure DevOps subscription.
 
     ![](media/lab1-image2.png)
