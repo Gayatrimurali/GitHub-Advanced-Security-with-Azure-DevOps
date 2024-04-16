@@ -68,7 +68,7 @@ You can follow these steps to update a file.
 
      ![setup](media/lab1-image15.png)
 
-1. The commit was rejected because the repository has both secret and branch protection enabled. This is a good thing! It's preventing us from checking in on the exposed secret. Let's fix this.
+1. The commit was rejected because the repository has secret protection enabled. This is a good thing! It's preventing us from checking in on the exposed secret. Let's fix this.
    
     ![Commit Rejected](media/commit_rejected.png)
 
