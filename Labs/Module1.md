@@ -169,6 +169,9 @@ You can follow these steps to install an extension which is needed in upcoming t
 1. Select **Proceed to Organization** to navigate back to **Azure DevOps**
 
       ![allow-permissions](media/ext5.png)
+
+Please feel free to go through the documentation for further understanding: [GitHub Advanced Security for Azure DevOps](https://azure.microsoft.com/en-us/products/devops/github-advanced-security)
+
 ## Review
 In this lab, you have completed the following:
 
