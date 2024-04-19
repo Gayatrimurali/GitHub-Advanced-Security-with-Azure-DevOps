@@ -92,6 +92,8 @@ In this lab, you will perform the following:
 
     ![alert_detected](media/m54.png)
 
+ Please feel free to go through these links for further understanding: [Application Security](https://info.microsoft.com/US-DevOps-VDEO-FY24-02Feb-12-GitHub-and-AI-A-Powerful-Duo-for-Application-Security-Testing-SRGCM11732_LP01-Registration---Form-in-Body.html) and [Email Reactor](https://developer.microsoft.com/en-us/reactor/series/S-1311/?wt.mc_id=promotional_S-1311_email_reactor)
+
 ## Review
 In this lab, you have completed the following:
 
