@@ -86,6 +86,57 @@ In this lab, you will perform:
 
    ![](media/lab1-image6.png)
 
+## Create Work item
+
+You can follow these steps to create a work item to link while committing the changes.
+
+1. Navigate to the **eShopOnWeb** project and select **Boards** from the left menu and select **Work items**
+
+      ![allow-permissions](media/nls3.png)
+
+1. On the **Work items** page, select **+New Work Item** and select **Issue** from the drop-down menu.
+
+      ![allow-permissions](media/nls5.png)
+
+1. Enter **Advanced security related events** in the Title box
+
+1. Enter **Work item to link for all the commits related to Advanced security events** in the description box and click on **Save**
+
+      ![allow-permissions](media/nls4.png)
+
+## Create AzDevOps PAT 
+
+1. Click on **User settings** and select **Personal access tokens**
+
+   ![allow-permissions](media/v1.png)
+
+1. Select **+New Token**
+
+1. On **Create a new personal access token** window, enter the below values and click on **Create**
+
+  | Setting | Value |
+  |----------|-------|
+  | Name | AzDo_PAT |
+  | Scopes | Full access |
+
+  ![allow-permissions](media/v2.png)
+
+1. Copy the PAT Token and paste it in the notepad.
+
+1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**
+
+  ![allow-permissions](media/v3.png)
+
+1. Add public const string AZ_PAT = "Your-Secret-Value"; to the existing code as shown below. Copy the secret value pasted in the notepad and replace with "Your-Secret-Value" and commit the changes.
+
+  ![allow-permissions](media/v4.png)
+
+## Remove deployment tasks from Pipeline
+
+1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**
+
+      ![allow-permissions](media/nls5.png)
+
 ### Task 2: Enable Advanced Security from Portal
 
 GitHub Advanced Security for Azure DevOps includes extra permissions for more levels of control around Advanced Security results and management. Be sure to adjust individual permissions for your repository.
@@ -127,24 +178,6 @@ In this task, you will configure advanced security permissions for the eShopOnWe
       ![allow-permissions](media/last1.png)
 
 1. Make sure a green checkmark ✅ appears next to the selected permission.
-
-## Create Work item
-
-You can follow these steps to create a work item to link while committing the changes.
-
-1. Navigate to the **eShopOnWeb** project and select **Boards** from the left menu and select **Work items**
-
-      ![allow-permissions](media/nls3.png)
-
-1. On the **Work items** page, select **+New Work Item** and select **Issue** from the drop-down menu.
-
-      ![allow-permissions](media/nls5.png)
-
-1. Enter **Advanced security related events** in the Title box
-
-1. Enter **Work item to link for all the commits related to Advanced security events** in the description box and click on **Save**
-
-      ![allow-permissions](media/nls4.png)
 
 ## Install extension
 
