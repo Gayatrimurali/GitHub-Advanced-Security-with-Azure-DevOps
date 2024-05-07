@@ -30,13 +30,13 @@ The Advanced Security Alert Hub is where all alerts are raised and where we gain
 
    ![setup](media/lab1-image16.png)
 
-1. Click on **Secrets** to see a list of all the exposed secret alerts that have been found. This includes the alert and introduced dates. Click on the **Microsoft Azure Storage account access key identifiable...** to see more details about the alert and what you can do to clean up the secret.
+1. Click on **Secrets** to see a list of all the exposed secret alerts that have been found. This includes the alert and introduced dates. Click on the **Azure DevOps personal access token(PAT)** to see more details about the alert and what you can do to clean up the secret.
 
-   ![Secrets page](media/advsecurity2.png)
+   ![Secrets page](media/secv1.png)
 
 1. Notice that this includes the Recommendation, Locations found, Remediation steps, Severity, and the Date it was first introduced. We can easily clean this up and dismiss the alert.
 
-   ![Secret Details](media/advsc3.png)
+   ![Secret Details](media/remv.png)
 
 ### Task 2: Fixing secret scanning alerts
 
@@ -54,23 +54,21 @@ You can follow these steps to update a file.
 
 1. While viewing the alert details, click on the line of code, _Constants._ _cs_.
 
-    ![Click on File](media/advsc9.png)
+    ![Click on File](media/editv.png)
 
 1. Click on **Edit** to edit the file. This will open the code editor and highlight the exact location of the secret. In this case, it's in the .cs file.
 
-   ![setup](media/lab1-image17.png)
-
-1. On line 9, update the variable name to "STORAGE_ID" and click on **Commit** to save changes.
+1. On line 5, update the variable name to "AZDO_PAT" and click on **Commit** to save changes.
     
-     ![setup](media/lab1-image14.png)
+     ![setup](media/azdov.png)
 
-1. Enter **StorageDetails** for the branch name and check **Create a pull request**, then click on **Commit** again.
+1. Enter **PATDetails** for the branch name and then click on **Commit** again.
 
-     ![setup](media/lab1-image15.png)
+     ![setup](media/branchv.png)
 
 1. The commit was rejected because the repository has secret protection enabled. This is a good thing! It's preventing us from checking in on the exposed secret. Let's fix this.
    
-    ![Commit Rejected](media/commit_rejected.png)
+    ![Commit Rejected](media/comv.png)
 
     > **Note:** The code went up to the server, was analyzed, rejected, and not stored anywhere. Using Secret push scanning, it catches secrets right before they become a problem.
 
@@ -80,13 +78,13 @@ You can follow these steps to update a file.
 
 1. Update your comment with **skip-secret-scanning:true** and click **Commit**.
 
-    ![Commit Bypass](media/commit_bypass2.png)
+    ![Commit Bypass](media/skipv.png)
 
     >**Note:** Bypassing flagged secrets isn't recommended because bypassing can put a company’s security at risk. 
 
 1. It will give an option to **Create a Pull request**.
 
-    ![Commit Bypass](media/commit_bypass1.png)
+    ![Commit Bypass](media/bypav.png)
 
 #### Fixing Exposed Secrets
 
@@ -96,15 +94,23 @@ You can follow these steps to fix the exposed secret.
 
     > **Note**: This scenario is all too common. A developer is testing an application locally and needs to connect to a database, so what do they do? Of course, just put the connection string in the appsettings.json file. They forget to remove it before checking in the code. Now, the secret is exposed in the repo, not just the tip. The exposed credentials will still be in history. This is a huge security hole!
 
-1. On line 9, copy the **STORAGE_ID value** and note it down in a notepad. Now replace this value with **#{STORAGE_ID}#**.
+1. On line 5, replace the PAT value with **#{PAT}#**.
 
-    ![setup](media/lab1-image18.png)
+    ![setup](media/varv.png)
 
 1. Click on **Commit** to save changes. Enter **SecretFix** for the branch name and link the **Work item** created earlier from the list.
 
-    ![Remove STORAGE_ID](media/advsc66.png)
+    ![Remove STORAGE_ID](media/secv.png)
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
+
+1. Navigate to **User settings** > **Personal access token**
+
+1. Select the existing token and select **Regenerate** twice and **copy** the token value to the notepad.
+
+    ![Remove STORAGE_ID](media/regv.png)
+
+    ![Remove STORAGE_ID](media/copyv.png)
 
 1. Next, we need to update the build pipeline to add a variable. Click on **Pipelines** and select **eShoponWeb**.
 
@@ -120,9 +126,9 @@ You can follow these steps to fix the exposed secret.
 
      ![setup](media/lab1-image21.png)
 
-1. Enter **STORAGE_ID** for the name and paste the secret value from Notepad into the value field. Click on **Keep this value secret to hide the value**, then click **OK** and **Save**. Next, we need to edit the pipeline and add a new build task to replace the **#{STORAGE_ID}#** with the actual value.
+1. Enter **PAT** for the name and paste the secret value from Notepad into the value field. Click on **Keep this value secret to hide the value**, then click **OK** and **Save**.
 
-   ![setup](media/lab1-image22.png)
+   ![setup](media/patv.png)
    
 1. While still in edit mode, add the following task between the Checkout and Restore tasks around line 17. This task will replace the **#{STORAGE_ID}#** with the actual value in the **'src/Web/Constants.cs'** file and also remove the tasks related to test and production deployments (Delete the code from line 79) from the existing pipeline, which is not required in our scenario.
 
