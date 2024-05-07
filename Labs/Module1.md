@@ -283,30 +283,6 @@ In this task, you will configure advanced security permissions for the eShopOnWe
 
 1. Make sure a green checkmark ✅ appears next to the selected permission.
 
-## Install extension
-
-You can follow these steps to install an extension which is needed in upcoming tasks.
-
-1. Select the **Marketplace** icon from the top right corner and select **Browse marketplace** from the list
-
-      ![allow-permissions](media/ext1.png)
-
-1. On the **Marketplace** window, under **Azure DevOps** search and select **replace tokens**
-
-      ![allow-permissions](media/ext2.png)
-
-1. Select **Get it free**
-
-      ![allow-permissions](media/ext3.png)
-
-1. Select **Install**
-
-      ![allow-permissions](media/ext4.png)
-
-1. Select **Proceed to Organization** to navigate back to **Azure DevOps**
-
-      ![allow-permissions](media/ext5.png)
-
 Please feel free to go through the documentation for further understanding: [GitHub Advanced Security for Azure DevOps](https://azure.microsoft.com/en-us/products/devops/github-advanced-security) and [Configure GitHub Advanced Security for Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml)
 
 ## Review
