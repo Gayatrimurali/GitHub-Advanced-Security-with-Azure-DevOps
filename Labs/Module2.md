@@ -130,117 +130,13 @@ You can follow these steps to fix the exposed secret.
 
    ![setup](media/patv.png)
    
-1. While still in edit mode, add the following task between the Checkout and Restore tasks around line 17. This task will replace the **#{STORAGE_ID}#** with the actual value in the **'src/Web/Constants.cs'** file and also remove the tasks related to test and production deployments (Delete the code from line 79) from the existing pipeline, which is not required in our scenario.
-
-    ``` YAML
-
-    - task: qetza.replacetokens.replacetokens-task.replacetokens@6
-      inputs:
-        targetFiles: '**/*.cs'
-        encoding: 'auto'
-        tokenPattern: 'custom'
-        tokenPrefix: '#{' 
-        tokenSuffix: '}#' 
-        verbosity: 'detailed' 
-        keepToken: false 
-    ```
-    
-    ![Replace Token Task](media/advlab23.png)
-
-1. The final pipeline should look as below:
-
-   ```YAML
-    trigger:
-    - main
-
-    pool:
-      vmImage: ubuntu-latest
-    
-    extends: 
-      template: template.yaml
-      parameters:
-        stages:
-          - stage: Build
-            displayName: 'Build'
-            jobs:
-            - job: Build
-              steps:
-              - checkout: self
-    
-              - task: qetza.replacetokens.replacetokens-task.replacetokens@6
-                inputs:
-                  targetFiles: '**/*.cs'
-                  encoding: 'auto'
-                  tokenPattern: 'custom'
-                  tokenPrefix: '#{' 
-                  tokenSuffix: '}#' 
-                  verbosity: 'detailed' 
-                  keepToken: false
-              - task: DotNetCoreCLI@2
-                displayName: Restore 
-                inputs:
-                  command: restore
-                  projects: '**/*.csproj'
-    
-              - task: ms.advancedsecurity-tasks.codeql.init.AdvancedSecurity-Codeql-Init@1
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-                displayName: 'Initialize CodeQL'
-                inputs:
-                  languages: csharp
-                  querysuite: default
-    
-              - task: DotNetCoreCLI@2
-                displayName: Build
-                inputs:
-                  projects: '**/*.csproj'
-                  arguments: '--configuration $(BuildConfiguration)'
-    
-              - task: ms.advancedsecurity-tasks.dependency-scanning.AdvancedSecurity-Dependency-Scanning@1
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-                displayName: 'Dependency Scanning'
-    
-              - task: ms.advancedsecurity-tasks.codeql.analyze.AdvancedSecurity-Codeql-Analyze@1
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-                displayName: 'Perform CodeQL analysis'
-    
-              - task: ms.advancedsecurity-tasks.codeql.enhance.AdvancedSecurity-Publish@1
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-                displayName: 'Publish Results'
-    
-              - task: DotNetCoreCLI@2
-                displayName: Test
-                inputs:
-                  command: test
-                  projects: '[Tt]ests/**/*.csproj'
-                  arguments: '--configuration $(BuildConfiguration) --collect:"Code coverage"'
-    
-              - task: DotNetCoreCLI@2
-                displayName: Publish
-                inputs:
-                  command: publish
-                  publishWebProjects: True
-                  arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
-                  zipAfterPublish: True
-    
-              - task: PublishBuildArtifacts@1
-                displayName: 'Publish Artifact'
-                inputs:
-                  PathtoPublish: '$(build.artifactstagingdirectory)'
-                condition: succeededOrFailed()
-              
-    ```
-   
-1. Select **Validate and save**, and ensure that the check box is marked at commit directly to the **SecretFix** branch setting, then click on **Save**.
-
-    ![Pipeline Save](media/advlab21.png)
-
-1. Once the commit is saved, click on **Repos**, click **Pull Requests**, and click on **New pull request** to merge the changes from branch **SecretFix** into branch **main**. 
+1. click on **Repos**, click **Pull Requests**, and click on **New pull request** to merge the changes from branch **SecretFix** into branch **main**. 
 
 1. For the title, enter the **Fixed secret** and click on **Create**. This will run the **eShoponWeb** pipeline to validate changes. 
 
     ![Pipeline Save](media/nls12.png)
 
-    >**Note:** Make sure you add a random workitem link from the dropdown if it is not added automatically for the pipeline to run successfully.
+    >**Note:** Make sure you add a workitem link from the dropdown created earlier, if it is not added automatically for the pipeline to run successfully.
 
 1. Once the **eShoponWeb** pipeline has been completed, click **Approve**, and then click on **Complete**.
 
