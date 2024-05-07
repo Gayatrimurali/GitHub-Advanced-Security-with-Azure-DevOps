@@ -150,7 +150,7 @@ You can follow these steps to dismiss the alert.
 
 1. Once the pipeline eShoponWeb has been completed, from the left navigation pane under **Repos**, go to the Azure DevOps **Advanced Security** dashboard and click on **Secrets**. 
 
-1. Click on the following item, **Microsoft Storage account...** to see the exposed secret and how we easily dismiss the alert. 
+1. Click on the following item, **Azure DevOps personal access token(PAT)** to see the exposed secret and how we easily dismiss the alert. 
 
 1. Click on **Close alert** to dismiss the alert. Select **Revoked**, and then click on **Close**.
     
@@ -160,9 +160,7 @@ You can follow these steps to dismiss the alert.
 
 1. Go to the Azure DevOps Advanced Security dashboard, click on **Secrets**, and subsequently click on **View other alerts**. You will see a list of other exposed secret alerts that have been found. 
 
-1. You will see that the alert **Microsoft Storage account...** no longer exists, as it is now revoked.
-
-    ![Closing Alert](media/mls44.png)
+1. You will see that the alert **Azure DevOps personal access token(PAT)** no longer exists, as it is now revoked.
 
     >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository, but only project administrator and project collection administrator  can dismiss Advanced Security alerts.
 
