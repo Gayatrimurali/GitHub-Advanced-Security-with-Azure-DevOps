@@ -125,15 +125,15 @@ You can follow these steps to create a work item to link while committing the ch
 
 1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**
 
-  ![allow-permissions](media/v3.png)
+  ![allow-permissions](media/editv1.png)
 
 1. Add public const string AZ_PAT = "Your-Secret-Value"; to the existing code as shown below. Copy the secret value pasted in the notepad and replace with "Your-Secret-Value" and commit the changes.
 
-  ![allow-permissions](media/v4.png)
+  ![allow-permissions](media/addcv.png)
 
 1. On the **Commit** page, provide the branch name as **addsecret** and link the workitem created earlier and click on **Commit**
 
-  ![allow-permissions](media/v4.png)
+  ![allow-permissions](media/comv1.png)
 
 ### Task 2: Enable Advanced Security from Portal
 
@@ -159,15 +159,15 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
 1. Navigate to the **Pipelines** in the left menu and select the existing pipeline.
 
-  ![allow-permissions](media/v4.png)
+  ![allow-permissions](media/pipev.png)
 
 1. Click on **Edit**
 
-  ![allow-permissions](media/v4.png)
+  ![allow-permissions](media/editv2.png)
 
 1. Change the branch to **addsecret**
 
-   ![allow-permissions](media/v4.png)
+   ![allow-permissions](media/branchv1.png)
 
 1. Delete the code in the pipeline which includes the test and production deployments to azure. (from line 70)
 
@@ -246,17 +246,19 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
      
 1. Click on **Validate and save**
 
-   ![allow-permissions](media/v4.png)
+   ![allow-permissions](media/valv.png)
 
 1. Click on **Save**
 
-   ![allow-permissions](media/v4.png)
+   ![allow-permissions](media/savev.png)
 
 1. Navigate to **Repos** > **Pull requests** and click on **Create a Pull request**
 
-   ![allow-permissions](media/v4.png)
+   ![allow-permissions](media/pullv.png)
 
-1. Once the build got succeeded, click on **Approve** and click on **complete**
+1. For the title, enter the **added secret** and click on **Create**. This will run the eShoponWeb pipeline to validate changes.
+
+1. Once the eShoponWeb pipeline has been completed, click **Approve**, and then click on **Complete**.
 
  
 ### Task 3: Setup Advanced Security permissions
