@@ -131,11 +131,9 @@ You can follow these steps to create a work item to link while committing the ch
 
   ![allow-permissions](media/v4.png)
 
-## Remove deployment tasks from Pipeline
+1. On the **Commit** page, provide the branch name as **addsecret** and link the workitem created earlier and click on **Commit**
 
-1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**
-
-      ![allow-permissions](media/nls5.png)
+  ![allow-permissions](media/v4.png)
 
 ### Task 2: Enable Advanced Security from Portal
 
@@ -156,6 +154,110 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
     ![](media/lab1-image12.png)
 
 1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well.
+
+### Task 3: Update the pipeline and create pull request
+
+1. Navigate to the **Pipelines** in the left menu and select the existing pipeline.
+
+  ![allow-permissions](media/v4.png)
+
+1. Click on **Edit**
+
+  ![allow-permissions](media/v4.png)
+
+1. Change the branch to **addsecret**
+
+   ![allow-permissions](media/v4.png)
+
+1. Delete the code in the pipeline which includes the test and production deployments to azure. (from line 70)
+
+1. The final code should look like the below
+
+  ```
+    trigger:
+    - main
+    
+    pool:
+      vmImage: ubuntu latest
+    
+    extends: 
+      template: template.yaml
+      parameters:
+        stages:
+          - stage: Build
+            displayName: 'Build'
+            jobs:
+            - job: Build
+              steps:
+              - checkout: self
+    
+              - task: DotNetCoreCLI@2
+                displayName: Restore 
+                inputs:
+                  command: restore
+                  projects: '**/*.csproj'
+    
+              - task: ms.advancedsecurity-tasks.codeql.init.AdvancedSecurity-Codeql-Init@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Initialize CodeQL'
+                inputs:
+                  languages: csharp
+                  querysuite: default
+    
+              - task: DotNetCoreCLI@2
+                displayName: Build
+                inputs:
+                  projects: '**/*.csproj'
+                  arguments: '--configuration $(BuildConfiguration)'
+    
+              - task: ms.advancedsecurity-tasks.dependency-scanning.AdvancedSecurity-Dependency-Scanning@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Dependency Scanning'
+    
+              - task: ms.advancedsecurity-tasks.codeql.analyze.AdvancedSecurity-Codeql-Analyze@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Perform CodeQL analysis'
+    
+              - task: ms.advancedsecurity-tasks.codeql.enhance.AdvancedSecurity-Publish@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Publish Results'
+    
+              - task: DotNetCoreCLI@2
+                displayName: Test
+                inputs:
+                  command: test
+                  projects: '[Tt]ests/**/*.csproj'
+                  arguments: '--configuration $(BuildConfiguration) --collect:"Code coverage"'
+    
+              - task: DotNetCoreCLI@2
+                displayName: Publish
+                inputs:
+                  command: publish
+                  publishWebProjects: True
+                  arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+                  zipAfterPublish: True
+    
+              - task: PublishBuildArtifacts@1
+                displayName: 'Publish Artifact'
+                inputs:
+                  PathtoPublish: '$(build.artifactstagingdirectory)'
+                condition: succeededOrFailed()
+   ```
+     
+1. Click on **Validate and save**
+
+   ![allow-permissions](media/v4.png)
+
+1. Click on **Save**
+
+   ![allow-permissions](media/v4.png)
+
+1. Navigate to **Repos** > **Pull requests** and click on **Create a Pull request**
+
+   ![allow-permissions](media/v4.png)
+
+1. Once the build got succeeded, click on **Approve** and click on **complete**
+
  
 ### Task 3: Setup Advanced Security permissions
 
