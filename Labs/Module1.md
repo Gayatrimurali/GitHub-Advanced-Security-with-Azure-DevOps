@@ -106,6 +106,8 @@ You can follow these steps to create a work item to link while committing the ch
 
 ## Create AzDevOps PAT 
 
+In this task, you will create a Personal Access Token (PAT) in Azure DevOps and integrate into our codebase. This integration is essential for testing advanced security functionalities later in the lab.
+
 1. Click on **User settings** and select **Personal access tokens**
 
    ![allow-permissions](media/v1.png)
@@ -114,26 +116,26 @@ You can follow these steps to create a work item to link while committing the ch
 
 1. On **Create a new personal access token** window, enter the below values and click on **Create**
 
-  | Setting | Value |
-  |----------|-------|
-  | Name | AzDo_PAT |
-  | Scopes | Full access |
+    | Setting | Value |
+    |----------|-------|
+    | Name | AzDo_PAT |
+    | Scopes | Full access |
 
-  ![allow-permissions](media/v2.png)
+    ![allow-permissions](media/v2.png)
 
 1. Copy the PAT Token and paste it in the notepad.
 
 1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**
 
-  ![allow-permissions](media/editv1.png)
+   ![allow-permissions](media/editv1.png)
 
 1. Add public const string AZ_PAT = "Your-Secret-Value"; to the existing code as shown below. Copy the secret value pasted in the notepad and replace with "Your-Secret-Value" and commit the changes.
 
-  ![allow-permissions](media/addcv.png)
+   ![allow-permissions](media/addcv.png)
 
 1. On the **Commit** page, provide the branch name as **addsecret** and link the workitem created earlier and click on **Commit**
 
-  ![allow-permissions](media/comv1.png)
+   ![allow-permissions](media/comv1.png)
 
 ### Task 2: Enable Advanced Security from Portal
 
@@ -156,6 +158,8 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well.
 
 ### Task 3: Update the pipeline and create pull request
+
+In this task, you will remove the azure deployment task codes from the pipeline.
 
 1. Navigate to the **Pipelines** in the left menu and select the existing pipeline.
 
@@ -258,9 +262,8 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
 1. For the title, enter the **added secret** and click on **Create**. This will run the eShoponWeb pipeline to validate changes.
 
-1. Once the eShoponWeb pipeline has been completed, click **Approve**, and then click on **Complete**.
+1. Once the eShoponWeb pipeline has been completed, click **Approve**, and then click on **Complete** and click on **Complete merge**.
 
- 
 ### Task 3: Setup Advanced Security permissions
 
 In this task, you will configure advanced security permissions for the eShopOnWeb repository in Azure DevOps. This involves granting specific permissions to project administrators to manage security alerts and settings related to the repository.
