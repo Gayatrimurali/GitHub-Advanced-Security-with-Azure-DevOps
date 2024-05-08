@@ -126,7 +126,7 @@ You can follow these steps to fix the exposed secret.
 
      ![setup](media/lab1-image21.png)
 
-1. Enter **PAT** for the name and paste the secret value from Notepad into the value field. Click on **Keep this value secret to hide the value**, then click **OK** and **Save**.
+1. Enter **PAT** for the name and paste the secret value(Regenerated value) from Notepad into the value field. Click on **Keep this value secret to hide the value**, then click **OK** and **Save**.
 
    ![setup](media/patv.png)
    
