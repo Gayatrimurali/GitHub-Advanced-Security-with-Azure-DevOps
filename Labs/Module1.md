@@ -157,7 +157,7 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
 1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well.
 
-### Task 3: Update the pipeline and create pull request
+## Update the pipeline and create pull request
 
 In this task, you will remove the azure deployment task codes from the pipeline.
 
