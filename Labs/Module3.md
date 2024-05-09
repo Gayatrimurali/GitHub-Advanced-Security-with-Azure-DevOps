@@ -143,6 +143,10 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Update the Package](media/advlab38.png)
 
+1. On **preview changes** pop-up, click on  **Apply**.
+
+   ![](media/2-2.png)
+
 1. Switch to the **GitChanges** tab and select **Configure** to add the username and email address that are required before committing changes.
 
     ![Dependencies](media/vs8.png)
