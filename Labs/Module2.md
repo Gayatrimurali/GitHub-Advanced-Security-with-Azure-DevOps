@@ -236,7 +236,9 @@ You can follow these steps to fix the exposed secret.
 
     >**Note:** Make sure you add a random workitem link from the dropdown if it is not added automatically for the pipeline to run successfully.
 
-1. Once the **eShoponWeb** pipeline has been completed, click **Approve**, and then click on **Complete**.
+1. Once the **eShoponWeb** pipeline has been created, click **Approve** and then click on **Complete**.
+
+   ![](media/2-1.png)
 
 1. Change **Merge Type** to **Squash commit** and check the box **Delete SecretFix after merging**, to merge changes into the main branch.
 
