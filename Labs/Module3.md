@@ -173,6 +173,14 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
    ![Dependencies](media/do3.png)
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+<validation step="f36e777d-dc2f-42c3-9afe-e54c2d9eff60" />
+
 ### Task 4: Dismissing dependency scanning alerts
 
 1. Navigate to the **pipelines section** and wait for it to complete. It might take up to 20 minutes.
