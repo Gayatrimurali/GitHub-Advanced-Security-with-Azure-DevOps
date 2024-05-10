@@ -146,13 +146,13 @@ You can follow these steps to create a work item to link while committing the ch
 
 1. On the **Work items** page, select **+New Work Item** and select **Issue** from the drop-down menu.
 
-      ![allow-permissions](media/nls5.png)
+    ![allow-permissions](media/nls5.png)
 
 1. Enter **Advanced security related events** in the Title box
 
 1. Enter **Work item to link for all the commits related to Advanced security events** in the description box and click on **Save**
 
-      ![allow-permissions](media/nls4.png)
+    ![allow-permissions](media/nls4.png)
 
 ## Install extension
 
@@ -160,23 +160,23 @@ You can follow these steps to install an extension which is needed in upcoming t
 
 1. Select the **Marketplace** icon from the top right corner and select **Browse marketplace** from the list
 
-      ![allow-permissions](media/ext1.png)
+    ![allow-permissions](media/ext1.png)
 
 1. On the **Marketplace** window, under **Azure DevOps** search and select **replace tokens**
 
-      ![allow-permissions](media/ext2.png)
+    ![allow-permissions](media/ext2.png)
 
 1. Select **Get it free**
 
-      ![allow-permissions](media/ext3.png)
+    ![allow-permissions](media/ext3.png)
 
 1. Select **Install**
 
-      ![allow-permissions](media/ext4.png)
+     ![allow-permissions](media/ext4.png)
 
 1. Select **Proceed to Organization** to navigate back to **Azure DevOps**
 
-      ![allow-permissions](media/ext5.png)
+    ![allow-permissions](media/ext5.png)
 
 Please feel free to go through the documentation for further understanding: [GitHub Advanced Security for Azure DevOps](https://azure.microsoft.com/en-us/products/devops/github-advanced-security) and [Configure GitHub Advanced Security for Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml)
 
