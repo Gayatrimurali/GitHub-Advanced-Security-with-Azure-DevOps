@@ -86,56 +86,13 @@ In this lab, you will perform:
 
    ![](media/lab1-image6.png)
 
-## Create Work item
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-You can follow these steps to create a work item to link while committing the changes.
-
-1. Navigate to the **eShopOnWeb** project and select **Boards** from the left menu and select **Work items**
-
-      ![allow-permissions](media/nls3.png)
-
-1. On the **Work items** page, select **+New Work Item** and select **Issue** from the drop-down menu.
-
-      ![allow-permissions](media/nls5.png)
-
-1. Enter **Advanced security related events** in the Title box
-
-1. Enter **Work item to link for all the commits related to Advanced security events** in the description box and click on **Save**
-
-      ![allow-permissions](media/nls4.png)
-
-## Create AzDevOps PAT 
-
-In this task, you will create a Personal Access Token (PAT) in Azure DevOps and integrate into our codebase. This integration is essential for testing advanced security functionalities later in the lab.
-
-1. Click on **User settings** and select **Personal access tokens**
-
-   ![allow-permissions](media/v1.png)
-
-1. Select **+New Token**
-
-1. On **Create a new personal access token** window, enter the below values and click on **Create**
-
-    | Setting | Value |
-    |----------|-------|
-    | Name | AzDo_PAT |
-    | Scopes | Full access |
-
-    ![allow-permissions](media/v2.png)
-
-1. Copy the PAT Token and paste it in the notepad.
-
-1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**
-
-   ![allow-permissions](media/editv1.png)
-
-1. Add public const string AZ_PAT = "Your-Secret-Value"; to the existing code as shown below. Copy the secret value pasted in the notepad and replace with "Your-Secret-Value" and commit the changes.
-
-   ![allow-permissions](media/addcv.png)
-
-1. On the **Commit** page, provide the branch name as **addsecret** and link the workitem created earlier and click on **Commit**
-
-   ![allow-permissions](media/comv1.png)
+<validation step="719b12ff-b146-4cc6-b0e3-b834f797d9b1" />
 
 ### Task 2: Enable Advanced Security from Portal
 
@@ -156,114 +113,7 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
     ![](media/lab1-image12.png)
 
 1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well.
-
-## Update the pipeline and create pull request
-
-In this task, you will remove the azure deployment task codes from the pipeline.
-
-1. Navigate to the **Pipelines** in the left menu and select the existing pipeline.
-
-  ![allow-permissions](media/pipev.png)
-
-1. Click on **Edit**
-
-  ![allow-permissions](media/editv2.png)
-
-1. Change the branch to **addsecret**
-
-   ![allow-permissions](media/branchv1.png)
-
-1. Delete the code in the pipeline which includes the test and production deployments to azure. (from line 70)
-
-1. The final code should look like the below
-
-  ```
-    trigger:
-    - main
-    
-    pool:
-      vmImage: ubuntu latest
-    
-    extends: 
-      template: template.yaml
-      parameters:
-        stages:
-          - stage: Build
-            displayName: 'Build'
-            jobs:
-            - job: Build
-              steps:
-              - checkout: self
-    
-              - task: DotNetCoreCLI@2
-                displayName: Restore 
-                inputs:
-                  command: restore
-                  projects: '**/*.csproj'
-    
-              - task: ms.advancedsecurity-tasks.codeql.init.AdvancedSecurity-Codeql-Init@1
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-                displayName: 'Initialize CodeQL'
-                inputs:
-                  languages: csharp
-                  querysuite: default
-    
-              - task: DotNetCoreCLI@2
-                displayName: Build
-                inputs:
-                  projects: '**/*.csproj'
-                  arguments: '--configuration $(BuildConfiguration)'
-    
-              - task: ms.advancedsecurity-tasks.dependency-scanning.AdvancedSecurity-Dependency-Scanning@1
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-                displayName: 'Dependency Scanning'
-    
-              - task: ms.advancedsecurity-tasks.codeql.analyze.AdvancedSecurity-Codeql-Analyze@1
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-                displayName: 'Perform CodeQL analysis'
-    
-              - task: ms.advancedsecurity-tasks.codeql.enhance.AdvancedSecurity-Publish@1
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-                displayName: 'Publish Results'
-    
-              - task: DotNetCoreCLI@2
-                displayName: Test
-                inputs:
-                  command: test
-                  projects: '[Tt]ests/**/*.csproj'
-                  arguments: '--configuration $(BuildConfiguration) --collect:"Code coverage"'
-    
-              - task: DotNetCoreCLI@2
-                displayName: Publish
-                inputs:
-                  command: publish
-                  publishWebProjects: True
-                  arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
-                  zipAfterPublish: True
-    
-              - task: PublishBuildArtifacts@1
-                displayName: 'Publish Artifact'
-                inputs:
-                  PathtoPublish: '$(build.artifactstagingdirectory)'
-                condition: succeededOrFailed()
-   ```
-     
-1. Click on **Validate and save**
-
-   ![allow-permissions](media/valv.png)
-
-1. Click on **Save**
-
-   ![allow-permissions](media/savev.png)
-
-1. Navigate to **Repos** > **Pull requests** and click on **Create a Pull request**
-
-   ![allow-permissions](media/pullv.png)
-
-1. For the title, enter the **added secret** and click on **Create**. This will run the eShoponWeb pipeline to validate changes.
-
-1. Once the eShoponWeb pipeline has been completed, click **Approve**, and then click on **Complete** and click on **Complete merge**.
-
+ 
 ### Task 3: Setup Advanced Security permissions
 
 In this task, you will configure advanced security permissions for the eShopOnWeb repository in Azure DevOps. This involves granting specific permissions to project administrators to manage security alerts and settings related to the repository.
@@ -285,6 +135,48 @@ In this task, you will configure advanced security permissions for the eShopOnWe
       ![allow-permissions](media/last1.png)
 
 1. Make sure a green checkmark ✅ appears next to the selected permission.
+
+## Create Work item
+
+You can follow these steps to create a work item to link while committing the changes.
+
+1. Navigate to the **eShopOnWeb** project and select **Boards** from the left menu and select **Work items**
+
+      ![allow-permissions](media/nls3.png)
+
+1. On the **Work items** page, select **+New Work Item** and select **Issue** from the drop-down menu.
+
+    ![allow-permissions](media/nls5.png)
+
+1. Enter **Advanced security related events** in the Title box
+
+1. Enter **Work item to link for all the commits related to Advanced security events** in the description box and click on **Save**
+
+    ![allow-permissions](media/nls4.png)
+
+## Install extension
+
+You can follow these steps to install an extension which is needed in upcoming tasks.
+
+1. Select the **Marketplace** icon from the top right corner and select **Browse marketplace** from the list
+
+    ![allow-permissions](media/ext1.png)
+
+1. On the **Marketplace** window, under **Azure DevOps** search and select **replace tokens**
+
+    ![allow-permissions](media/ext2.png)
+
+1. Select **Get it free**
+
+    ![allow-permissions](media/ext3.png)
+
+1. Select **Install**
+
+     ![allow-permissions](media/ext4.png)
+
+1. Select **Proceed to Organization** to navigate back to **Azure DevOps**
+
+    ![allow-permissions](media/ext5.png)
 
 Please feel free to go through the documentation for further understanding: [GitHub Advanced Security for Azure DevOps](https://azure.microsoft.com/en-us/products/devops/github-advanced-security) and [Configure GitHub Advanced Security for Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml)
 
