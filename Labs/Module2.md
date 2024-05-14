@@ -30,13 +30,13 @@ The Advanced Security Alert Hub is where all alerts are raised and where we gain
 
    ![setup](media/lab1-image16.png)
 
-1. Click on **Secrets** to see a list of all the exposed secret alerts that have been found. This includes the alert and introduced dates. Click on the **Azure DevOps personal access token(PAT)** to see more details about the alert and what you can do to clean up the secret.
+1. Click on **Secrets** to see a list of all the exposed secret alerts that have been found. This includes the alert and introduced dates. Click on the **Microsoft Azure Storage account access key identifiable...** to see more details about the alert and what you can do to clean up the secret.
 
-   ![Secrets page](media/secv1.png)
+   ![Secrets page](media/advsecurity2.png)
 
 1. Notice that this includes the Recommendation, Locations found, Remediation steps, Severity, and the Date it was first introduced. We can easily clean this up and dismiss the alert.
 
-   ![Secret Details](media/remv.png)
+   ![Secret Details](media/advsc3.png)
 
 ### Task 2: Fixing secret scanning alerts
 
@@ -54,21 +54,23 @@ You can follow these steps to update a file.
 
 1. While viewing the alert details, click on the line of code, _Constants._ _cs_.
 
-    ![Click on File](media/editv.png)
+    ![Click on File](media/advsc9.png)
 
 1. Click on **Edit** to edit the file. This will open the code editor and highlight the exact location of the secret. In this case, it's in the .cs file.
 
-1. On line 5, update the variable name to "AZDO_PAT" and click on **Commit** to save changes.
+   ![setup](media/lab1-image17.png)
+
+1. On line 9, update the variable name to "STORAGE_ID" and click on **Commit** to save changes.
     
-     ![setup](media/azdov.png)
+     ![setup](media/lab1-image14.png)
 
-1. Enter **PATDetails** for the branch name and then click on **Commit** again.
+1. Enter **StorageDetails** for the branch name and check **Create a pull request**, then click on **Commit** again.
 
-     ![setup](media/branchv.png)
+     ![setup](media/lab1-image15.png)
 
 1. The commit was rejected because the repository has secret protection enabled. This is a good thing! It's preventing us from checking in on the exposed secret. Let's fix this.
    
-    ![Commit Rejected](media/comv.png)
+    ![Commit Rejected](media/commit_rejected.png)
 
     > **Note:** The code went up to the server, was analyzed, rejected, and not stored anywhere. Using Secret push scanning, it catches secrets right before they become a problem.
 
@@ -78,13 +80,13 @@ You can follow these steps to update a file.
 
 1. Update your comment with **skip-secret-scanning:true** and click **Commit**.
 
-    ![Commit Bypass](media/skipv.png)
+    ![Commit Bypass](media/commit_bypass2.png)
 
     >**Note:** Bypassing flagged secrets isn't recommended because bypassing can put a company’s security at risk. 
 
 1. It will give an option to **Create a Pull request**.
 
-    ![Commit Bypass](media/bypav.png)
+    ![Commit Bypass](media/commit_bypass1.png)
 
 #### Fixing Exposed Secrets
 
@@ -94,23 +96,15 @@ You can follow these steps to fix the exposed secret.
 
     > **Note**: This scenario is all too common. A developer is testing an application locally and needs to connect to a database, so what do they do? Of course, just put the connection string in the appsettings.json file. They forget to remove it before checking in the code. Now, the secret is exposed in the repo, not just the tip. The exposed credentials will still be in history. This is a huge security hole!
 
-1. On line 5, replace the PAT value with **#{PAT}#**.
+1. On line 9, copy the **STORAGE_ID value** and note it down in a notepad. Now replace this value with **#{STORAGE_ID}#**.
 
-    ![setup](media/varv.png)
+    ![setup](media/lab1-image18.png)
 
 1. Click on **Commit** to save changes. Enter **SecretFix** for the branch name and link the **Work item** created earlier from the list.
 
-    ![Remove STORAGE_ID](media/secv.png)
+    ![Remove STORAGE_ID](media/advsc66.png)
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
-
-1. Navigate to **User settings** > **Personal access token**
-
-1. Select the existing token and select **Regenerate** twice and **copy** the token value to the notepad.
-
-    ![Remove STORAGE_ID](media/regv.png)
-
-    ![Remove STORAGE_ID](media/copyv.png)
 
 1. Next, we need to update the build pipeline to add a variable. Click on **Pipelines** and select **eShoponWeb**.
 
@@ -126,23 +120,138 @@ You can follow these steps to fix the exposed secret.
 
      ![setup](media/lab1-image21.png)
 
-1. Enter **PAT** for the name and paste the secret value(Regenerated value) from Notepad into the value field. Click on **Keep this value secret to hide the value**, then click **OK** and **Save**.
+1. Enter **STORAGE_ID** for the name and paste the secret value from Notepad into the value field. Click on **Keep this value secret to hide the value**, then click **OK** and **Save**. Next, we need to edit the pipeline and add a new build task to replace the **#{STORAGE_ID}#** with the actual value.
 
-   ![setup](media/patv.png)
+   ![setup](media/lab1-image22.png)
    
-1. click on **Repos**, click **Pull Requests**, and click on **New pull request** to merge the changes from branch **SecretFix** into branch **main**. 
+1. While still in edit mode, add the following task between the Checkout and Restore tasks around line 17. This task will replace the **#{STORAGE_ID}#** with the actual value in the **'src/Web/Constants.cs'** file and also remove the tasks related to test and production deployments (Delete the code from line 79) from the existing pipeline, which is not required in our scenario.
+
+    ``` YAML
+
+    - task: qetza.replacetokens.replacetokens-task.replacetokens@6
+      inputs:
+        targetFiles: '**/*.cs'
+        encoding: 'auto'
+        tokenPattern: 'custom'
+        tokenPrefix: '#{' 
+        tokenSuffix: '}#' 
+        verbosity: 'detailed' 
+        keepToken: false 
+    ```
+    
+    ![Replace Token Task](media/advlab23.png)
+
+1. The final pipeline should look as below:
+
+   ```YAML
+    trigger:
+    - main
+
+    pool:
+      vmImage: ubuntu-latest
+    
+    extends: 
+      template: template.yaml
+      parameters:
+        stages:
+          - stage: Build
+            displayName: 'Build'
+            jobs:
+            - job: Build
+              steps:
+              - checkout: self
+    
+              - task: qetza.replacetokens.replacetokens-task.replacetokens@6
+                inputs:
+                  targetFiles: '**/*.cs'
+                  encoding: 'auto'
+                  tokenPattern: 'custom'
+                  tokenPrefix: '#{' 
+                  tokenSuffix: '}#' 
+                  verbosity: 'detailed' 
+                  keepToken: false
+              - task: DotNetCoreCLI@2
+                displayName: Restore 
+                inputs:
+                  command: restore
+                  projects: '**/*.csproj'
+    
+              - task: ms.advancedsecurity-tasks.codeql.init.AdvancedSecurity-Codeql-Init@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Initialize CodeQL'
+                inputs:
+                  languages: csharp
+                  querysuite: default
+    
+              - task: DotNetCoreCLI@2
+                displayName: Build
+                inputs:
+                  projects: '**/*.csproj'
+                  arguments: '--configuration $(BuildConfiguration)'
+    
+              - task: ms.advancedsecurity-tasks.dependency-scanning.AdvancedSecurity-Dependency-Scanning@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Dependency Scanning'
+    
+              - task: ms.advancedsecurity-tasks.codeql.analyze.AdvancedSecurity-Codeql-Analyze@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Perform CodeQL analysis'
+    
+              - task: ms.advancedsecurity-tasks.codeql.enhance.AdvancedSecurity-Publish@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Publish Results'
+    
+              - task: DotNetCoreCLI@2
+                displayName: Test
+                inputs:
+                  command: test
+                  projects: '[Tt]ests/**/*.csproj'
+                  arguments: '--configuration $(BuildConfiguration) --collect:"Code coverage"'
+    
+              - task: DotNetCoreCLI@2
+                displayName: Publish
+                inputs:
+                  command: publish
+                  publishWebProjects: True
+                  arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+                  zipAfterPublish: True
+    
+              - task: PublishBuildArtifacts@1
+                displayName: 'Publish Artifact'
+                inputs:
+                  PathtoPublish: '$(build.artifactstagingdirectory)'
+                condition: succeededOrFailed()
+              
+    ```
+   
+1. Select **Validate and save**, and ensure that the check box is marked at commit directly to the **SecretFix** branch setting, then click on **Save**.
+
+    ![Pipeline Save](media/advlab21.png)
+
+1. Once the commit is saved, click on **Repos**, click **Pull Requests**, and click on **New pull request** to merge the changes from branch **SecretFix** into branch **main**. 
 
 1. For the title, enter the **Fixed secret** and click on **Create**. This will run the **eShoponWeb** pipeline to validate changes. 
 
     ![Pipeline Save](media/nls12.png)
 
-    >**Note:** Make sure you add a workitem link from the dropdown created earlier, if it is not added automatically for the pipeline to run successfully.
+    >**Note:** Make sure you add a random workitem link from the dropdown if it is not added automatically for the pipeline to run successfully.
 
-1. Once the **eShoponWeb** pipeline has been completed, click **Approve**, and then click on **Complete**.
+1. Once the **eShoponWeb** pipeline has been created, click **Approve** and then click on **Complete**.
+
+   ![](media/2-1.png)
 
 1. Change **Merge Type** to **Squash commit** and check the box **Delete SecretFix after merging**, to merge changes into the main branch.
 
     ![Completing merge](media/advlab25.png)
+
+
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+<validation step="850d5a53-dfa3-456c-a94d-9e081b2185cf" />
 
 ### Task 3: Dismissing secret scanning alerts
 
@@ -150,7 +259,7 @@ You can follow these steps to dismiss the alert.
 
 1. Once the pipeline eShoponWeb has been completed, from the left navigation pane under **Repos**, go to the Azure DevOps **Advanced Security** dashboard and click on **Secrets**. 
 
-1. Click on the following item, **Azure DevOps personal access token(PAT)** to see the exposed secret and how we easily dismiss the alert. 
+1. Click on the following item, **Microsoft Storage account...** to see the exposed secret and how we easily dismiss the alert. 
 
 1. Click on **Close alert** to dismiss the alert. Select **Revoked**, and then click on **Close**.
     
@@ -160,7 +269,9 @@ You can follow these steps to dismiss the alert.
 
 1. Go to the Azure DevOps Advanced Security dashboard, click on **Secrets**, and subsequently click on **View other alerts**. You will see a list of other exposed secret alerts that have been found. 
 
-1. You will see that the alert **Azure DevOps personal access token(PAT)** no longer exists, as it is now revoked.
+1. You will see that the alert **Microsoft Storage account...** no longer exists, as it is now revoked.
+
+    ![Closing Alert](media/mls44.png)
 
     >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository, but only project administrator and project collection administrator  can dismiss Advanced Security alerts.
 
