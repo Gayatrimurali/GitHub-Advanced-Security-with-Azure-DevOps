@@ -98,7 +98,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/clone2.png)
 
-1. **Sign in** to Visual Studio with the credentials email address: **<inject key="AzureAdUserEmail"></inject>** and Password:**<inject key="AzureAdUserPassword"></inject>** and later select **Start Visual studio**.
+1. **Sign in** to Visual Studio 2022 with the credentials email address: **<inject key="AzureAdUserEmail"></inject>** and Password:**<inject key="AzureAdUserPassword"></inject>** and later select **Start Visual studio**.
 
     ![Dependencies](media/vs1.png)
 
@@ -110,7 +110,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs4.png)
 
-1. While cloning the repo, Git-credentials Manager pops up. Enter the same credentials provided in the environment details tab.
+1. While cloning the repo, Git-credentials Manager pops up. Enter the **Username:** **<inject key="AzureAdUserEmail"></inject>** and **Password:** **<inject key="AzureAdUserPassword"></inject>**
 
 1. Create a new branch to make the necessary changes. Select the **main** branch from the lower right corner and select **New branch**.
 
@@ -158,6 +158,8 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 1. Add the required **description** and select the **Commit All and Push** option to push the changes to Origin.
 
     ![Dependencies](media/vs10.png)
+
+    >**Note:** On the **Commit** pop-up select **Save and commit**.
 
 1. Navigate to **Azure DevOps**, click on **Repos**, select **Pull requests** and select **Create a pull request** to push the commits from **codefix** to the **main**.
 

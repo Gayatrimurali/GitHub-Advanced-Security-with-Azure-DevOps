@@ -48,13 +48,13 @@ In this lab, you will perform:
 
    ![](media/lab1-image10.png)
 
-1. On the **Organization Settings** page, navigate to the **Security** section and click **Policies**. Turn on the **Toggle** for **Third-party application access via OAuth**.
+1. Navigate back to the **Organization Settings** page, go to the **Security** section, and click **Policies**. Turn on the **Toggle** for **Third-party application access via OAuth**.
 
      ![](media/nls1.png)
    
       > **Note:** The OAuth setting helps enable tools such as the DemoDevOpsGenerator to register extensions. Without this, several labs may fail due to a lack of the required extensions.
 
-1. Toggle the switch to **On** for **Allow public projects** and click on **Save** when the **change policy setting** is prompted.
+1. Toggle the switch to **On** for **Allow public projects**.
 
      > **Note:** Extensions used in some labs might require a public project to allow using the free version.
 
@@ -100,7 +100,11 @@ GitHub Advanced Security for Azure DevOps includes extra permissions for more le
 
 To ensure Azure DevOps Advanced Security is enabled in your organization, you can follow these steps:
 
-1. Open the **eShopOnWeb** project and click on **Project Settings** available in the lower left corner. In the left menu area under Repos, click **Repositories**.
+1. Navigate back to the **Azure DevOps** tab, and select **Azure DevOps (1)**.
+
+    ![setup](media/azuredevops.png)
+
+1. Select **eShopOnWeb (2)** project and click on **Project Settings** available in the lower left corner. In the left menu area under Repos, click **Repositories**.
 
 1. Click on the **eShopOnWeb** repository.
 

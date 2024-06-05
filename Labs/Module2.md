@@ -26,7 +26,7 @@ Once this is toggled on, it starts off a background scan of this repo and looks 
 
 The Advanced Security Alert Hub is where all alerts are raised and where we gain insights, specifically under the category of Secrets. When a secret is found, you can click on it to access more information. The secret may be located in different places, including various commits. 
 
-1. Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
+1. Under **eShopOnWeb** project, go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
 
    ![setup](media/lab1-image16.png)
 
