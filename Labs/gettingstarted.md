@@ -54,6 +54,6 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
  
 6. Click on **"Next"** from the bottom right corner to embark on your lab journey!
  
-      ![Start Your Azure Journey](media/sc900-image(3).png)
+   ![Start Your Azure Journey](media/sc900-image(3).png)
  
 Now, you're all set to explore the powerful world of technology. Feel free to reach out if you've got any questions along the way. Enjoy your workshop!
