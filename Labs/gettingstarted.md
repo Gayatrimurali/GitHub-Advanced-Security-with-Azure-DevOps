@@ -26,13 +26,13 @@ For convenience, you can open the lab guide in a separate window by selecting th
  
 ## Managing Your Virtual Machine
  
-1. Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
  
-   ![Manage Your Virtual Machine](media/res.png)
+![Manage Your Virtual Machine](media/res.png)
  
 ## Let's Get Started with the Azure Portal
  
-1. On your virtual machine, click on the Azure Portal icon as shown below:
+1. On your virtual machine, click on the Azure Portal icon as shown below.
  
    ![Launch Azure Portal](media/sc900-image(1).png)
  
