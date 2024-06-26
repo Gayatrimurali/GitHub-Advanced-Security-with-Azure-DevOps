@@ -48,11 +48,12 @@ In this lab, you will perform:
 
    ![](media/lab1-image10.png)
 
-1. On the **Organization Settings** page, navigate to the **Security** section and click **Policies (1)**. Turn on the **Toggle** for both **Third-party application access via OAuth (2)** and **Allow public projects (3)**, and click on **Save** when the **Change policy setting** is prompted.
+1. On the **Organization Settings** page, go to the Security section and click **Policies (1)**. Enable the toggles for both **Third-party application access via OAuth (2)** and **Allow public projects (3)**, then click **Save (4)** when prompted to Change policy setting.
 
      ![](media/nls1.png)
    
       > **Note:** The OAuth setting helps enable tools such as the DemoDevOpsGenerator to register extensions. Without this, several labs may fail due to a lack of the required extensions.
+
       > **Note:** Extensions used in some labs might require a public project to allow using the free version.
 
 1. Navigate to **azuredevopsdemogenerator** using the link below. This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. For more information on the site, please see [https://docs.microsoft.com/en-us/azure/devops/demo-gen](https://docs.microsoft.com/en-us/azure/devops/demo-gen).
