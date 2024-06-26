@@ -30,7 +30,7 @@ The Advanced Security Alert Hub is where all alerts are raised and where we gain
 
    ![setup](media/lab1-image16.png)
 
-1. Click on **Secrets** to see a list of all the exposed secret alerts that have been found. This includes the alert and introduced dates. Click on the **Azure DevOps personal access token(PAT)** to see more details about the alert and what you can do to clean up the secret.
+1. Click on **Secrets (1)** to see a list of all the exposed secret alerts that have been found. This includes the alert and introduced dates. Click on the **Azure DevOps personal access token (PAT) (2)** to see more details about the alert and what you can do to clean up the secret.
 
    ![Secrets page](media/secv1.png)
 
@@ -58,11 +58,14 @@ You can follow these steps to update a file.
 
 1. Click on **Edit** to edit the file. This will open the code editor and highlight the exact location of the secret. In this case, it's in the .cs file.
 
-1. On line 5, update the variable name to "AZDO_PAT" and click on **Commit** to save changes.
+   ![setup](media/06-26-2024(10).png)
+
+
+1. On line 5, update the variable name to **AZDO_PAT (1)**, then click **Commit (2)** to save the changes.
     
      ![setup](media/azdov.png)
 
-1. Enter **PATDetails** for the branch name and then click on **Commit** again.
+1. Enter **PATDetails (1)** for the branch name and then click on **Commit (2)** again.
 
      ![setup](media/branchv.png)
 
@@ -80,11 +83,7 @@ You can follow these steps to update a file.
 
     ![Commit Bypass](media/skipv.png)
 
-    >**Note:** Bypassing flagged secrets isn't recommended because bypassing can put a company’s security at risk. 
-
-1. It will give an option to **Create a Pull request**.
-
-    ![Commit Bypass](media/bypav.png)
+    >**Note:** Bypassing flagged secrets isn't recommended because bypassing can put a company’s security at risk.
 
 #### Fixing Exposed Secrets
 
@@ -92,19 +91,23 @@ You can follow these steps to fix the exposed secret.
 
 1. Click on **Edit**.
 
-    > **Note**: This scenario is all too common. A developer is testing an application locally and needs to connect to a database, so what do they do? Of course, just put the connection string in the appsettings.json file. They forget to remove it before checking in the code. Now, the secret is exposed in the repo, not just the tip. The exposed credentials will still be in history. This is a huge security hole!
+    > **Note**: This scenario is all too common. A Developers often forget to remove the connection string from the appsettings.json file when testing an application, exposing the secret in the repo and allowing exposed credentials to remain in history, resulting in a significant security hole. This is a common issue when testing local applications.
 
-1. On line 5, replace the PAT value with **#{PAT}#**.
+    ![setup](media/06-26-2024(10).png)
+
+1. On line 5, replace the PAT value with **#{PAT}#** **(1)** and click on **Commit (2)** to save changes.
 
     ![setup](media/varv.png)
 
-1. Click on **Commit** to save changes. Enter **SecretFix** for the branch name and link the **Work item** created earlier from the list.
+1. Enter **SecretFix** for the branch name and link the **Work item** created earlier from the list.
 
     ![Remove STORAGE_ID](media/secv.png)
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
-1. Navigate to **User settings** > **Personal access token**
+1. Navigate to **User settings (1)** > **Personal access token (2)**.
+
+   ![Remove STORAGE_ID](media/06-26-2024(7).png)
 
 1. Select the existing token and select **Regenerate** twice and **copy** the token value to the notepad.
 
@@ -114,33 +117,35 @@ You can follow these steps to fix the exposed secret.
 
 1. Next, we need to update the build pipeline to add a variable. Click on **Pipelines** and select **eShoponWeb**.
 
-    ![setup](media/lab1-image19.png)
+    ![setup](media/06-26-2024(8).png)
 
-1. Click on **Edit** to edit the pipeline. Change to the **SecretFix** branch.
+1. Click on **Edit** to edit the pipeline. Change the branch to the **SecretFix (1)** branch and click on **Variables (2)**.
 
      ![setup](media/lab1-image20.png)
    
      ![Remove STORAGE_ID](media/advsc44.png)
  
-1. Click on **Variables** and click on **+** New Variable. 
+1. Once the **Variables** pane opens, click on **+** to create a new variable.
 
      ![setup](media/lab1-image21.png)
 
-1. Enter **PAT** for the name and paste the secret value(Regenerated value) from Notepad into the value field. Click on **Keep this value secret to hide the value**, then click **OK** and **Save**.
+1. Enter **PAT (1)** for the name and paste the secret **value (Regenerated value) (2)** from Notepad into the value field. Click on **Keep this value secret (3)** to hide the value, then click **OK (4)** and **Save (5)**.
 
    ![setup](media/patv.png)
    
-1. click on **Repos**, click **Pull Requests**, and click on **New pull request** to merge the changes from branch **SecretFix** into branch **main**. 
+1. Click on **Repos (1)**, click **Pull Requests (2)**, and click on **New pull request (3)** to merge the changes from branch **SecretFix** into branch **main**.
 
-1. For the title, enter the **Fixed secret** and click on **Create**. This will run the **eShoponWeb** pipeline to validate changes. 
+    ![Pipeline Save](media/06-26-2024(11).png)
 
-    ![Pipeline Save](media/nls12.png)
+1. For the title, enter the **Fixed secret (2)** and click on **Create (3)**. This will run the **eShoponWeb** pipeline to validate changes. 
+
+    ![Pipeline Save](media/06-26-2024(12).png)
 
     >**Note:** Make sure you add a workitem link from the dropdown created earlier, if it is not added automatically for the pipeline to run successfully.
 
 1. Once the **eShoponWeb** pipeline has been completed, click **Approve**, and then click on **Complete**.
 
-1. Change **Merge Type** to **Squash commit** and check the box **Delete SecretFix after merging**, to merge changes into the main branch.
+1. Change the Merge Type to **Squash commit (1)** and check both **Complete associated work items after merging (2)** and **Delete SecretFix after merging (2)**. Finally, click **Complete merge (3)** to merge the changes into the main branch.
 
     ![Completing merge](media/advlab25.png)
 
@@ -152,7 +157,7 @@ You can follow these steps to dismiss the alert.
 
 1. Click on the following item, **Azure DevOps personal access token(PAT)** to see the exposed secret and how we easily dismiss the alert. 
 
-1. Click on **Close alert** to dismiss the alert. Select **Revoked**, and then click on **Close**.
+1. Click on **Close alert (1)** to dismiss the alert. Select **Revoked (2)**, and then click on **Close (3)**.
     
     ![Closing Alert](media/advlab24.png)
 

@@ -110,14 +110,15 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
 1. Select **+ New Token**.
 
-1. On **Create a new personal access token** window, enter the below values and click on **Create (3)**.
+1. On **Create a new personal access token** window, enter the below values and click on **Create (4)**.
 
     | Setting | Value |
     |----------|-------|
     | Name | **AzDo_PAT (1)** |
-    | Scopes | **Full access (2)** |
+    | Scopes | **Custom defined (2)** |
+    | Work Items | **Read & write (3)** |
 
-    ![allow-permissions](media/v2.png)
+    ![allow-permissions](media/06-26-2024(9).png)
 
 1. Once you've generated the token, click on the **Copy** icon to the right of the secret value in the notepad.
 
