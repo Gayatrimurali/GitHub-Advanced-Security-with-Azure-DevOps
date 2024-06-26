@@ -30,33 +30,30 @@ In this lab, you will perform:
 
       ![setup](media/end2.png)
 
-1. On the **Almost done** page, enter the **captcha** and click on **Continue**.
+1. On the **Almost done** page, enter the **captcha (1)** and click on **Continue (2)**.
 
       ![setup](media/end1.png)
 
-1. On the **Azure DevOps** page, at the button left, click on **Organization settings**. then select **Billing** (opening this screen takes a few seconds).
+1. On the **Azure DevOps** page, at the button left, click on **Organization settings** (opening this screen takes a few seconds).
 
     ![](media/nls2.png)
 
-1. From the left navigation pane, select **Billing** and click **Set up billing**. On the right-hand side of the screen, select the **Existing subscription** listed and click **Save** to link the subscription with the organization.
+1. From the left navigation pane, select **Billing (1)** and click **Set up billing (2)**. On the right-hand side of the screen, select the **Existing subscription (3)** listed and click **Save (4)** to link the subscription with the organization.
 
    ![](media/lab1-image8.png)
 
    ![](media/lab1-image9.png)
 
-1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then click the **SAVE** button at the bottom.
+1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then click on **Save** button at the bottom.
 
    ![](media/lab1-image10.png)
 
-1. On the **Organization Settings** page, navigate to the **Security** section and click **Policies**. Turn on the **Toggle** for **Third-party application access via OAuth**.
+1. On the **Organization Settings** page, navigate to the **Security** section and click **Policies (1)**. Turn on the **Toggle** for both **Third-party application access via OAuth (2)** and **Allow public projects (3)**, and click on **Save** when the **Change policy setting** is prompted.
 
      ![](media/nls1.png)
    
       > **Note:** The OAuth setting helps enable tools such as the DemoDevOpsGenerator to register extensions. Without this, several labs may fail due to a lack of the required extensions.
-
-1. Toggle the switch to **On** for **Allow public projects** and click on **Save** when the **change policy setting** is prompted.
-
-     > **Note:** Extensions used in some labs might require a public project to allow using the free version.
+      > **Note:** Extensions used in some labs might require a public project to allow using the free version.
 
 1. Navigate to **azuredevopsdemogenerator** using the link below. This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. For more information on the site, please see [https://docs.microsoft.com/en-us/azure/devops/demo-gen](https://docs.microsoft.com/en-us/azure/devops/demo-gen).
 
@@ -74,15 +71,15 @@ In this lab, you will perform:
 
     ![](media/lab1-image3.png)
 
-1. Select the **eShopOnWeb** template and click on **Select Template**.
+1. Select the **eShopOnWeb (1)** template and click on **Select Template (2)**.
 
     ![](media/lab1-image4.png)
 
-1. Provide a project name, **eShopOnWeb**, and choose your **Organization**, then click on **Create Project** and wait for the process to complete.
+1. Provide a project name, **eShopOnWeb (1)**, and choose your **Organization (2)**, then click on **Create Project (3)** and wait for the process to complete.
 
    ![](media/lab1-image5.png)
 
-1. Once the process is complete, click on **Navigate to the project**.
+1. Once the process is complete, click on **Navigate to project**.
 
    ![](media/lab1-image6.png)
 
@@ -90,17 +87,15 @@ In this lab, you will perform:
 
 You can follow these steps to create a work item to link while committing the changes.
 
-1. Navigate to the **eShopOnWeb** project and select **Boards** from the left menu and select **Work items**
+1. Navigate to the **eShopOnWeb** project and select **Boards (1)** from the left menu and select **Work items (2)**.
 
       ![allow-permissions](media/nls3.png)
 
-1. On the **Work items** page, select **+New Work Item** and select **Issue** from the drop-down menu.
+1. On the **Work items** page, select **+ New Work Item (1)** and select **Issue (2)** from the drop-down menu.
 
       ![allow-permissions](media/nls5.png)
 
-1. Enter **Advanced security related events** in the Title box
-
-1. Enter **Work item to link for all the commits related to Advanced security events** in the description box and click on **Save**
+1. Enter **Advanced security related events (1)** in the Title box and enter **Work item to link for all the commits related to Advanced security events (2)** in the description box, and click on **Save (3)**.
 
       ![allow-permissions](media/nls4.png)
 
@@ -108,32 +103,42 @@ You can follow these steps to create a work item to link while committing the ch
 
 In this task, you will create a Personal Access Token (PAT) in Azure DevOps and integrate into our codebase. This integration is essential for testing advanced security functionalities later in the lab.
 
-1. Click on **User settings** and select **Personal access tokens**
+1. Click on **User settings (1)** and select **Personal access tokens (2)**.
 
    ![allow-permissions](media/v1.png)
 
-1. Select **+New Token**
+1. Select **+ New Token**.
 
-1. On **Create a new personal access token** window, enter the below values and click on **Create**
+1. On **Create a new personal access token** window, enter the below values and click on **Create (3)**.
 
     | Setting | Value |
     |----------|-------|
-    | Name | AzDo_PAT |
-    | Scopes | Full access |
+    | Name | **AzDo_PAT (1)** |
+    | Scopes | **Full access (2)** |
 
     ![allow-permissions](media/v2.png)
 
-1. Copy the PAT Token and paste it in the notepad.
+1. Once you've generated the token, click on the **Copy** icon to the right of the secret value in the notepad.
 
-1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**
+   ![allow-permissions](media/06-26-2024(1).png)
+
+1. Search **Notepad (1)** using the search box and select the same from suggestions **(2)**.
+
+   ![allow-permissions](media/06-26-2024(2).png)
+
+1. Paste the **PAT token** which you copied in step number 4.
+
+   ![allow-permissions](media/06-26-2024(3).png)
+
+1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**.
 
    ![allow-permissions](media/editv1.png)
 
-1. Add public const string AZ_PAT = "Your-Secret-Value"; to the existing code as shown below. Copy the secret value pasted in the notepad and replace with "Your-Secret-Value" and commit the changes.
+1. Add **public const string AZ_PAT = "Your-Secret-Value";** to the existing code as shown below. Copy the secret value pasted in the notepad and replace with "Your-Secret-Value" and commit the changes.
 
    ![allow-permissions](media/addcv.png)
 
-1. On the **Commit** page, provide the branch name as **addsecret** and link the workitem created earlier and click on **Commit**
+1. On the **Commit** page, provide the branch name as **addsecret (1)** and link the workitem created earlier **(2)** and click on **Commit (3)**.
 
    ![allow-permissions](media/comv1.png)
 
@@ -143,13 +148,13 @@ GitHub Advanced Security for Azure DevOps includes extra permissions for more le
 
 To ensure Azure DevOps Advanced Security is enabled in your organization, you can follow these steps:
 
-1. Open the **eShopOnWeb** project and click on **Project Settings** available in the lower left corner. In the left menu area under Repos, click **Repositories**.
+1. Click **Project settings (1)** in the lower-left corner. In the left menu under Repos, click **Repositories (2)**, then select the **eShopOnWeb (3)** repository.
 
-1. Click on the **eShopOnWeb** repository.
+   ![setup](media/06-26-2024(4).png)
 
-1. Click on **Settings**, then click on **Advanced Security**, to turn it on.
+1. Click on **Settings (1)**, then click on **Advanced Security (2)**, to turn it On.
 
-    ![setup](media/last2.png)
+    ![setup](media/06-26-2024(5).png)
 
 1. Click **Begin Billing**.
 
@@ -161,23 +166,23 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
 In this task, you will remove the azure deployment task codes from the pipeline.
 
-1. Navigate to the **Pipelines** in the left menu and select the existing pipeline.
+1. Navigate to the **Pipelines (1)** in the left menu and select the **eShopOnWeb (2)** pipeline.
 
-  ![allow-permissions](media/pipev.png)
+   ![allow-permissions](media/pipev.png)
 
-1. Click on **Edit**
+1. Click on **Edit**.
 
-  ![allow-permissions](media/editv2.png)
+   ![allow-permissions](media/editv2.png)
 
-1. Change the branch to **addsecret**
+1. Change the branch to **addsecret**.
 
    ![allow-permissions](media/branchv1.png)
 
-1. Delete the code in the pipeline which includes the test and production deployments to azure. (from line 70)
+1. Delete the code in the pipeline which includes the test and production deployments to azure. (from line 70).
 
 1. The final code should look like the below
 
-  ```
+   ```
     trigger:
     - main
     
@@ -246,17 +251,17 @@ In this task, you will remove the azure deployment task codes from the pipeline.
                 inputs:
                   PathtoPublish: '$(build.artifactstagingdirectory)'
                 condition: succeededOrFailed()
-   ```
+    ```
      
-1. Click on **Validate and save**
+1. Click on **Validate and save**.
 
    ![allow-permissions](media/valv.png)
 
-1. Click on **Save**
+1. Click on **Save**.
 
    ![allow-permissions](media/savev.png)
 
-1. Navigate to **Repos** > **Pull requests** and click on **Create a Pull request**
+1. Navigate to **Repos (1)** > **Pull requests (2)** and click on **Create a Pull request (3)**.
 
    ![allow-permissions](media/pullv.png)
 
@@ -268,13 +273,11 @@ In this task, you will remove the azure deployment task codes from the pipeline.
 
 In this task, you will configure advanced security permissions for the eShopOnWeb repository in Azure DevOps. This involves granting specific permissions to project administrators to manage security alerts and settings related to the repository.
 
-1. In the lower-left corner, click on **Project Settings**. In the left menu area under the **Repos** section, click **Repositories**.
+1. Click **Project settings (1)** in the lower-left corner. In the left menu under Repos, click **Repositories (2)**, then select the **eShopOnWeb (3)** repository.
 
-      ![](media/lab1-image13.png)
-  	
-1. Click on the **eShopOnWeb** repository.
+      ![setup](media/06-26-2024(4).png)
 
-1. Select **Security** and click on **Project Administrators**.
+1. Select **Security (1)** and click on **Project Administrators (2)**.
 
 1. Next to Advanced Security: manage and dismiss alerts, click the **dropdown**, and select  **Allow**.
 
@@ -282,7 +285,7 @@ In this task, you will configure advanced security permissions for the eShopOnWe
 
 1. Next to Advanced Security: view alerts, click the dropdown, and select **Allow**.
 
-      ![allow-permissions](media/last1.png)
+      ![allow-permissions](media/06-26-2024(6).png)
 
 1. Make sure a green checkmark ✅ appears next to the selected permission.
 
