@@ -115,7 +115,7 @@ You can follow these steps to fix the exposed secret.
 
     ![Remove STORAGE_ID](media/copyv.png)
 
-1. Next, we need to update the build pipeline to add a variable. Click on **Pipelines** and select **eShoponWeb**.
+1. Next, we need to update the build pipeline to add a variable. Click on **Pipelines (1)** and select **eShoponWeb (2)**.
 
     ![setup](media/06-26-2024(8).png)
 

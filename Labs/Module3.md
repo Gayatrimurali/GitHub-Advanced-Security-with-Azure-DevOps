@@ -23,9 +23,14 @@ In this lab, you will perform the following:
 
 Dependency Scanning scans your project's dependencies, such as libraries, frameworks, and packages, to identify any known security vulnerabilities or outdated versions that may pose a risk to your application.
 
-1. Select the pipeline **eShopOnweb** and click on **Edit**.
+1. Click on **Pipelines (1)** and select **eShoponWeb (2)**.
 
-    ![alert_detected](media/advlab33.png)
+    ![setup](media/06-26-2024(8).png)
+
+
+1. Click on **Edit**.
+
+    ![alert_detected](media/06-26-2024(13).png)
 
 1. Locate the task **Advanced Security Dependency Scanning**(AdvancedSecurity-Dependency-Scanning@1) which already included in the YAML pipeline file.
 
