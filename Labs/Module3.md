@@ -13,7 +13,7 @@ In this lab, you will perform the following:
 - Task 3: Fixing dependency scanning alerts
 - Task 4: Dismissing dependency scanning alerts
 
-## Estimated Timing:45 minutes
+## Estimated Timing: 45 minutes
 
 ## Architecture Diagram
 
