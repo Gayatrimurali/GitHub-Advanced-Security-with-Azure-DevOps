@@ -23,13 +23,9 @@ In this lab, you will perform the following:
 
 Dependency Scanning scans your project's dependencies, such as libraries, frameworks, and packages, to identify any known security vulnerabilities or outdated versions that may pose a risk to your application.
 
-1. Click on **Pipelines (1)** and select **eShoponWeb (2)**.
+1. Select the pipeline **eShopOnweb** and click on **Edit**.
 
-    ![setup](media/06-26-2024(8).png)
-
-1. Click on **Edit**.
-
-    ![alert_detected](media/06-26-2024(13).png)
+    ![alert_detected](media/advlab33.png)
 
 1. Locate the task **Advanced Security Dependency Scanning**(AdvancedSecurity-Dependency-Scanning@1) which already included in the YAML pipeline file.
 
@@ -47,7 +43,7 @@ Dependency Scanning scans your project's dependencies, such as libraries, framew
 
 1. The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. Please note that this process may take up to 15 minutes to finish. 
 
-    **Note:** Once the build has succeeded, you can ignore the permission needed prompt under the **Test Deployment** and proceed with the next task.
+   > **Note:** Once the build has succeeded, you can ignore the permission needed prompt under the **Test Deployment** and proceed with the next task.
 
 ### Task 2: Viewing alerts of repository
 
@@ -71,6 +67,7 @@ Dependency Scanning scans your project's dependencies, such as libraries, framew
 
    > **Note:** When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to closed. To see these resolved alerts, you can use the **State filter** in the main toolbar and select **Closed**.
 
+
 #### Understanding Dependency Alerts
 
 In your repository, there are two types of dependencies: direct and transitive (also known as indirect).
@@ -78,6 +75,7 @@ In your repository, there are two types of dependencies: direct and transitive (
 - **Direct dependencies** are components of your project.
 
 - **Transitive dependencies** are components used by direct dependencies.
+
 
 ### Task 3: Fixing dependency scanning alerts
 
@@ -91,13 +89,13 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1. Click on the **Locations** to see the code that triggered the alert.
  
-1. Navigate to the **Repos** section in Azure DevOps using the left navigation pane, then click on **Clone** to copy the repo URL. Paste this URL into Notepad for reference.
+1. Copy the repo URL from Azure DevOps by navigating to the **Repos** section from the left navigation pane, clicking on **Clone** to get the repo URL, and taking note of it in the notepad.
 
     ![Dependencies](media/clone1.png)
 
     ![Dependencies](media/clone2.png)
 
-1. **Sign in** to Visual Studio with the credentials email address: **<inject key="AzureAdUserEmail"></inject>** and Password:**<inject key="AzureAdUserPassword"></inject>** and later select **Start Visual studio**.
+1. **Sign in** to Visual Studio 2022 with the credentials email address: **<inject key="AzureAdUserEmail"></inject>** and Password:**<inject key="AzureAdUserPassword"></inject>** and later select **Start Visual studio**.
 
     ![Dependencies](media/vs1.png)
 
@@ -109,15 +107,15 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs4.png)
 
-1. While cloning the repo, Git-credentials Manager pops up. Enter the same credentials provided in the environment details tab.
+1. While cloning the repo, Git-credentials Manager pops up. Enter the **Username:** **<inject key="AzureAdUserEmail"></inject>** and **Password:** **<inject key="AzureAdUserPassword"></inject>**
 
-1. Create a new branch to make the necessary changes. Select the **main** branch from the lower right corner and select **New branch**.
+1. Create a new branch to make the necessary changes. Select the **main (1)** branch from the lower right corner and select **New branch (2)**.
 
     ![Dependencies](media/vs6.png)
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
-1. On **Create a new branch** window, enter **Codefix** and click on **Create**.
+1. On **Create a new branch** window, enter **Codefix (1)** and click on **Create (2)**.
 
     ![Dependencies](media/vs7.png)
 
@@ -145,7 +143,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
    ![](media/2-2.png)
 
-1. Switch to the **GitChanges** tab and select **Configure** to add the username and email address that are required before committing changes.
+1. Switch to the **GitChanges (1)** tab and select **Configure (2)** to add the username and email address that are required before committing changes.
 
     ![Dependencies](media/vs8.png)
 
@@ -157,29 +155,31 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs10.png)
 
+    >**Note:** On the **Commit** pop-up select **Save and commit**.
+
 1. Navigate to **Azure DevOps**, click on **Repos**, select **Pull requests** and select **Create a pull request** to push the commits from **codefix** to the **main**.
 
    ![Dependencies](media/vs11.png)
 
-1. On the **New pull request** page, add the work item from the list and click on **Create**.
+1. On the **New pull request** page, add the work item from the list **(1)** and click on **Create (2)**.
 
     ![Dependencies](media/vs12.png)
 
     > **Note:** The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. The alert will then automatically close.
 
-1. Once the **eShoponWeb** pipeline has been completed, click on **Approve** and then click on **Complete**.
+1. Once the **eShoponWeb** pipeline has been completed, click on **Approve (1)** and then click on **Complete (2)**.
 
    ![Dependencies](media/do2.png)
 
-1. Change **Merge Type** to **Squash commit** and check the box **Delete Codefix after merging** to merge changes into the main branch.
+1. To merge changes into the main branch, change the Merge Type to **Squash commit (1)**. Then, check the boxes for **Complete associated work items after merging (2)** and **Delete Codefix after merging (2)**. Finally, click **Complete merge (3)**.
 
    ![Dependencies](media/do3.png)
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="f36e777d-dc2f-42c3-9afe-e54c2d9eff60" />
 
