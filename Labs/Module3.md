@@ -27,7 +27,7 @@ Dependency Scanning scans your project's dependencies, such as libraries, framew
 
     ![alert_detected](media/advlab33.png)
 
-1. Locate the task **Advanced Security Dependency Scanning**(AdvancedSecurity-Dependency-Scanning@1) which already included in the YAML pipeline file.
+1. Locate the task **Advanced Security Dependency Scanning** (AdvancedSecurity-Dependency-Scanning@1) which is already included in the YAML pipeline file.
 
     ```
       - task: ms.advancedsecurity-tasks.dependency-scanning.AdvancedSecurity-Dependency-Scanning@1
