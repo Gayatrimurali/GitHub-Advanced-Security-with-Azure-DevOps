@@ -27,7 +27,6 @@ Dependency Scanning scans your project's dependencies, such as libraries, framew
 
     ![setup](media/06-26-2024(8).png)
 
-
 1. Click on **Edit**.
 
     ![alert_detected](media/06-26-2024(13).png)
@@ -70,9 +69,7 @@ Dependency Scanning scans your project's dependencies, such as libraries, framew
 
    ![where_detected](media/nls8.png)
 
-   > **Note**  
-    When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to closed. To see these resolved alerts, you can use the **State filter** in the main toolbar and select **Closed**.
-
+   > **Note:** When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to closed. To see these resolved alerts, you can use the **State filter** in the main toolbar and select **Closed**.
 
 #### Understanding Dependency Alerts
 
@@ -81,7 +78,6 @@ In your repository, there are two types of dependencies: direct and transitive (
 - **Direct dependencies** are components of your project.
 
 - **Transitive dependencies** are components used by direct dependencies.
-
 
 ### Task 3: Fixing dependency scanning alerts
 
@@ -95,9 +91,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1. Click on the **Locations** to see the code that triggered the alert.
  
-1. From the code editor, **update the package to 1.0.4.2**. To do that, here we will use Visual Studio. 
-
-1. Copy the repo URL from Azure DevOps by navigating to the **Repos** section from the left navigation pane, clicking on **Clone** to get the repo URL, and taking note of it in the notepad.
+1. Navigate to the **Repos** section in Azure DevOps using the left navigation pane, then click on **Clone** to copy the repo URL. Paste this URL into Notepad for reference.
 
     ![Dependencies](media/clone1.png)
 
@@ -121,8 +115,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs6.png)
 
-    > **Note:**
-    This step is necessary since the main branch is protected by a pull request pipeline.
+    > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
 1. On **Create a new branch** window, enter **Codefix** and click on **Create**.
 
