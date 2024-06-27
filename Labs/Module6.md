@@ -18,7 +18,7 @@ In this lab, you will perform the following:
 
    ![](media/lab1-image7.png)
 
-1. From the left navigation pane select **Billing** and click **change billing** and on the right-hand side of the screen select the **Remove billing** listed and click **Save** to remove the subscription which is linked with the organization.
+1. From the left navigation pane select **Billing** and click **Change billing** on the right-hand side of the screen select the **Remove billing** listed and click **Save** to remove the subscription which is linked with the organization.
 
    ![](media/lab1-mod6.png)
 
