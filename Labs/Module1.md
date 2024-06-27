@@ -8,7 +8,7 @@ In this lab, we configure GitHub Advanced Security (GHAS) within Azure DevOps, e
 
 In this lab, you will perform:
 - Task 1: Sign up and configure the eShopOnWeb team project in Azure DevOps
-- Task 2: Enable Advanced Security from portal
+- Task 2: Enable Advanced Security from the portal
 - Task 3: Setup Advanced Security permissions
 
 ## Estimated Timing: 45 minutes
@@ -44,7 +44,7 @@ In this lab, you will perform:
 
    ![](media/lab1-image9.png)
 
-1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then click on **Save** button at the bottom.
+1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then click on the **Save** button at the bottom.
 
    ![](media/lab1-image10.png)
 
@@ -84,7 +84,7 @@ In this lab, you will perform:
 
    ![](media/lab1-image6.png)
 
-## Create Work item
+## Create a Work item
 
 You can follow these steps to create a work item to link while committing the changes.
 
@@ -102,7 +102,7 @@ You can follow these steps to create a work item to link while committing the ch
 
 ## Create AzDevOps PAT 
 
-In this task, you will create a Personal Access Token (PAT) in Azure DevOps and integrate into our codebase. This integration is essential for testing advanced security functionalities later in the lab.
+In this task, you will create a Personal Access Token (PAT) in Azure DevOps and integrate it into our codebase. This integration is essential for testing advanced security functionalities later in the lab.
 
 1. Click on **User settings (1)** and select **Personal access tokens (2)**.
 
@@ -136,7 +136,7 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
    ![allow-permissions](media/editv1.png)
 
-1. Add **public const string AZ_PAT = "Your-Secret-Value";** to the existing code as shown below. Copy the secret value pasted in the notepad and replace with "Your-Secret-Value" and commit the changes.
+1. Add **public const string AZ_PAT = "Your-Secret-Value";** to the existing code as shown below. Copy the secret value pasted in the notepad replace it with "Your-Secret-Value" and commit the changes.
 
    ![allow-permissions](media/addcv.png)
 
@@ -164,9 +164,9 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
 1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well.
 
-## Update the pipeline and create pull request
+## Update the pipeline and create a pull request
 
-In this task, you will remove the azure deployment task codes from the pipeline.
+In this task, you will remove the Azure deployment task codes from the pipeline.
 
 1. Navigate to the **Pipelines (1)** in the left menu and select the **eShopOnWeb (2)** pipeline.
 
@@ -180,9 +180,9 @@ In this task, you will remove the azure deployment task codes from the pipeline.
 
    ![allow-permissions](media/branchv1.png)
 
-1. Delete the code in the pipeline which includes the test and production deployments to azure. (from line 70).
+1. Delete the code in the pipeline which includes the test and production deployments to Azure (from line 70).
 
-1. The final code should look like the below
+1. The final code should look like the one below
 
    ```
     trigger:
