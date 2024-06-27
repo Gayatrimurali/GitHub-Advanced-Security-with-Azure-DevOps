@@ -33,7 +33,7 @@ In this lab, you will perform the following:
 
     ![alert_detected](media/mls1.png)
 
-1. Select **Environment settings** under Management > **+Add environment** > **Azure DevOps**.
+1. Select **Environment settings (1)** under Management > **+ Add environment (2)** > **Azure DevOps (3)**.
 
     ![alert_detected](media/advlab51.png)
 
@@ -41,36 +41,30 @@ In this lab, you will perform the following:
 
    | Setting  | Value |
    -----------|---------
-   | Connector name | AzureDevopsconnector |
+   | Connector name | **AzureDevopsconnector (1)** |
    | Subscription | Choose the default subscription |
-   | Resource group | Lab-VM |
-   | Location | Select any supporting region |
+   | Resource group | **Lab-VM (2)** |
+   | Location | Select any supporting region **(3)** |
 
     ![alert_detected](media/advlab52.png)
 
 1. Select **Next: Configure access**.
 
-1. Select **Authorize**. Ensure you're authorizing the correct Azure Tenant using the drop-down menu in Azure DevOps and by verifying you're in the correct Azure Tenant in Defender for Cloud.
-
-1. In the popup dialog, read the list of permission requests, and then select **Accept**.
+1. Select **Authorize** and ensure you're authorizing the correct Azure Tenant by using the drop-down menu in Azure DevOps and verifying you're in the correct Azure Tenant in Defender for Cloud. In the popup dialog, read the list of permission requests and then select **Accept**.
 
     ![alert_detected](media/advlab53.png)
 
-1. Leave all other settings as default.
-
-1. Select **Next: Review and generate**.
-
-1. Review the information, and then select **Create**.
+1. Leave all other settings as default. Select **Next: Review and generate**, review the information, and then select **Create**.
 
 1. Wait for some time to view the connector on the **Environment settings** page.
 
     ![alert_detected](media/advlab54.png)
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+  > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+  > - Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
+  > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
+  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+  > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="c52850e5-7c62-4d01-a624-175043de84b6" />
 
@@ -92,7 +86,7 @@ In this lab, you will perform the following:
 
     ![alert_detected](media/m52.png)
 
-1. Navigate to the **Code** tab and scroll down, click on the **Severity** section to open the individual findings, and click on **Information** which in turn provides detailed findings and the issue location.
+1. Navigate to the **Code (1)** tab and scroll down, click on the **Severity (2)** section to open the individual findings, and click on **Information (3)** which in turn provides detailed findings and the issue location.
 
     ![alert_detected](media/m53.png)
 
@@ -107,4 +101,3 @@ In this lab, you have completed the following:
 
 -  Connected Azure DevOps Environment to Microsoft Defender for Cloud.
 -  Understood your DevOps security.
-
