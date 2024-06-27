@@ -95,6 +95,8 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/clone2.png)
 
+1. Select the Start menu and search for **Visual Studio 2022**. Select **Visual Studio 2022** to run it.
+
 1. **Sign in** to Visual Studio 2022 with the credentials email address: **<inject key="AzureAdUserEmail"></inject>** and Password:**<inject key="AzureAdUserPassword"></inject>** and later select **Start Visual studio**.
 
     ![Dependencies](media/vs1.png)
