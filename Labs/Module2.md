@@ -8,7 +8,7 @@ In this lab, we implement secret scanning in Azure DevOps to identify and mitiga
 
 In this lab, you will perform the following:
 
-- Task 1: Viewing alerts of repository
+- Task 1: Viewing alerts of the repository
 - Task 2: Fixing secret scanning alerts
 - Task 3: Dismissing secret scanning alerts
   
@@ -22,7 +22,7 @@ Secret Scanning scans your codebase and other resources to identify potential se
 
 Once this is toggled on, it starts off a background scan of this repo and looks for exposed credentials. The scan doesn't just look at the tip of the main, since attackers would look through all the branches and the entire commit history.
 
-### Task 1: Viewing alerts of repository 
+### Task 1: Viewing alerts of repository
 
 The Advanced Security Alert Hub is where all alerts are raised and where we gain insights, specifically under the category of Secrets. When a secret is found, you can click on it to access more information. The secret may be located in different places, including various commits. 
 
@@ -60,7 +60,6 @@ You can follow these steps to update a file.
 
    ![setup](media/06-26-2024(10).png)
 
-
 1. On line 5, update the variable name to **AZDO_PAT (1)**, then click **Commit (2)** to save the changes.
     
      ![setup](media/azdov.png)
@@ -91,7 +90,7 @@ You can follow these steps to fix the exposed secret.
 
 1. Click on **Edit**.
 
-    > **Note**: This scenario is all too common. A Developers often forget to remove the connection string from the appsettings.json file when testing an application, exposing the secret in the repo and allowing exposed credentials to remain in history, resulting in a significant security hole. This is a common issue when testing local applications.
+    > **Note**: This scenario is all too common. Developers often forget to remove the connection string from the appsettings.json file when testing an application, exposing the secret in the repo and allowing exposed credentials to remain in history, resulting in a significant security hole. This is a common issue when testing local applications.
 
     ![setup](media/06-26-2024(10).png)
 
@@ -141,7 +140,7 @@ You can follow these steps to fix the exposed secret.
 
     ![Pipeline Save](media/06-26-2024(12).png)
 
-    >**Note:** Make sure you add a workitem link from the dropdown created earlier, if it is not added automatically for the pipeline to run successfully.
+    >**Note:** Make sure you add a work item link from the dropdown created earlier if it is not added automatically for the pipeline to run successfully.
 
 1. Once the **eShoponWeb** pipeline has been completed, click **Approve**, and then click on **Complete**.
 
@@ -167,7 +166,7 @@ You can follow these steps to dismiss the alert.
 
 1. You will see that the alert **Azure DevOps personal access token(PAT)** no longer exists, as it is now revoked.
 
-    >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository, but only project administrator and project collection administrator  can dismiss Advanced Security alerts.
+    >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository, but only the project administrator and project collection administrator  can dismiss Advanced Security alerts.
 
 ## Review
 In this lab, you have completed the following:
