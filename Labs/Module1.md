@@ -140,9 +140,11 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
    ![allow-permissions](media/addcv.png)
 
-1. On the **Commit** page, provide the branch name as **addsecret (1)** and link the workitem created earlier **(2)** and click on **Commit (3)**.
+1. On the **Commit** page, provide the branch name as **addsecret (1)** and link the **workitem** created earlier **(2)** and click on **Commit (3)**.
 
    ![allow-permissions](media/comv1.png)
+
+  >**Note**: If you're unable to find or select the work item, go to **Boards** > **Work items**, locate the desired work item, and change its state to **Active**.
 
 ### Task 2: Enable Advanced Security from Portal
 
