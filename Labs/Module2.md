@@ -102,7 +102,9 @@ You can follow these steps to fix the exposed secret.
 
     ![Remove STORAGE_ID](media/secv.png)
 
-    > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
+    >**Note:** This step is necessary since the main branch is protected by a pull request pipeline.
+
+    >**Note**: If you're unable to find or select the work item, go to **Boards** > **Work items**, locate the desired work item, and change its state to **Active**.
 
 1. Navigate to **User settings (1)** > **Personal access token (2)**.
 
