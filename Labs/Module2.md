@@ -170,6 +170,20 @@ You can follow these steps to dismiss the alert.
 
     >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository, but only the project administrator and project collection administrator  can dismiss Advanced Security alerts.
 
+## Task 4: Delete the PATDetails branch
+
+In this task, you will delete the **PATDetails** branch because the PAT Secret was exposed.
+
+1. In the left-hand navigation pane, click on **Repos**.
+
+1. Within the Repos section, select the **Branches** tab. This will display all the branches in your repository.
+
+1. Click on the ellipsis (three dots) next to the **PATDetails** branch name.
+
+1. From the dropdown menu, select **Delete branch**.
+
+1. Confirm the deletion when prompted.
+
 ## Review
 In this lab, you have completed the following:
 
