@@ -102,9 +102,17 @@ You can follow these steps to fix the exposed secret.
 
     ![Remove STORAGE_ID](media/secv.png)
 
-    >**Note:** This step is necessary since the main branch is protected by a pull request pipeline.
+    > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
-    >**Note**: If you're unable to find or select the work item, go to **Boards** > **Work items**, locate the desired work item, and change its state to **Active**.
+    > **Note**: If you're unable to find or select the work item, please follow the below instructions.
+
+     - Navigate to the **eShopOnWeb** project and select **Boards (1)** from the left menu and select **Work items (2)**.
+
+      ![allowermissions](media/nls3.png)
+    
+     - Select the **Advanced security related events** workitem and change its state to **Active(1)** and click on **Save(2)**
+
+      ![allow-permissions](media/workitemq.png)
 
 1. Navigate to **User settings (1)** > **Personal access token (2)**.
 
