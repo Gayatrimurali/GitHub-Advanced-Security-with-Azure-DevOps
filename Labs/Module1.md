@@ -182,7 +182,7 @@ In this task, you will remove the Azure deployment task codes from the pipeline.
 
    ![allow-permissions](media/branchv1.png)
 
-1. Delete the code in the pipeline which includes the test and production deployments to Azure (from line 70).
+1. **Remove** the code in the pipeline which includes the **test** and **production** deployments tasks (from line 70).
 
 1. The final code should look like the one below
 
