@@ -14,7 +14,7 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 ## Exploring Your Lab Resources
  
-To get a better understanding of your lab resources and credentials, you can just go to the **Environment Details** tab.
+To get a better understanding of your lab resources and credentials, navigate to the **Environment Details** tab.
  
   ![Explore Lab Resources](media/env-1.png)
  
@@ -40,13 +40,13 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
-      ![Enter Your Username](media/sc900-image-1.png)
+   ![Enter Your Username](media/sc900-image-1.png)
  
 4. Next, provide your password:
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
-      ![Enter Your Password](media/sc900-image-2.png)
+   ![Enter Your Password](media/sc900-image-2.png)
  
 5. If prompted to stay signed in, you can click **"No**."
  
