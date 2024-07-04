@@ -11,6 +11,7 @@ In this lab, you will perform the following:
 - Task 1: Viewing alerts of the repository
 - Task 2: Fixing secret scanning alerts
 - Task 3: Dismissing secret scanning alerts
+- Task 4: Delete the PATDetails branch
   
 ## Estimated Timing: 30 minutes
 
@@ -189,6 +190,8 @@ In this task, you will delete the **PATDetails** branch because the PAT Secret w
 1. Click on the ellipsis (three dots) next to the **PATDetails** branch name.
 
 1. From the dropdown menu, select **Delete branch**.
+
+    ![Closing Alert](media/branchdel.png)
 
 1. Confirm the deletion when prompted.
 
