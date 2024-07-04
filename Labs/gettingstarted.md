@@ -36,23 +36,23 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
    
    ![](media/sc900-image(1).png)
  
-3. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
+2. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
    ![Enter Your Username](media/sc900-image-1.png)
  
-4. Next, provide your password:
+3. Next, provide your password:
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
    ![Enter Your Password](media/sc900-image-2.png)
  
-5. If prompted to stay signed in, you can click **"No**."
+4. If prompted to stay signed in, you can click **"No**."
  
-6. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **"Maybe Later"** to skip the tour.
+5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **"Maybe Later"** to skip the tour.
  
-7. Click on **"Next"** from the bottom right corner to embark on your lab journey!
+6. Click on **"Next"** from the bottom right corner to embark on your lab journey!
  
    ![Start Your Azure Journey](media/sc900-image(3).png)
  
