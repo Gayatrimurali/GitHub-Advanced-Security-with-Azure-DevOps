@@ -119,7 +119,7 @@ You can follow these steps to fix the exposed secret.
 
    ![Remove STORAGE_ID](media/06-26-2024(7).png)
 
-1. Select the existing token and select **Regenerate** twice and **copy** the token value to the notepad.
+1. Select the existing token and select **Regenerate** twice and **copy** the token value, then open a new tab and continue with the next step..
 
     ![Remove STORAGE_ID](media/regv88.png)
 
@@ -139,7 +139,7 @@ You can follow these steps to fix the exposed secret.
 
      ![setup](media/lab1-image21.png)
 
-1. Enter **PAT (1)** for the name and paste the secret **value (Regenerated value) (2)** from Notepad into the value field. Click on **Keep this value secret (3)** to hide the value, then click **OK (4)** and **Save (5)**.
+1. Enter **PAT (1)** for the name and paste the secret **value (Regenerated value) (2)** into the value field copied. Click on **Keep this value secret (3)** to hide the value, then click **OK (4)** and **Save (5)**.
 
    ![setup](media/patv.png)
    
