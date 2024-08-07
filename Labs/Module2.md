@@ -121,7 +121,7 @@ You can follow these steps to fix the exposed secret.
 
 1. Select the existing token and select **Regenerate** twice and **copy** the token value to the notepad.
 
-    ![Remove STORAGE_ID](media/regv.png)
+    ![Remove STORAGE_ID](media/regv88.png)
 
     ![Remove STORAGE_ID](media/copyv.png)
 
