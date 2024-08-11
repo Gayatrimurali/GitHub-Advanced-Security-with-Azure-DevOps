@@ -171,11 +171,11 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1. Once the **eShoponWeb** pipeline has been completed, click on **Approve (1)** and then click on **Complete (2)**, 
 
-   ![Dependencies](media/cmpltfinalprwithnocomplete.png)
+   ![Dependencies](media/do2.png)
 
 1. To merge changes into the main branch, change the Merge Type to **Squash commit (1)**. Then, uncheck the boxes for **Complete associated work items after merging (2)** and **Delete Codefix after merging (2)**. Finally, click **Complete merge (3)**.
 
-   ![Dependencies](media/do3.png)
+   ![Dependencies](media/cmpltfinalprwithnocomplete.png)
 
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
