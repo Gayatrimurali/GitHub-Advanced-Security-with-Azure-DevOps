@@ -155,7 +155,7 @@ You can follow these steps to fix the exposed secret.
 
    > **Note:** The pipeline execution can take approx. 5 minutes to get complete, please wait untill the build gets completed and then click on Complete merge.
 
-1. Change **Merge Type** to **Squash commit** Then, **uncheck** the box for **Complete associated work items after merging** (2) and **check** the box **Delete Fixalert after merging** to merge changes into the main branch.
+1. Change **Merge Type** to **Squash commit** Then, **uncheck** the box for **Complete associated work items after merging** (2) and **check** the box **Delete SecretFix after merging** to merge changes into the main branch.
 
     ![Completing merge](media/cmpltfinalprwithnocomplete.png)
 
