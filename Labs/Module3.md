@@ -173,7 +173,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
    ![Dependencies](media/do2.png)
 
-1. To merge changes into the main branch, change the Merge Type to **Squash commit (1)**. Then, uncheck the boxes for **Complete associated work items after merging (2)** and **Delete Codefix after merging (2)**. Finally, click **Complete merge (3)**.
+1. To merge changes into the main branch, Change **Merge Type** to **Squash commit** Then, uncheck the boxe for **Complete associated work items after merging** (2) and check the box **Delete Codefix after merging (2)**. Finally, click **Complete merge (3)**.
 
    ![Dependencies](media/cmpltfinalprwithnocomplete.png)
 
