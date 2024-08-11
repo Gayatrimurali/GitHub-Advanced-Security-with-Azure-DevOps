@@ -155,9 +155,9 @@ You can follow these steps to fix the exposed secret.
 
    > **Note:** The pipeline execution can take approx. 5 minutes to get complete, please wait untill the build gets completed and then click on Complete merge.
 
-1. Change the Merge Type to **Squash commit (1)** and check both **Complete associated work items after merging (2)** and **Delete SecretFix after merging (2)**. Finally, click **Complete merge (3)** to merge the changes into the main branch.
+1. Change **Merge Type** to **Squash commit** Then, **uncheck** the box for **Complete associated work items after merging** (2) and **check** the box **Delete Fixalert after merging** to merge changes into the main branch.
 
-    ![Completing merge](media/advlab25.png)
+    ![Completing merge](media/cmpltfinalprwithnocomplete.png)
 
 ### Task 3: Dismissing secret scanning alerts
 
