@@ -124,7 +124,7 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
    ![allow-permissions](media/06-26-2024(1).png)
 
-1. Instead of using Notepad to copy the PAT, open a new tab, navigate to the eShopOnWeb project, and paste the PAT token as described in the below step.
+1. You can copy the PAT in a Notepad window or open a new tab, navigate to the eShopOnWeb project, and paste the PAT token as described in the below step.
 
 1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**.
 
