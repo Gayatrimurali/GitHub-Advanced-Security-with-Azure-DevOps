@@ -27,6 +27,14 @@ Once this is toggled on, it starts off a background scan of this repo and looks 
 
 The Advanced Security Alert Hub is where all alerts are raised and where we gain insights, specifically under the category of Secrets. When a secret is found, you can click on it to access more information. The secret may be located in different places, including various commits. 
 
+1. First lets make the previous created issue as active as it automatically gets closed when you completed a PR connect with the issue work item. navigate to the **eShopOnWeb** project and select **Boards (1)** from the left menu and select **Work items (2)**.
+
+      ![allowermissions](media/nls3.png)
+    
+1. Select the **Advanced security related events** workitem and change its state to **Active(1)** and click on **Save(2)**
+
+      ![allow-permissions](media/workitemq.png)
+   
 1. Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
 
    ![setup](media/lab1-image16.png)
@@ -105,16 +113,6 @@ You can follow these steps to fix the exposed secret.
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
-    > **Note**: If you're unable to find or select the work item, please follow the below instructions.
-
-     - Navigate to the **eShopOnWeb** project and select **Boards (1)** from the left menu and select **Work items (2)**.
-
-      ![allowermissions](media/nls3.png)
-    
-     - Select the **Advanced security related events** workitem and change its state to **Active(1)** and click on **Save(2)**
-
-      ![allow-permissions](media/workitemq.png)
-
 1. Navigate to **User settings (1)** > **Personal access token (2)**.
 
    ![Remove STORAGE_ID](media/06-26-2024(7).png)
@@ -154,6 +152,8 @@ You can follow these steps to fix the exposed secret.
     >**Note:** Make sure you add a work item link from the dropdown created earlier if it is not added automatically for the pipeline to run successfully.
 
 1. Once the **eShoponWeb** pipeline has been completed, click **Approve**, and then click on **Complete**.
+
+   > **Note:** The pipeline execution can take approx. 5 minutes to get complete, please wait untill the build gets completed and then click on Complete merge.
 
 1. Change the Merge Type to **Squash commit (1)** and check both **Complete associated work items after merging (2)** and **Delete SecretFix after merging (2)**. Finally, click **Complete merge (3)** to merge the changes into the main branch.
 
