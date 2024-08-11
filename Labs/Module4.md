@@ -70,14 +70,14 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
     ![Image](media/nls9.png)
 
 1. Instead of getting the value of 
-__{drive}__ using a query, we can directly define it as __C__ for the string drive variable in the line 20.
+__{drive}__ using a query, we can directly define it as __C__ for the string drive variable in the line 20. Replace the line number 20 with the below string.
     ```C#
     string drive = "C";
     ```
 
     ![Image](media/nls11.png)
 
-1. Click on **Commit** to save changes. Enter **Fixalert** for the branch name and link the work item. Check **Create a pull request**, and then click on **Commit** again.
+1. Click on **Commit** to save changes. Enter **Fixalert** for the branch name and link the work item (Advanced security related events) . Check **Create a pull request**, and then click on **Commit** again.
 
     ![Image](media/nls10.png)
 
