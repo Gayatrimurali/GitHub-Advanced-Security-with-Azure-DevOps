@@ -169,11 +169,11 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     > **Note:** The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. The alert will then automatically close.
 
-1. Once the **eShoponWeb** pipeline has been completed, click on **Approve (1)** and then click on **Complete (2)**.
+1. Once the **eShoponWeb** pipeline has been completed, click on **Approve (1)** and then click on **Complete (2)**, 
 
-   ![Dependencies](media/do2.png)
+   ![Dependencies](media/cmpltfinalprwithnocomplete.png)
 
-1. To merge changes into the main branch, change the Merge Type to **Squash commit (1)**. Then, check the boxes for **Complete associated work items after merging (2)** and **Delete Codefix after merging (2)**. Finally, click **Complete merge (3)**.
+1. To merge changes into the main branch, change the Merge Type to **Squash commit (1)**. Then, uncheck the boxes for **Complete associated work items after merging (2)** and **Delete Codefix after merging (2)**. Finally, click **Complete merge (3)**.
 
    ![Dependencies](media/do3.png)
 
