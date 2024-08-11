@@ -134,7 +134,7 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
    ![allow-permissions](media/addcv.png)
 
-1. On the **Commit** page, provide the branch name as **addsecret (1)** and link the **workitem** created earlier **(2)** and click on **Commit (3)**.
+1. On the **Commit** page, provide the branch name as **addsecret (1)** to create a new branch and link the **workitem** created earlier **(2)** and click on **Commit (3)**.
 
    ![allow-permissions](media/comv1.png)
 
@@ -158,7 +158,7 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
     ![](media/lab1-image12.png)
 
-1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well.
+1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well but we recommend for this hands on lab to enable it only for repositry level.
 
 ## Update the pipeline and create a pull request
 
@@ -168,15 +168,15 @@ In this task, you will remove the Azure deployment task codes from the pipeline.
 
    ![allow-permissions](media/pipev.png)
 
-1. Click on **Edit**.
+1. Click on **Edit** on top right corner.
 
    ![allow-permissions](media/editv2.png)
 
-1. Change the branch to **addsecret**.
+1. Change the branch to **addsecret** that you have created while commiting the previous changes  .
 
    ![allow-permissions](media/branchv1.png)
 
-1. **Remove** the code in the pipeline which includes the **test** and **production** deployments tasks (from line 70).
+1. Make sure you **Remove** the code in the pipeline which includes the **test** and **production** deployments tasks (from line 70 till the end). If you won't remove the deployment task the pipeline might fail.
 
 1. The final code should look like the one below
 
@@ -255,18 +255,26 @@ In this task, you will remove the Azure deployment task codes from the pipeline.
 
    ![allow-permissions](media/valv.png)
 
-1. Click on **Save**.
+1. Click on **Save**, we will be pusing the changes to the previously created branch **addsecret** only.
 
    ![allow-permissions](media/savev.png)
 
-1. Navigate to **Repos (1)** > **Pull requests (2)** and click on **Create a Pull request (3)**.
+1. Navigate to **Repos (1)** > **Pull requests (2)** and click on **Create a Pull request (3)**, you will see already a tab mentioning the latest changes.
 
    ![allow-permissions](media/pullv.png)
 
 1. For the title, enter the **added secret** and click on **Create**. This will run the eShoponWeb pipeline to validate changes.
-
+ 
+   ![allow-permissions](media/crtPR.png)buildscs
+   
 1. Once the eShoponWeb pipeline has been completed, click **Approve**, and then click on **Complete** and click on **Complete merge**.
+  
+   > **Note:** The pipeline execution can take approx. 5 minutes to get complete, please wait untill the build gets completed and then click on Complete merge.
+   
+   ![allow-permissions](media/buildscs.png)
 
+   ![allow-permissions](media/cmpltdpr.png)
+   
 ### Task 3: Setup Advanced Security permissions
 
 In this task, you will configure advanced security permissions for the eShopOnWeb repository in Azure DevOps. This involves granting specific permissions to project administrators to manage security alerts and settings related to the repository.
