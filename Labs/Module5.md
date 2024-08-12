@@ -1,4 +1,6 @@
-# Lab 05: Microsoft Defender for Cloud DevOps security
+# Lab 05: Microsoft Defender for Cloud DevOps security (Read-Only)
+
+This lab has been set to Read-Only because addressing the DevOps security findings in Microsoft Defender for Cloud will take approximately 8 hours.
 
 ## Lab Scenario
 
