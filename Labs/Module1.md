@@ -249,7 +249,7 @@ extends:
             inputs:
               PathtoPublish: '$(build.artifactstagingdirectory)'  # Specify the path to publish artifacts from
             condition: succeededOrFailed()  # Run this step whether the build succeeded or failed
- ```
+```
      
 1. Click on **Validate and save**.
 
