@@ -178,7 +178,7 @@ In this task, you will remove the Azure deployment task codes from the pipeline.
 
 1. Make sure you **Remove** the code in the pipeline which includes the **test** and **production** deployments tasks (from line 70 till the end). If you won't remove the deployment task the pipeline might fail.
 
-1. The final code should look like the one below
+1. The final code should look like the one below (added comments for reference)
 
 ```yaml
 trigger:
