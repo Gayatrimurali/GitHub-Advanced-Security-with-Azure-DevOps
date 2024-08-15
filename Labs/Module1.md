@@ -9,7 +9,7 @@ In this lab, we configure GitHub Advanced Security (GHAS) within Azure DevOps, e
 In this lab, you will perform:
 - Task 1: Sign up and configure the eShopOnWeb team project in Azure DevOps
 - Task 2: Enable Advanced Security from the portal
-- Task 3: Setup Advanced Security permissions
+- Task 3: Understand and Manage Advanced Security Permissions
 
 ## Estimated Timing: 45 minutes
 
@@ -17,7 +17,7 @@ In this lab, you will perform:
 
   ![AD](media/ard01.png)
 
-### Task 1: Sign up and configure the eShopOnWeb team project in Azure DevOps
+## Task 1: Sign up and configure the eShopOnWeb team project in Azure DevOps
 
 1. Open the **Edge browser**, and navigate to **Azure DevOps** using the link below. Select **Start Free**, and sign in with the credentials provided in the Environment variables.
 
@@ -26,31 +26,45 @@ In this lab, you will perform:
    ```
       ![setup](media/lab1-image1.png)
 
+1. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
+ 
+   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+ 
+   ![Enter Your Username](media/pg3-1.png)
+ 
+1. Next, provide your password:
+ 
+   - **Password:** <inject key="AzureAdUserPassword"></inject>
+ 
+   ![Enter Your Password](media/pg3-2.png)
+ 
+1. If prompted to stay signed in, you can click **Yes**.
+
+      ![setup](media/pg3-3.png)
+
 1. On the **Get Started with Azure DevOps** page, click on **Continue**.
 
-      ![setup](media/end2.png)
+      ![setup](media/pg3-4.png)
 
 1. On the **Almost done** page, enter the **captcha (1)** and click on **Continue (2)**.
 
-      ![setup](media/end1.png)
+      ![setup](media/pg3-5.png)
 
 1. On the **Azure DevOps** page, at the button left, click on **Organization settings** (opening this screen takes a few seconds).
 
-    ![](media/nls2.png)
+    ![](media/pg3-6.png)
 
 1. From the left navigation pane, select **Billing (1)** and click **Set up billing (2)**. On the right-hand side of the screen, select the **Existing subscription (3)** listed and click **Save (4)** to link the subscription with the organization.
 
-   ![](media/lab1-image8.png)
-
-   ![](media/lab1-image9.png)
+   ![](media/pg3-7.png)
 
 1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then click on the **Save** button at the bottom.
 
-   ![](media/lab1-image10.png)
+   ![](media/pg3-8.png)
 
 1. On the **Organization Settings** page, go to the Security section and click **Policies (1)**. Enable the toggles for both **Third-party application access via OAuth (2)** and **Allow public projects (3)**, then click **Save (4)** when prompted to Change policy setting.
 
-     ![](media/nls1.png)
+     ![](media/pg3-9.png)
    
       > **Note:** The OAuth setting helps enable tools such as the DemoDevOpsGenerator to register extensions. Without this, several labs may fail due to a lack of the required extensions.
 
@@ -64,9 +78,11 @@ In this lab, you will perform:
   
 1. Click on **Sign in** and log in using the Microsoft account associated with your Azure DevOps subscription.
 
-    ![](media/lab1-image2.png)
+    ![](media/pg3-10.png)
 
 1. Please click on **Accept** to grant permission to access your subscription.
+
+    ![](media/pg3-11.png)
 
 1. Click **Choose Template**.
 
@@ -84,23 +100,25 @@ In this lab, you will perform:
 
    ![](media/lab1-image6.png)
 
-## Create a Work item
+### Remove Branch Policy
 
-You can follow these steps to create a work item to link while committing the changes.
+This task is being carried out to facilitate a seamless workflow during testing in the lab environment. However, please note that in a production environment, it is recommended to enable this policy as a best practice.
 
-1. Navigate to the **eShopOnWeb** project and select **Boards (1)** from the left menu and select **Work items (2)**.
+1. Navigate to the **eShopOnWeb** project and select **Repos** from the left menu.
 
-      ![allow-permissions](media/nls3.png)
+      ![allow-permissions](media/pg3-12.png)
 
-1. On the **Work items** page, select **+ New Work Item (1)** and select **Issue (2)** from the drop-down menu.
+1. Navigate to **Branches** menu and select **Branch Policies** for the Main branch.
 
-      ![allow-permissions](media/nls5.png)
+      ![allow-permissions](media/pg3-13.png)
 
-1. Enter **Advanced security related events (1)** in the Title box and enter **Work item to link for all the commits related to Advanced security events (2)** in the description box, and click on **Save (3)**.
+1. Turn **Off** the check for linked work items policy
 
-      ![allow-permissions](media/nls4.png)
+      ![allow-permissions](media/pg3-14.png)
 
-## Create Azure DevOps - Personal Access Token 
+This action will remove the requirement for linking work items when working with branches in the lab environment.
+
+### Create Azure DevOps - Personal Access Token 
 
 In this task, you will create a Personal Access Token (PAT) in Azure DevOps and integrate it into our codebase. This integration is essential for testing advanced security functionalities later in the lab.
 
@@ -130,17 +148,17 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
    ![allow-permissions](media/editv1.png)
 
-1. Add **public const string AZ_PAT = "Your-Secret-Value";** to the existing code as shown below. Replace "Your-Secret-Value" with your PAT token, and commit the changes.
+1. Add **public const string AZ_PAT = "Your-Secret-Value";** to the existing code as shown below. Replace "Your-Secret-Value" with your PAT token, and **commit** the changes.
 
    ![allow-permissions](media/addcv.png)
 
-1. On the **Commit** page, provide the branch name as **addsecret (1)** to create a new branch and link the **workitem** created earlier **(2)** and click on **Commit (3)**.
+1. On the **Commit** page, provide the branch name as **addsecret (1)** and click on **Commit (2)**.
 
    ![allow-permissions](media/comv1.png)
 
-  >**Note**: If you're unable to find or select the work item, go to **Boards** > **Work items**, locate the desired work item, and change its state to **Active**.
+  >**Note**: You were able to add the secret value directly to the code without any issues, which emphasizes that the advanced security feature is not yet enabled.
 
-### Task 2: Enable Advanced Security from Portal
+## Task 2: Enable Advanced Security from Portal
 
 GitHub Advanced Security for Azure DevOps includes extra permissions for more levels of control around Advanced Security results and management. Be sure to adjust individual permissions for your repository.
 
@@ -160,9 +178,9 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
 1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well but we recommend for this hands on lab to enable it only for repositry level.
 
-## Update the pipeline and create a pull request
+### Update the pipeline and create a pull request
 
-In this task, you will remove the Azure deployment task codes from the pipeline.
+In this task, you will update the pipeline to include dependency scanning and CodeQL analysis tasks, and create a pull request to merge these changes, initializing the dependency and code scanning capabilities for the repository.
 
 1. Navigate to the **Pipelines (1)** in the left menu and select the **eShopOnWeb (2)** pipeline.
 
@@ -176,80 +194,75 @@ In this task, you will remove the Azure deployment task codes from the pipeline.
 
    ![allow-permissions](media/branchv1.png)
 
-1. Make sure you **Remove** the code in the pipeline which includes the **test** and **production** deployments tasks (from line 70 till the end). If you won't remove the deployment task the pipeline might fail.
+1. Remove the existing code in the pipeline and add the below code
 
-1. The final code should look like the one below (added comments for reference)
-
-    ```yaml
-    trigger:
+   ```yaml
+      trigger:
       - main  # Trigger pipeline on changes to the 'main' branch
-    
-    pool:
-      vmImage: ubuntu-latest  # Use the latest Ubuntu VM image for the build
-    
-    extends:
-      template: template.yaml  # Extend from an external template
-      parameters:
-        stages:
-          - stage: Build  # Define the Build stage
-            displayName: 'Build'  # Display name for the stage
-            jobs:
-            - job: Build  # Define the Build job
-              steps:
-              - checkout: self  # Check out the source code
-    
-              - task: DotNetCoreCLI@2  # Restore .NET dependencies
-                displayName: Restore
-                inputs:
-                  command: restore
-                  projects: '**/*.csproj'  # Restore packages for all .csproj files
-    
-              - task: ms.advancedsecurity-tasks.codeql.init.AdvancedSecurity-Codeql-Init@1  # Initialize CodeQL analysis
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))  # Only run if not a pull request
-                displayName: 'Initialize CodeQL'
-                inputs:
-                  languages: csharp  # Specify C# as the language
-                  querysuite: default  # Use the default query suite
-    
-              - task: DotNetCoreCLI@2  # Build the .NET project
-                displayName: Build
-                inputs:
-                  projects: '**/*.csproj'  # Build all .csproj files
-                  arguments: '--configuration $(BuildConfiguration)'  # Use the specified build configuration
-    
-              - task: ms.advancedsecurity-tasks.dependency-scanning.AdvancedSecurity-Dependency-Scanning@1  # Perform dependency scanning
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))  # Only run if not a pull request
-                displayName: 'Dependency Scanning'
-    
-              - task: ms.advancedsecurity-tasks.codeql.analyze.AdvancedSecurity-Codeql-Analyze@1  # Perform CodeQL analysis
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))  # Only run if not a pull request
-                displayName: 'Perform CodeQL analysis'
-    
-              - task: ms.advancedsecurity-tasks.codeql.enhance.AdvancedSecurity-Publish@1  # Publish CodeQL results
-                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))  # Only run if not a pull request
-                displayName: 'Publish Results'
-    
-              - task: DotNetCoreCLI@2  # Run tests with code coverage
-                displayName: Test
-                inputs:
-                  command: test
-                  projects: '[Tt]ests/**/*.csproj'  # Test all projects in the 'Tests' folder
-                  arguments: '--configuration $(BuildConfiguration) --collect:"Code coverage"'  # Collect code coverage data
-    
-              - task: DotNetCoreCLI@2  # Publish the built application
-                displayName: Publish
-                inputs:
-                  command: publish
-                  publishWebProjects: True  # Publish web projects
-                  arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'  # Specify output directory
-                  zipAfterPublish: True  # Zip the output after publishing
-    
-              - task: PublishBuildArtifacts@1  # Publish the build artifacts
-                displayName: 'Publish Artifact'
-                inputs:
-                  PathtoPublish: '$(build.artifactstagingdirectory)'  # Specify the path to publish artifacts from
-                condition: succeededOrFailed()  # Run this step whether the build succeeded or failed
-    ```
+
+      pool:
+   vmImage: ubuntu-latest  # Use the latest Ubuntu VM image for the build
+
+   extends:
+   template: template.yaml  # Extend from an external template
+   parameters:
+      stages:
+         - stage: Build  # Define the Build stage
+         displayName: 'Build'  # Display name for the stage
+         jobs:
+         - job: Build  # Define the Build job
+            steps:
+            - checkout: self  # Check out the source code
+
+            - task: DotNetCoreCLI@2  # Restore .NET dependencies
+               displayName: Restore
+               inputs:
+               command: restore
+               projects: '**/*.csproj'  # Restore packages for all .csproj files
+
+            - task: AdvancedSecurity-Codeql-Init@1  # Initialize CodeQL analysis
+               condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))  # Only run if not a pull request
+               displayName: 'Initialize CodeQL'
+               inputs:
+               languages: csharp  # Specify C# as the language
+               querysuite: default  # Use the default query suite
+
+            - task: DotNetCoreCLI@2  # Build the .NET project
+               displayName: Build
+               inputs:
+               projects: '**/*.csproj'  # Build all .csproj files
+               arguments: '--configuration $(BuildConfiguration)'  # Use the specified build configuration
+
+            - task: AdvancedSecurity-Dependency-Scanning@1  # Perform dependency scanning
+               condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))  # Only run if not a pull request
+               displayName: 'Dependency Scanning'
+
+            - task: AdvancedSecurity-Codeql-Analyze@1  # Perform CodeQL analysis
+               condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))  # Only run if not a pull request
+               displayName: 'Perform CodeQL analysis'
+
+            - task: DotNetCoreCLI@2  # Run tests with code coverage
+               displayName: Test
+               inputs:
+               command: test
+               projects: '[Tt]ests/**/*.csproj'  # Test all projects in the 'Tests' folder
+               arguments: '--configuration $(BuildConfiguration) --collect:"Code coverage"'  # Collect code coverage data
+
+            - task: DotNetCoreCLI@2  # Publish the built application
+               displayName: Publish
+               inputs:
+               command: publish
+               publishWebProjects: True  # Publish web projects
+               arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'  # Specify output directory
+               zipAfterPublish: True  # Zip the output after publishing
+
+            - task: PublishBuildArtifacts@1  # Publish the build artifacts
+               displayName: 'Publish Artifact'
+               inputs:
+               PathtoPublish: '$(build.artifactstagingdirectory)'  # Specify the path to publish artifacts from
+               condition: succeededOrFailed()  # Run this step whether the build succeeded or failed
+
+      ```
      
 1. Click on **Validate and save**.
 
@@ -263,21 +276,41 @@ In this task, you will remove the Azure deployment task codes from the pipeline.
 
    ![allow-permissions](media/pullv.png)
 
-1. For the title, enter the **added secret** and click on **Create**. This will run the eShoponWeb pipeline to validate changes.
+1. For the title, enter the **added secret and updated pipeline** and click on **Create**. This will run the eShoponWeb pipeline to validate changes.
  
-   ![allow-permissions](media/crtPR.png)buildscs
+   ![allow-permissions](media/pg3-15.png)buildscs
    
 1. Once the eShoponWeb pipeline has been completed, click **Approve**, and then click on **Complete** and click on **Complete merge**.
   
    > **Note:** The pipeline execution can take approx. 5 minutes to get complete, please wait untill the build gets completed and then click on Complete merge.
    
-   ![allow-permissions](media/buildscs.png)
+   ![allow-permissions](media/pg3-16.png)
 
-   ![allow-permissions](media/cmpltdpr.png)
-   
-### Task 3: Setup Advanced Security permissions
+   ![allow-permissions](media/pg3-17.png)
 
-In this task, you will configure advanced security permissions for the eShopOnWeb repository in Azure DevOps. This involves granting specific permissions to project administrators to manage security alerts and settings related to the repository.
+## Task 3: Understand and Manage Advanced Security Permissions
+
+In this task, you'll learn about the advanced security permissions available for the eShopOnWeb repository in Azure DevOps. While Project Administrators typically have the necessary permissions to manage security settings, understanding these permissions is important for scenarios where adjustments might be necessary.
+
+### Overview of Advanced Security Permissions
+
+Azure DevOps provides advanced security features that allow you to manage and monitor the security of your repository. Here are the key permissions:
+
+1. **Manage and dismiss alerts:** This permission allows users to handle security alerts generated by advanced security tools. Typically, this is used by security teams to address potential vulnerabilities or issues flagged in the codebase.
+
+2. **Manage settings:** This permission enables users to configure and adjust security settings for the repository. While Project Administrators generally have this permission by default, there might be scenarios where it is delegated to specific security-focused roles.
+
+3. **View alerts:** This permission allows users to view security alerts without the ability to manage them. This might be useful for auditors or other roles that need to monitor security without making changes.
+
+### When to Adjust Permissions
+
+While Project Administrators generally do not need to adjust their own permissions, there are scenarios where it might be necessary to modify these settings:
+
+- **Delegation to Security Teams:** In larger organizations, security teams might be assigned specific roles within a project. In such cases, you might adjust permissions to give these teams control over managing and dismissing alerts without full administrative rights.
+  
+- **Auditing and Compliance:** If your organization requires strict auditing or compliance controls, you might grant specific users or groups the ability to view alerts without granting them the power to manage settings or dismiss alerts.
+
+### How to Access, Review, and Set Security Settings
 
 1. Click **Project settings (1)** in the lower-left corner. In the left menu under Repos, click **Repositories (2)**, then select the **eShopOnWeb (3)** repository.
 
@@ -295,13 +328,16 @@ In this task, you will configure advanced security permissions for the eShopOnWe
 
 1. Make sure a green checkmark ✅ appears next to the selected permission.
 
-Please feel free to go through the documentation for further understanding: [GitHub Advanced Security for Azure DevOps](https://azure.microsoft.com/en-us/products/devops/github-advanced-security) and [Configure GitHub Advanced Security for Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml)
+For detailed guidance on configuring these settings, refer to the following documentation:
+- [GitHub Advanced Security for Azure DevOps](https://azure.microsoft.com/en-us/products/devops/github-advanced-security)
+- [Configure GitHub Advanced Security for Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml)
+- [Advanced Security Billing](https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-billing?view=azure-devops)
 
 ## Review
 In this lab, you have completed the following:
 
 - Configured the eShopOnWeb team project.
 - Enabled Advanced Security from the Portal.
-- Set up Advanced Security permissions.
+- Understand and Manage Advanced Security Permissions
 
 Click on **Next** to proceed with the next lab.
