@@ -102,7 +102,7 @@ In this lab, you will perform:
 
 ### Remove Branch Policy
 
-This task is being carried out to facilitate a seamless workflow during testing in the lab environment. However, please note that in a production environment, it is recommended to enable this policy as a best practice.
+This task is being carried out to facilitate a seamless workflow during testing in the lab environment. However, please note that in a production environment, it is recommended to enable this policy as a best practice as its always good to link you PR to the work items that is created for any specific items.
 
 1. Navigate to the **eShopOnWeb** project and select **Repos** from the left menu.
 
