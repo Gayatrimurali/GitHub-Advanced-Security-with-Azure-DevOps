@@ -106,7 +106,7 @@ __{drive}__ using a query, we can directly define it as __C__ for the string dri
 
 ### Task 4: Dismissing the code scanning alerts 
 
-Once after the completion of the build, if you navigate to the __Code scanning__ section of __Advanced Security__. You will find the alert is closed automatically.
+Once after the completion of the build from the **main branch**, if you navigate to the __Code scanning__ section of __Advanced Security__. You will find the alert is closed automatically.
 
 ## Review
 In this lab, you have completed the following:
