@@ -2,7 +2,7 @@
 
 ## Lab Scenario
 
-In this lab, we set up code scanning in Azure DevOps using GitHub Advanced Security to analyze code for security vulnerabilities and errors. We will review code scanning alerts, fix identified issues in the code, and dismiss resolved alerts, thereby enhancing the security of their codebase.
+In this lab, You will set up code scanning in Azure DevOps using GitHub Advanced Security to analyze code for security vulnerabilities and errors. You will review code scanning alerts, fix identified issues in the code, and dismiss resolved alerts, thereby enhancing the security of their codebase.
 
 ## Lab Objectives
 
@@ -21,7 +21,7 @@ In this lab, you will perform the following:
 
 ### Task 1: Setup Code Scanning
 
-Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the code in an Azure DevOps repository to find security vulnerabilities and coding errors. Any problems identified by the analysis are raised as an alert. Code scanning uses CodeQL to identify vulnerabilities.
+Code Scanning in GitHub Advanced Security for Azure DevOps enables automated analysis of your code to detect security vulnerabilities and coding issues. By integrating CodeQL, it provides in-depth insights into potential flaws in your codebase. Alerts are generated for any detected issues, helping you address them before deployment. This ensures continuous security and quality improvement in your development workflow.
 
 1. Select the pipeline **eShopOnweb**.
 
@@ -29,15 +29,20 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
 1. Locate the tasks related to **Advanced Security Code Scanning** that are already included in the YAML pipeline file.
 
-   ![alert_detected](media/nls6.png)
+   ![alert_detected](media/codeqlsasdvasd.png)
  
 1. Do not run the pipeline. The code scanning setup has already been initiated, along with dependency scanning performed in the previous lab.
+
+   You can learn more about Code scanning with DevOps advance secutiy [here.](https://learn.microsoft.com/en-us/azure/devops/repos/security/github-advanced-security-code-scanning?view=azure-devops)
+   If you turn off Advanced Security for your repository, you lose access to the results in the Advanced Security tab and build task. The build task does not fail, but any results from builds run with the task while Advanced Security is disabled are hidden and not retained. As we have already enabled the Advanced security for the Repositry, and have added all the required task in pipeline to generate the alerts, you should be able to see the results in advanced security dashboard.
 
 ### Task 2: Review Code Scanning Alert (Gain Insights)
 
 1. Go to the **Repos** tab and click on the **Advanced Security** menu at the bottom.
 
 1. Click on **Code scanning** to see a list of all the code scanning alerts that have been found. This includes the alert, vulnerable code details, and first detected date.
+
+    ![code_alert_detected](media/codesnglaetrsd.png)
 
 #### Code scanning Alert Details
 
@@ -53,11 +58,11 @@ Code scanning in GitHub Advanced Security for Azure DevOps lets you analyze the 
 
    ![where_detected](media/nls81.png)
 
-    **ProTip!** When a vulnerable component is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to Closed. To see these resolved alerts, you can use the **State filter** in the main toolbar and select **Closed**.
+    **ProTip!** When a vulnerable code is no longer detected in the latest build for pipelines with the dependency scanning task, the state of the associated alert is automatically changed to Closed. To see these resolved alerts, you can use the **State filter** in the main toolbar and select **Closed**.
 
 ### Task 3: Fixing the Code to resolve the alert
 
-1. This is simple to fix using parameters in the dynamic SQL described in the remediation steps.
+1. This is simple to fix using parameters in the command line described in the remediation steps.
 
 1. Click on **Locations found** to see the code that triggered the alert.
 
@@ -77,17 +82,15 @@ __{drive}__ using a query, we can directly define it as __C__ for the string dri
 
     ![Image](media/nls11.png)
 
-1. Click on **Commit** to save changes. Enter **Fixalert** for the branch name and link the work item (Advanced security related events) . Check **Create a pull request**, and then click on **Commit** again.
+1. Click on **Commit** to save changes. Enter **Fixalert** for the branch name and Check **Create a pull request**, and then click on **Commit** again.
 
-    ![Image](media/nls10.png)
+    ![Image](media/fixalertsdsfsdf.png)
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
-1. Navigate to Azure DevOps, click on **Repos**, select **Pull requests** and select **Create a pull request** to push the commits from **Fixalert** to the **main**.
+1. You will be navigated to the new pull required page to push the commits from **Fixalert** to the **main**, just click on **Create**.
 
-1. On the **New pull request** page, click on **Create**.
-
-    ![Image](media/mls3.png)
+    ![Image](media/crtpsddsfbnjsdf.png)
 
 1. Once the **eShoponWeb** pipeline has been completed, click on **Approve** and then click on **Complete**.
 
@@ -99,13 +102,7 @@ __{drive}__ using a query, we can directly define it as __C__ for the string dri
 
     > **Note**: The build will run automatically, initiating the code scanning task and publishing the results to Advanced Security.
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="35f2bb5c-ac28-4706-a14a-69bcae74d995" />
 
 ### Task 4: Dismissing the code scanning alerts 
 
