@@ -7,8 +7,8 @@ GitHub Advanced Security (GHAS) and Azure DevOps (ADO) are powerful tools that c
 
 GitHub Advanced Security provides a set of security features designed to help developers secure their code and manage vulnerabilities throughout the development lifecycle. Key features include:
 
-1. **Code Scanning**: Automatically scans your code for security vulnerabilities using GitHub's CodeQL, a powerful static analysis engine.
-2. **Secret Scanning**: Detects secrets such as API keys and passwords in your code to prevent accidental exposure.
+1. **Code Scanning**: Automatically scans your code for security vulnerabilities using GitHub's CodeQL, a powerful static analysis engine with the help of ADO pipelines.
+2. **Secret Scanning**: Detects secrets such as API keys and passwords in your code to prevent accidental exposure, this feature built-in and comes with Advanced security.
 3. **Dependency Review**: Identifies and reviews security vulnerabilities in your project's dependencies.
 
 ## What is Azure DevOps?
