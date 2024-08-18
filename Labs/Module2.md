@@ -26,38 +26,28 @@ Once this is toggled on, it starts off a background scan of this repo and looks 
 ### Task 1: Viewing alerts of repository
 
 The Advanced Security Alert Hub is where all alerts are raised and where we gain insights, specifically under the category of Secrets. When a secret is found, you can click on it to access more information. The secret may be located in different places, including various commits. 
-
-1. First lets make the previous created issue as active as it automatically gets closed when you completed a PR connect with the issue work item. navigate to the **eShopOnWeb** project and select **Boards (1)** from the left menu and select **Work items (2)**.
-
-      ![allowermissions](media/nls3.png)
-    
-1. Select the **Advanced security related events** workitem and change its state to **Active(1)** and click on **Save(2)**
-
-      ![allow-permissions](media/workitemq.png)
    
-1. Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
+1. Go to the **Repos** tab from left side menu and click on the **Advanced Security** menu item at the bottom.
 
    ![setup](media/lab1-image16.png)
 
-1. Click on **Secrets (1)** to see a list of all the exposed secret alerts that have been found. This includes the alert and introduced dates. Click on the **Azure DevOps personal access token (PAT) (2)** to see more details about the alert and what you can do to clean up the secret.
+1. Click on **Secrets (1)** to see a list of all the exposed secret alerts that have been found. This includes the alert and introduced dates. Click on the **Azure DevOps legacy personal access token (PAT) (2)** to see more details about the alert and what you can do to clean up the secret.
 
-   ![Secrets page](media/secv1.png)
+   ![Secrets page](media/secrtfound.png)
 
 1. Notice that this includes the Recommendation, Locations found, Remediation steps, Severity, and the Date it was first introduced. We can easily clean this up and dismiss the alert.
 
-   ![Secret Details](media/remv.png)
+   ![Secret Details](media/secrtdetailss.png)
 
-### Task 2: Fixing secret scanning alerts
+### Task 2: Checking push protextion and Fixing secret scanning alerts
 
 Once a credential touches the repo, it's too late. Hackers might have already exploited it. The only way forward is to permanently eliminate these leaks and find all the places they're being used in production.
 
  **Note:** Good news! GHAzDO focuses on preventing this in the first place. Bad news! These need to be manually fixed. There isn't an easy button.
 
-#### Push Protection
+#### Push Protection demonstration
 
 Push Protection helps protect your repository by preventing unauthorized or malicious code from being pushed to your repository's branches.
-
-#### Updating Secrets:
 
 You can follow these steps to update a file. 
 
@@ -87,6 +77,8 @@ You can follow these steps to update a file.
 
 #### Bypass push protection
 
+Bypass push protection in Azure DevOps allows developers to override security checks that prevent sensitive data from being pushed to a repository. This feature should be used cautiously, typically when dealing with false positives or urgent changes that need immediate deployment. In Azure DevOps, setting **skip-secret-scanning: true** in your pipeline allows you to bypass secret scanning checks, enabling you to push changes without triggering security blocks related to sensitive data detection.
+
 1. Update your comment with **skip-secret-scanning:true** and click **Commit**.
 
     ![Commit Bypass](media/skipv.png)
@@ -95,7 +87,9 @@ You can follow these steps to update a file.
 
 #### Fixing Exposed Secrets
 
-You can follow these steps to fix the exposed secret. 
+Fixing exposed secrets in Azure DevOps involves revoking or rotating the compromised secret, removing it from the codebase, and updating the code to use secure storage like Azure Key Vault. Additionally, you may need to clean the commit history and enhance security measures to prevent future exposures.
+
+You can follow the below steps to fix the exposed secret. 
 
 1. Click on **Edit**.
 
@@ -103,69 +97,57 @@ You can follow these steps to fix the exposed secret.
 
     ![setup](media/06-26-2024(10).png)
 
-1. On line 5, replace the PAT value with **#{PAT}#** **(1)** and click on **Commit (2)** to save changes.
+1. On line 5, replace the whole line to **public static readonly string AZ_PAT = Environment.GetEnvironmentVariable("AZ_PAT"); (1)**, then click **Commit (2)** to save the changes.
 
-    ![setup](media/varv.png)
+   > **Note:** You can learn more about using the Envrionment variables with Azure DevOps pipeline [here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch) as this lab is more focusing on Advanced securities of Azure DevOps.
+    
+     ![setup](media/fixscrttt.png)
 
-1. Enter **SecretFix** for the branch name and link the **Work item** created earlier from the list.
+1. Enter **PATFIX (1)** for the branch name and then click on **Commit (2)** again.
 
-    ![Remove STORAGE_ID](media/secv.png)
+     ![setup](media/patfxx.png)
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
-1. Navigate to **User settings (1)** > **Personal access token (2)**.
+1. Now, lets regenerate the PAT as the old secret key is already exposed and its necessary to regenrate or delete the PAT to avoid security risk. Navigate to **User settings (1)** > **Personal access token (2)**.
 
    ![Remove STORAGE_ID](media/06-26-2024(7).png)
 
-1. Select the existing token and select **Regenerate** twice and **copy** the token value, then open a new tab and continue with the next step..
+1. Select the existing token and select **Regenerate** and **copy** the token value, then open a new tab and continue with the next step..
 
     ![Remove STORAGE_ID](media/regv88.png)
 
     ![Remove STORAGE_ID](media/copyv.png)
 
-1. Next, we need to update the build pipeline to add a variable. Click on **Pipelines (1)** and select **eShoponWeb (2)**.
-
-    ![setup](media/06-26-2024(8).png)
-
-1. Click on **Edit** to edit the pipeline. Change the branch to the **SecretFix (1)** branch and click on **Variables (2)**.
-
-     ![setup](media/lab1-image20.png)
    
-     ![Remove STORAGE_ID](media/advsc44.png)
- 
-1. Once the **Variables** pane opens, click on **+** to create a new variable.
+1. Now lets raise the PR and merge the changes to main branch, click on **Repos (1)** from left side menu, click **Pull Requests (2)**, and click on **Create a pull request (3)** to merge the changes from branch **PATFIX** into branch **main**. 
 
-     ![setup](media/lab1-image21.png)
-
-1. Enter **PAT (1)** for the name and paste the secret **value (Regenerated value) (2)** into the value field copied. Click on **Keep this value secret (3)** to hide the value, then click **OK (4)** and **Save (5)**.
-
-   ![setup](media/patv.png)
-   
-1. Click on **Repos (1)**, click **Pull Requests (2)**, and click on **New pull request (3)** to merge the changes from branch **SecretFix** into branch **main**.
-
-    ![Pipeline Save](media/06-26-2024(11).png)
+    ![Pipeline Save](media/crtprss.png)
 
 1. For the title, enter the **Fixed secret (2)** and click on **Create (3)**. This will run the **eShoponWeb** pipeline to validate changes. 
 
-    ![Pipeline Save](media/06-26-2024(12).png)
+    ![Pipeline Save](media/fxscrt.png)
 
-    >**Note:** Make sure you add a work item link from the dropdown created earlier if it is not added automatically for the pipeline to run successfully.
 
-1. Once the **eShoponWeb** pipeline has been completed, click **Approve**, and then click on **Complete**.
+1. Once the **eShoponWeb** pipeline run has been completed, click **Approve**, and then click on **Complete**.
 
    > **Note:** The pipeline execution can take approx. 5 minutes to get complete, please wait untill the build gets completed and then click on Complete merge.
 
-1. Change **Merge Type** to **Squash commit** Then, **uncheck** the box for **Complete associated work items after merging** (2) and **check** the box **Delete SecretFix after merging** to merge changes into the main branch.
+1. On **Complete pull request** page, leave all option to default and click on **Complete merge** button to merge changes into the main branch.
 
-    ![Completing merge](media/cmpltfinalprwithnocomplete.png)
+    ![Completing merge](media/dfltmerge.png)
 
 ### Task 3: Dismissing secret scanning alerts
 
-You can follow these steps to dismiss the alert.
+Dismissing secret scanning alerts in Azure DevOps allows you to acknowledge and suppress alerts for specific false positives or non-sensitive data, preventing them from triggering security warnings in future scans.
 
-1. Once the pipeline eShoponWeb has been completed, from the left navigation pane under **Repos**, go to the Azure DevOps **Advanced Security** dashboard and click on **Secrets**. 
+You can follow the below steps to dismiss the alert.
 
-1. Click on the following item, **Azure DevOps personal access token(PAT)** to see the exposed secret and how we easily dismiss the alert. 
+1. Once the pipeline **eShoponWeb** has been completed, from the left navigation pane under **Repos**, go to the Azure DevOps **Advanced Security** dashboard and click on **Secrets**.
+
+    > **Note:** You can check the pipeline status by navigating to the pipeline section from the left side menu, usually it takes about 5 minutes to complete the execution. 
+
+1. Set the filter from right side to ****Click on the following item, **Azure DevOps personal access token(PAT)** to see the exposed secret and how we easily dismiss the alert. 
 
 1. Click on **Close alert (1)** to dismiss the alert. Select **Revoked (2)**, and then click on **Close (3)**.
     
@@ -173,27 +155,11 @@ You can follow these steps to dismiss the alert.
 
     >**Note**: Once the code is merged into the main, GHAzDO starts a background scan of this repo and looks for exposed credentials. The scan doesn't just look at the tip of the main, since attackers would look through all the branches and the entire commit history.
 
-1. Go to the Azure DevOps Advanced Security dashboard, click on **Secrets**, and subsequently click on **View other alerts**. You will see a list of other exposed secret alerts that have been found. 
+1. Go to the Azure DevOps Advanced Security dashboard, click on **Secrets**. You will see a list of other exposed secret alerts that have been found. 
 
-1. You will see that the alert **Azure DevOps personal access token(PAT)** no longer exists, as it is now revoked.
+1. You will see that the alert **Azure DevOps legacy personal access token(PAT)** no longer exists, as it is now revoked, if you want you can select **State** filter from left side and change it to **Closed** to see the previouslt closed alerts.
 
     >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository, but only the project administrator and project collection administrator  can dismiss Advanced Security alerts.
-
-## Task 4: Delete the PATDetails branch
-
-In this task, you will delete the **PATDetails** branch because the PAT Secret was exposed.
-
-1. In the left-hand navigation pane, click on **Repos**.
-
-1. Within the Repos section, select the **Branches** tab. This will display all the branches in your repository.
-
-1. Click on the ellipsis (three dots) next to the **PATDetails** branch name.
-
-1. From the dropdown menu, select **Delete branch**.
-
-    ![Closing Alert](media/branchdel.png)
-
-1. Confirm the deletion when prompted.
 
 ## Review
 In this lab, you have completed the following:
