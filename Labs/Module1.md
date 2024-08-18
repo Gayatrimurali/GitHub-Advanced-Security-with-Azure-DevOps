@@ -162,7 +162,7 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
 GitHub Advanced Security for Azure DevOps includes extra permissions for more levels of control around Advanced Security results and management. Be sure to adjust individual permissions for your repository.
 
-To ensure Azure DevOps Advanced Security is enabled in your organization, you can follow these steps:
+To enable Azure DevOps Advanced Security on your repositry, you can follow these steps:
 
 1. Click **Project settings (1)** in the lower-left corner. In the left menu under Repos, click **Repositories (2)**, then select the **eShopOnWeb (3)** repository.
 
@@ -176,7 +176,9 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
     ![](media/lab1-image12.png)
 
-1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well but we recommend for this hands on lab to enable it only for repositry level.
+1. Advanced Security and Push Protection are now enabled.
+
+1. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well but we recommend for this hands on lab to enable it only for repositry level.
 
 ### Update the DevOps pipeline to include Advance security tasks and create a pull request to initiate scan.
 
@@ -251,14 +253,6 @@ In this task, you will update the pipeline to include Advances security dependen
                   command: test
                   projects: '[Tt]ests/**/*.csproj'
                   arguments: '--configuration $(BuildConfiguration) --collect:"Code coverage"'
-    
-              - task: DotNetCoreCLI@2
-                displayName: Publish
-                inputs:
-                  command: publish
-                  publishWebProjects: True
-                  arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
-                  zipAfterPublish: True
     
               - task: PublishBuildArtifacts@1
                 displayName: 'Publish Artifact'
