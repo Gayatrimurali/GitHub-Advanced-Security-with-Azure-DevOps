@@ -7,8 +7,8 @@ GitHub Advanced Security (GHAS) and Azure DevOps (ADO) are powerful tools that c
 
 GitHub Advanced Security provides a set of security features designed to help developers secure their code and manage vulnerabilities throughout the development lifecycle. Key features include:
 
-1. **Code Scanning**: Automatically scans your code for security vulnerabilities using GitHub's CodeQL, a powerful static analysis engine.
-2. **Secret Scanning**: Detects secrets such as API keys and passwords in your code to prevent accidental exposure.
+1. **Code Scanning**: Automatically scans your code for security vulnerabilities using GitHub's CodeQL, a powerful static analysis engine with the help of ADO pipelines.
+2. **Secret Scanning**: Detects secrets such as API keys and passwords in your code to prevent accidental exposure, this feature built-in and comes with Advanced security.
 3. **Dependency Review**: Identifies and reviews security vulnerabilities in your project's dependencies.
 
 ## What is Azure DevOps?
@@ -25,21 +25,14 @@ Azure DevOps is a set of development tools and services provided by Microsoft, w
 
 Integrating GHAS with ADO can be done through various approaches, combining the security features of GitHub with the powerful development and deployment capabilities of Azure DevOps.
 
-1. **Using GitHub Actions in Azure Pipelines**: You can trigger GitHub Actions workflows from Azure Pipelines to leverage GHAS features like code scanning and secret scanning.
-
-   - **Code Scanning with CodeQL**: Set up CodeQL analysis within a GitHub Action that runs as part of your CI/CD pipeline in Azure Pipelines.
-   - **Secret Scanning**: Enable secret scanning in your GitHub repository to detect and manage secrets before they are exposed.
-
-2. **Pull Request Integration**: Use GitHub’s pull request checks to ensure that code changes meet security standards before merging. Integrate these checks with Azure Pipelines to automate the process.
-
-3. **Dependency Management**: Use GitHub’s dependency review feature in conjunction with Azure Artifacts to manage and secure your project dependencies.
+1. **Code Scanning with CodeQL**: Code scanning is also a pipeline-based scanning tool where results are aggregated per repository.
+2. **Secret Scanning**: Secret scanning push protection and repository scanning are automatically enabled when you turn on Advanced Security. You can enable or disable secret push protection from the repository settings page.
+3. **Dependency scanning**: Dependency scanning is a pipeline-based scanning tool. Results are aggregated per repository. It's recommended that you add the dependency scanning task to all the pipelines you'd like to be scanned.
 
 ## Benefits of Integration
 
 - **Enhanced Security**: By integrating GHAS with ADO, you can catch vulnerabilities early in the development process and ensure that your code is secure before it is deployed.
 - **Automated Workflows**: Automate security checks and balances within your CI/CD pipeline to reduce manual effort and improve efficiency.
-- **Comprehensive Reporting**: Gain insights into your security posture with detailed reports and dashboards from both GitHub and Azure DevOps.
-- **Improved Collaboration**: Leverage GitHub’s collaborative features alongside Azure DevOps’ project management tools to improve team coordination and productivity.
 
 ## Getting Started
 
