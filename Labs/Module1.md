@@ -120,7 +120,7 @@ This action will remove the requirement for linking work items when working with
 
 ### Create Azure DevOps - Personal Access Token 
 
-In this task, you will create a Personal Access Token (PAT) in Azure DevOps and integrate it into our codebase. This integration is essential for testing advanced security functionalities later in the lab.
+In this task, you will create a Personal Access Token (PAT) in Azure DevOps and integrate it into our codebase. This integration is essential for testing advanced security functionalities later in the lab and to demonstrate how the advance security functionality works and detect any security threat.
 
 1. Click on **User settings (1)** and select **Personal access tokens (2)**.
 
