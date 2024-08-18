@@ -197,70 +197,74 @@ In this task, you will update the pipeline to include dependency scanning and Co
 1. Remove the existing code in the pipeline and add the below code
 
    ```yaml
-   trigger:
-   - main  # Trigger pipeline on changes to the 'main' branch
-
-   pool:
-     vmImage: ubuntu-latest  # Use the latest Ubuntu VM image for the build
-
-   extends:
-     template: template.yaml  # Extend from an external template
-     parameters:
-       stages:
-         - stage: Build  # Define the Build stage
-           displayName: 'Build'  # Display name for the stage
-           jobs:
-           - job: Build  # Define the Build job
+    trigger:
+    - main
+    
+    pool:
+      vmImage: ubuntu latest
+    
+    extends: 
+      template: template.yaml
+      parameters:
+        stages:
+          - stage: Build
+            displayName: 'Build'
+            jobs:
+            - job: Build
               steps:
-              - checkout: self  # Check out the source code
-  
-              - task: DotNetCoreCLI@2  # Restore .NET dependencies
-                 displayName: Restore
-                 inputs:
-                 command: restore
-                 projects: '**/*.csproj'  # Restore packages for all .csproj files
-  
-              - task: AdvancedSecurity-Codeql-Init@1  # Initialize CodeQL analysis
-                 condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))  # Only run if not a pull request
-                 displayName: 'Initialize CodeQL'
-                 inputs:
-                 languages: csharp  # Specify C# as the language
-                 querysuite: default  # Use the default query suite
-  
-              - task: DotNetCoreCLI@2  # Build the .NET project
-                 displayName: Build
-                 inputs:
-                 projects: '**/*.csproj'  # Build all .csproj files
-                 arguments: '--configuration $(BuildConfiguration)'  # Use the specified build configuration
-  
-              - task: AdvancedSecurity-Dependency-Scanning@1  # Perform dependency scanning
-                 condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))  # Only run if not a pull request
-                 displayName: 'Dependency Scanning'
-  
-              - task: AdvancedSecurity-Codeql-Analyze@1  # Perform CodeQL analysis
-                 condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))  # Only run if not a pull request
-                 displayName: 'Perform CodeQL analysis'
-  
-              - task: DotNetCoreCLI@2  # Run tests with code coverage
-                 displayName: Test
-                 inputs:
-                 command: test
-                 projects: '[Tt]ests/**/*.csproj'  # Test all projects in the 'Tests' folder
-                 arguments: '--configuration $(BuildConfiguration) --collect:"Code coverage"'  # Collect code coverage data
-  
-              - task: DotNetCoreCLI@2  # Publish the built application
-                 displayName: Publish
-                 inputs:
-                 command: publish
-                 publishWebProjects: True  # Publish web projects
-                 arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'  # Specify output directory
-                 zipAfterPublish: True  # Zip the output after publishing
-  
-              - task: PublishBuildArtifacts@1  # Publish the build artifacts
-                 displayName: 'Publish Artifact'
-                 inputs:
-                 PathtoPublish: '$(build.artifactstagingdirectory)'  # Specify the path to publish artifacts from
-                 condition: succeededOrFailed()  # Run this step whether the build succeeded or failed
+              - checkout: self
+    
+              - task: DotNetCoreCLI@2
+                displayName: Restore 
+                inputs:
+                  command: restore
+                  projects: '**/*.csproj'
+    
+              - task: AdvancedSecurity-Codeql-Init@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Initialize CodeQL'
+                inputs:
+                  languages: csharp
+                  querysuite: default
+    
+              - task: DotNetCoreCLI@2
+                displayName: Build
+                inputs:
+                  projects: '**/*.csproj'
+                  arguments: '--configuration $(BuildConfiguration)'
+    
+              - task: AdvancedSecurity-Dependency-Scanning@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Dependency Scanning'
+    
+              - task: AdvancedSecurity-Codeql-Analyze@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Perform CodeQL analysis'
+    
+              - task: AdvancedSecurity-Publish@1
+                condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+                displayName: 'Publish Results'
+    
+              - task: DotNetCoreCLI@2
+                displayName: Test
+                inputs:
+                  command: test
+                  projects: '[Tt]ests/**/*.csproj'
+                  arguments: '--configuration $(BuildConfiguration) --collect:"Code coverage"'
+    
+              - task: DotNetCoreCLI@2
+                displayName: Publish
+                inputs:
+                  command: publish
+                  publishWebProjects: True
+                  arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+                  zipAfterPublish: True
+    
+              - task: PublishBuildArtifacts@1
+                displayName: 'Publish Artifact'
+                inputs:
+                  PathtoPublish: '$(build.artifactstagingdirectory)'
+                condition: succeededOrFailed()
 
       ```
      
