@@ -178,9 +178,9 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
 1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well but we recommend for this hands on lab to enable it only for repositry level.
 
-### Update the pipeline and create a pull request
+### Update the DevOps pipeline to include Advance security tasks and create a pull request to initiate scan.
 
-In this task, you will update the pipeline to include dependency scanning and CodeQL analysis tasks, and create a pull request to merge these changes, initializing the dependency and code scanning capabilities for the repository.
+In this task, you will update the pipeline to include Advances security dependency scanning and CodeQL analysis tasks, and create a pull request to merge these changes, initializing the dependency and code scanning capabilities for the repository.
 
 1. Navigate to the **Pipelines (1)** in the left menu and select the **eShopOnWeb (2)** pipeline.
 
@@ -286,11 +286,21 @@ In this task, you will update the pipeline to include dependency scanning and Co
    
 1. Once the eShoponWeb pipeline has been completed, click **Approve**, and then click on **Complete** and click on **Complete merge**.
   
-   > **Note:** The pipeline execution can take approx. 5 minutes to get complete, please wait untill the build gets completed and then click on Complete merge.
+   > **Note:** The pipeline execution can take approx. 5 minutes to get complete, please wait untill the build gets completed and then click on Complete merge. If you want to see the actual progress of pipeline, you can click on eShopOnWeb (Build in progress) button under overview section
    
    ![allow-permissions](media/pg3-16.png)
 
    ![allow-permissions](media/pg3-17.png)
+
+1. Once the pipeline merges, Navigate to pipeline section from the lab side menu and select the newly running pipeline on merging the branch to main.
+
+   ![allow-permissions](media/mergingPR.png)
+
+1. Select the latest pipeline run, tagging to the PR description (Added secret and updated pipeline.) and select running **build** from bottom. You will be able to see the vulnerabilities that are selected by the advanced security tasks that we have added in previous steps.
+
+   ![allow-permissions](media/smrynwarning.png)
+
+1. You can also see how each task is categorized in pipeline run and you can expant to see the actual raw results. 
 
 ## Task 3: Understand and Manage Advanced Security Permissions
 
