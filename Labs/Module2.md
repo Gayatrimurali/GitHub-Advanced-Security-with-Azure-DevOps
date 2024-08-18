@@ -97,7 +97,7 @@ You can follow the below steps to fix the exposed secret.
 
     ![setup](media/06-26-2024(10).png)
 
-1. On line 5, replace the whole line to **public static readonly string AZ_PAT = Environment.GetEnvironmentVariable("AZ_PAT"); (1)**, then click **Commit (2)** to save the changes.
+1. On line 5, replace the whole line to **public static readonly string AZDO_PAT = Environment.GetEnvironmentVariable("AZ_PAT"); (1)**, then click **Commit (2)** to save the changes.
 
    > **Note:** You can learn more about using the Envrionment variables with Azure DevOps pipeline [here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch) as this lab is more focusing on Advanced securities of Azure DevOps.
     
