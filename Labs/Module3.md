@@ -30,30 +30,31 @@ Dependency Scanning scans your project's dependencies, such as libraries, framew
 1. Locate the task **Advanced Security Dependency Scanning** (AdvancedSecurity-Dependency-Scanning@1) which is already included in the YAML pipeline file.
 
     ```
-      - task: ms.advancedsecurity-tasks.dependency-scanning.AdvancedSecurity-Dependency-Scanning@1
-        condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-        displayName: 'Dependency Scanning'
+           - task: AdvancedSecurity-Dependency-Scanning@1
+             condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+             displayName: 'Dependency Scanning''
      ```
 
-    ![alert_detected](media/advlab32.png)
+    ![alert_detected](media/taskdpdncdscng.png)
 
-1. Click on **Run** to run the pipeline configuration file, which will set the dependency scanning.
+1. You don't have to **Run** the pipeline to save time and its completly optional as we have already executed the pipeline in the previous task, which will have already set the dependency scanning.
 
     ![alert_detected](media/advlab31.png)
 
-1. The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. Please note that this process may take up to 15 minutes to finish. 
-
-   > **Note:** Once the build has succeeded, you can ignore the permission needed prompt under the **Test Deployment** and proceed with the next task.
+   > **Note:** If you are running the pipeline please wait untill it gets completed and then move to next task, usually it takes about 5 minutes to complete the task. 
 
 ### Task 2: Viewing alerts of repository
 
 1. Go to the **Repos** tab and click on the **Advanced Security** menu item at the bottom.
 
 1. Click on **Dependencies** to see a list of all the dependencies alerts that have been found. This includes the alert, vulnerable package, and first detected date. We can easily clean up the dependencies.
+   ![alert_detected](media/dpndcyscnts.png)
 
 #### Dependency Scanning Alert Details
 
 1. Click on the item ***Improper Input Validation in IpMatcher...*** to see the details about this alert.
+
+    > **Note:** You can filter the keywords in **Filter by Keywords** box.
 
 1. This includes the Recommendation, Locations found,  Description, Severity, and the Date it was first detected. We can easily clean up the dependencies. 
 
@@ -79,21 +80,10 @@ In your repository, there are two types of dependencies: direct and transitive (
 
 ### Task 3: Fixing dependency scanning alerts
 
-You can follow the recommended steps to manually update dependencies.
+In Azure DevOps, Fixing dependency scanning alerts involves updating the affected dependencies to secure versions, testing the changes, and deploying the updates to address identified vulnerabilities.
+You can follow the below recommended steps to manually update dependencies.
 
 When a Dependency Alert is created in Azure DevOps Advanced Security, it will contain details about the vulnerability and steps you can take to resolve it.
-
-1. To view the alert, go to the Azure DevOps Advanced Security dashboard, scroll down, and click on the alert  **Improper Input Validation in IpMatcher....**
-
-1. Review Recommendation, Location, Description, and Severity to understand the vulnerability and how to resolve it.
-
-1. Click on the **Locations** to see the code that triggered the alert.
- 
-1. Copy the repo URL from Azure DevOps by navigating to the **Repos** section from the left navigation pane, clicking on **Clone** to get the repo URL, and taking note of it in the notepad.
-
-    ![Dependencies](media/clone1.png)
-
-    ![Dependencies](media/clone2.png)
 
 1. Select the Start menu and search for **Visual Studio 2022**. Select **Visual Studio 2022** to run it.
 
@@ -103,7 +93,24 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs2.png)
 
-1. Select **Clone a repository** under **Get Started** and enter the **clone URL** under **Repository location**, which was copied earlier. Ensure the Path is **C:\Users\azureuser\Source\Repos\eShopOnWeb** and then click on **Clone**.	
+1. In the meantime Visual studio starts, Navigate back to Azure DevOps portal to view the alert, go to the Azure DevOps Advanced Security dashboard, scroll down, and click on the alert  **Improper Input Validation in IpMatcher....**
+
+1. Review Recommendation, Location, Description, and Severity to understand the vulnerability and how to resolve it.
+   
+   ![Dependencies](media/slertdescriptionasas.png)
+  
+1. Click on the **Locations** to see the code that triggered the alert, this will open the code file from where the alert has triggered. You can explored the code and understand the used package has triggered a alert and we are not using the latest package version. 
+
+    ![Dependencies](media/lctionalerts.png)
+   
+1. Copy the repo URL from Azure DevOps by navigating to the **Repos** section from the left navigation pane, clicking on **Clone** to get the repo URL, and taking note of it in the notepad.
+
+    ![Dependencies](media/clone1.png)
+
+    ![Dependencies](media/clone2.png)
+
+
+1. Now navigate back to VS 2022 and Select **Clone a repository** under **Get Started** and enter the **clone URL** under **Repository location**, which was copied earlier. Ensure the Path is **C:\Users\azureuser\Source\Repos\eShopOnWeb** and then click on **Clone**.	
 
     ![Dependencies](media/vs3.png)
 
@@ -121,11 +128,11 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs7.png)
 
-1. Double-click the **eShopOnWeb.sln** solution file.  
+1. From the **Solution Explored**, Double-click the **eShopOnWeb.sln** solution file.  
 
     ![Dependencies](media/vs5.png)
 
-1. Once the source code is opened in Solution Explorer, navigate to the **Dependencies** section under **Web.(SRC>Web)**.
+1. Once the source code is opened in Solution Explorer, navigate to the **Dependencies** section under **(SRC>Web)Web.**.
 
     ![Dependencies](media/advlab35.png)
 
@@ -145,7 +152,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
    ![](media/2-2.png)
 
-1. Switch to the **GitChanges (1)** tab and select **Configure (2)** to add the username and email address that are required before committing changes.
+1. Switch to the **GitChanges (1)** tab from bottom and select **Configure (2)** to add the username and email address that are required before committing changes, the details would be already available.
 
     ![Dependencies](media/vs8.png)
 
@@ -153,7 +160,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs9.png)
 
-1. Add the required **description** and select the **Commit All and Push** option to push the changes to Origin.
+1. Add the required **description** as **Update IPMatcher version** and select the **Commit All and Push** option to push the changes to Origin.
 
     ![Dependencies](media/vs10.png)
 
@@ -163,35 +170,28 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
    ![Dependencies](media/vs11.png)
 
-1. On the **New pull request** page, add the work item from the list **(1)** and click on **Create (2)**.
+1. On the **New pull request** page, and click on **Create (2)**.
 
-    ![Dependencies](media/vs12.png)
+    ![Dependencies](media/ipmaterprs.png)
 
     > **Note:** The build will run automatically, initiating the dependency scanning task and publishing the results to Advanced Security. The alert will then automatically close.
 
 1. Once the **eShoponWeb** pipeline has been completed, click on **Approve (1)** and then click on **Complete (2)**, 
 
-   ![Dependencies](media/do2.png)
+   ![Dependencies](media/aprvdpipelinessd.png)
 
-1. To merge changes into the main branch, Change **Merge Type** to **Squash commit** Then, uncheck the boxe for **Complete associated work items after merging** (2) and check the box **Delete Codefix after merging (2)**. Finally, click **Complete merge (3)**.
+1. On Complete pull request page, leave all option to default and click on **Complete merge** button to merge changes into the main branch.
 
-   ![Dependencies](media/cmpltfinalprwithnocomplete.png)
+   ![Dependencies](media/cmpltfinlsdvsd.png)
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Click the Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
-    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
-    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="f36e777d-dc2f-42c3-9afe-e54c2d9eff60" />
 
 ### Task 4: Dismissing dependency scanning alerts
 
-1. Navigate to the **pipelines section** and wait for it to complete. It might take up to 20 minutes.
+1. Navigate to the **pipelines section** and wait for it to complete. It might take up to 10 minutes.
 
 1. Once the pipeline has been completed, **eShopOnWeb**, go to the Azure DevOps Advanced Security dashboard and click on **Dependencies**.
 
-1. You will see that the alert **Improper Input Validation in IpMatcher....** no longer exists. It is now closed.
+1. You will see that the alert **Improper Input Validation in IpMatcher....** no longer exists. It is now closed, if you want to see the filter in closed state, select the State filter and changes it to Closed.
 
    > **Note:** This is a great way to ensure you are using the latest and greatest versions of your dependencies and also to ensure you are not using any vulnerable versions.
 
