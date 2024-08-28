@@ -118,7 +118,8 @@ You can follow the below steps to fix the exposed secret.
 
     ![Remove STORAGE_ID](media/copyv.png)
 
-   
+   >**Note**: In this lab, we have deliberately avoided creating the AZ_PAT environment variable because it is not required for the exercise. However, in real scenarios, you would set up this variable in the pipeline after regenerating the PAT.
+
 1. Now lets raise the PR and merge the changes to main branch, click on **Repos (1)** from left side menu, click **Pull Requests (2)**, and click on **Create a pull request (3)** to merge the changes from branch **PATFIX** into branch **main**. 
 
     ![Pipeline Save](media/crtprss.png)
