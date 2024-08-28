@@ -266,7 +266,7 @@ In this task, you will update the pipeline to include Advances security dependen
 
    ![allow-permissions](media/valv.png)
 
-1. Click on **Save**, we will be pusing the changes to the previously created branch **addsecret** only.
+1. Click on **Save**, we will be pushing the changes to the previously created branch **addsecret** only.
 
    ![allow-permissions](media/savev.png)
 
