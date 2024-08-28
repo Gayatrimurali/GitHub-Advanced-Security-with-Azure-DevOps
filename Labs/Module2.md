@@ -145,9 +145,9 @@ You can follow the below steps to dismiss the alert.
 
 1. Once the pipeline **eShoponWeb** has been completed, from the left navigation pane under **Repos**, go to the Azure DevOps **Advanced Security** dashboard and click on **Secrets**.
 
-    > **Note:** You can check the pipeline status by navigating to the pipeline section from the left side menu, usually it takes about 5 minutes to complete the execution. 
+    >**Note:** You can check the pipeline status by navigating to the pipeline section from the left side menu, usually it takes about 5 minutes to complete the execution. 
 
-1. Set the filter from right side to ****Click on the following item, **Azure DevOps personal access token(PAT)** to see the exposed secret and how we easily dismiss the alert. 
+1. Click on the following item, **Azure DevOps personal access token(PAT)** to see the exposed secret and how we easily dismiss the alert. 
 
 1. Click on **Close alert (1)** to dismiss the alert. Select **Revoked (2)**, and then click on **Close (3)**.
     
