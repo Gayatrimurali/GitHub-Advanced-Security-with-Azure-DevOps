@@ -11,7 +11,6 @@ In this lab, you will perform the following:
 - Task 1: Viewing alerts of the repository
 - Task 2: Fixing secret scanning alerts
 - Task 3: Dismissing secret scanning alerts
-- Task 4: Delete the PATDetails branch
   
 ## Estimated Timing: 30 minutes
 
@@ -77,7 +76,7 @@ You can follow these steps to update a file.
 
 #### Bypass push protection
 
-Bypass push protection in Azure DevOps allows developers to override security checks that prevent sensitive data from being pushed to a repository. This feature should be used cautiously, typically when dealing with false positives or urgent changes that need immediate deployment. In Azure DevOps, setting **skip-secret-scanning: true** in your pipeline allows you to bypass secret scanning checks, enabling you to push changes without triggering security blocks related to sensitive data detection.
+Bypass push protection in Azure DevOps allows developers to override security checks that prevent sensitive data from being pushed to a repository. This feature should be used cautiously, typically when dealing with false positives or urgent changes that need immediate deployment. In Azure DevOps, setting **skip-secret-scanning:true** in your pipeline allows you to bypass secret scanning checks, enabling you to push changes without triggering security blocks related to sensitive data detection.
 
 1. Update your comment with **skip-secret-scanning:true** and click **Commit**.
 
