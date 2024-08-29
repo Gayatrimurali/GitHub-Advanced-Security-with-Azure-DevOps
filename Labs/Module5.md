@@ -56,6 +56,7 @@ In this lab, you will perform the following:
 
     ![alert_detected](media/advlab54.png)
 
+    >**Note:** It can take upto 2 hours for the status to change from In progress to Connected.
 
 ### Task 2: Understanding your DevOps security (Read-Only)
 
