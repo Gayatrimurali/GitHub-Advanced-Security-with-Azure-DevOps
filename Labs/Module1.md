@@ -94,7 +94,7 @@ In this lab, you will perform:
 
 1. Provide a project name, **eShopOnWeb (1)**, and choose your **Organization (2)**, then click on **Create Project (3)** and wait for the process to complete.
 
-   ![](media/lab1-image5.png)
+   ![](media/dproject.png)
 
 1. Once the process is complete, click on **Navigate to project**.
 
@@ -174,7 +174,7 @@ To enable Azure DevOps Advanced Security on your repositry, you can follow these
 
 1. Click **Begin Billing**.
 
-    ![](media/lab1-image12.png)
+    ![](media/billingn.png)
 
 1. Advanced Security and Push Protection are now enabled.
 
