@@ -99,7 +99,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
    
    ![Dependencies](media/slertdescriptionasas.png)
   
-1. Click on the **Locations** to see the code that triggered the alert, this will open the code file from where the alert has triggered. You can explored the code and understand the used package has triggered a alert and we are not using the latest package version. 
+1. Click on the **Locations** to see the code that triggered the alert, this will open the code file from where the alert has triggered. You can explore the code and understand the used package has triggered an alert and we are not using the latest package version. 
 
     ![Dependencies](media/lctionalerts.png)
    
