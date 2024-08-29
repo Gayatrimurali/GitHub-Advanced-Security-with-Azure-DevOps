@@ -109,7 +109,6 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/clone2.png)
 
-
 1. Now navigate back to VS 2022 and Select **Clone a repository** under **Get Started** and enter the **clone URL** under **Repository location**, which was copied earlier. Ensure the Path is **C:\Users\azureuser\Source\Repos\eShopOnWeb** and then click on **Clone**.	
 
     ![Dependencies](media/vs3.png)
