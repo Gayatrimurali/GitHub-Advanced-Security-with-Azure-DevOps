@@ -29,13 +29,9 @@ In this lab, you will perform the following:
 
     ![alert_detected](media/mls2.png)
 
-1. Select **skip** on **Getting started** tab.
+1. In the left navigation pane, expand the Management section and  select **Environment settings (1)**.Click on **+ Add environment (2)**  and choose **Azure DevOps (3)**.
 
-    ![alert_detected](media/mls1.png)
-
-1. Select **Environment settings (1)** under Management > **+ Add environment (2)** > **Azure DevOps (3)**.
-
-    ![alert_detected](media/advlab51.png)
+    ![alert_detected](media/ghas1.png)
 
 1. On the **Azure DevOps Connection** page, under **Account details**, provide the below settings.
 
