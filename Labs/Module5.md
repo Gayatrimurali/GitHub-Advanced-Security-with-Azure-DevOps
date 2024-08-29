@@ -58,6 +58,8 @@ In this lab, you will perform the following:
 
     >**Note:** It can take upto 2 hours for the status to change from In progress to Connected.
 
+    <validation step="c52850e5-7c62-4d01-a624-175043de84b6" />
+
 ### Task 2: Understanding your DevOps security (Read-Only)
 
 This task has been set to Read-Only because addressing the DevOps security findings in Microsoft Defender for Cloud will take approximately 8 hours.
