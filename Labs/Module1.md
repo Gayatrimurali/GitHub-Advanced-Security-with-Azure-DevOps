@@ -252,7 +252,7 @@ In this task, you will update the pipeline to include Advances security dependen
                 inputs:
                   command: test
                   projects: '[Tt]ests/**/*.csproj'
-                  arguments: '--configuration $(BuildConfiguration) --collect:"Code coverage"'
+                  arguments: '--configuration $(BuildConfiguration)'
     
               - task: PublishBuildArtifacts@1
                 displayName: 'Publish Artifact'
