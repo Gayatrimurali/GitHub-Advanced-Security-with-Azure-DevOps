@@ -127,7 +127,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs7.png)
 
-1. From the **Solution Explored**, Double-click the **eShopOnWeb.sln** solution file.  
+1. From the **Solution Explorer**, Double-click the **eShopOnWeb.sln** solution file.  
 
     ![Dependencies](media/vs5.png)
 
