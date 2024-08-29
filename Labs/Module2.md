@@ -100,7 +100,7 @@ You can follow the below steps to fix the exposed secret.
 
    > **Note:** You can learn more about using the Envrionment variables with Azure DevOps pipeline [here](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch) as this lab is more focusing on Advanced securities of Azure DevOps.
     
-     ![setup](media/fixscrttt.png)
+     ![setup](media/envpat.png)
 
 1. Enter **PATFIX (1)** for the branch name and then click on **Commit (2)** again.
 
