@@ -96,13 +96,13 @@ __{drive}__ using a query, we can directly define it as __C__ for the string dri
 
     ![Image](media/mls4.png)
 
+    >**Note:** You can ignore the optional build failure error.
+
 1. Change **Merge Type** to **Squash commit** and check the box **Delete Fixalert after merging** to merge changes into the main branch.
 
     ![Image](media/mls5.png)
 
     > **Note**: The build will run automatically, initiating the code scanning task and publishing the results to Advanced Security.
-
-
 
 ### Task 4: Dismissing the code scanning alerts 
 
