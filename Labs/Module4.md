@@ -23,7 +23,7 @@ In this lab, you will perform the following:
 
 Code Scanning in GitHub Advanced Security for Azure DevOps enables automated analysis of your code to detect security vulnerabilities and coding issues. By integrating CodeQL, it provides in-depth insights into potential flaws in your codebase. Alerts are generated for any detected issues, helping you address them before deployment. This ensures continuous security and quality improvement in your development workflow.
 
-1. Select the pipeline **eShopOnweb**.
+1. Select the pipeline **eShopOnweb** and click on **Edit** in the top right corner.
 
    ![alert_detected](media/advlab33.png)
 
