@@ -137,6 +137,8 @@ You can follow the below steps to fix the exposed secret.
 
     ![Completing merge](media/dfltmerge.png)
 
+   <validation step="850d5a53-dfa3-456c-a94d-9e081b2185cf" />
+
 ### Task 3: Dismissing secret scanning alerts
 
 Dismissing secret scanning alerts in Azure DevOps allows you to acknowledge and suppress alerts for specific false positives or non-sensitive data, preventing them from triggering security warnings in future scans.
