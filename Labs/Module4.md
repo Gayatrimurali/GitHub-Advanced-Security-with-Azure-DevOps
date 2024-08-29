@@ -102,6 +102,8 @@ __{drive}__ using a query, we can directly define it as __C__ for the string dri
 
     > **Note**: The build will run automatically, initiating the code scanning task and publishing the results to Advanced Security.
 
+    <validation step="35f2bb5c-ac28-4706-a14a-69bcae74d995" />
+
 ### Task 4: Dismissing the code scanning alerts 
 
 Once after the completion of the build from the **main branch**, if you navigate to the __Code scanning__ section of __Advanced Security__. You will find the alert is closed automatically.
