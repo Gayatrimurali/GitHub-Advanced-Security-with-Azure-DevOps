@@ -159,13 +159,13 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs9.png)
 
-1. Add the required **description** as **Update IPMatcher version** and select the **Commit All and Push** option to push the changes to Origin.
+1. Add the required **description** as **Updated IPMatcher version** and select the **Commit All and Push** option to push the changes to Origin.
 
     ![Dependencies](media/vs10.png)
 
     >**Note:** On the **Commit** pop-up select **Save and commit**.
 
-1. Navigate to **Azure DevOps**, click on **Repos**, select **Pull requests** and select **Create a pull request** to push the commits from **codefix** to the **main**.
+1. Navigate to **Azure DevOps**, click on **Repos**, select **Pull requests** and select **Create a pull request** to push the commits from **Codefix** to the **main**.
 
    ![Dependencies](media/vs11.png)
 
