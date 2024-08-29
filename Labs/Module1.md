@@ -80,7 +80,7 @@ In this lab, you will perform:
 
 1. Provide a project name, **eShopOnWeb**, and choose your **Organization**, then click on **Create Project** and wait for the process to complete.
 
-   ![](media/lab1-image5.png)
+   ![](media/dproject.png)
 
 1. Once the process is complete, click on **Navigate to the project**.
 
@@ -114,7 +114,7 @@ To ensure Azure DevOps Advanced Security is enabled in your organization, you ca
 
 1. Click **Begin Billing**.
 
-    ![](media/lab1-image12.png)
+    ![](media/billingn.png)
 
 1. Advanced Security and Push Protection are now enabled. You can also onboard Advanced Security at [Project-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#project-level-onboarding) and [Organization-level](https://learn.microsoft.com/en-us/azure/devops/repos/security/configure-github-advanced-security-features?view=azure-devops&tabs=yaml#organization-level-onboarding) as well.
  
