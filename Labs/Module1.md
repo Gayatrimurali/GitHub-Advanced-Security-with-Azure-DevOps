@@ -158,7 +158,7 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
   >**Note**: You were able to add the secret value directly to the code without any issues, which emphasizes that the advanced security feature is not yet enabled. We will be enabling it in the next step and you will be able to see the advance security feature in action. 
 
-  <validation step="E1C4127A-1F01-475B-8420-5B0F62E3C77D" />
+  <validation step="719b12ff-b146-4cc6-b0e3-b834f797d9b1" />
 
 ## Task 2: Enable Advanced Security from Portal
 
