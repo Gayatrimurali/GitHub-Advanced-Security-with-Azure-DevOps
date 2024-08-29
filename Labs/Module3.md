@@ -183,6 +183,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
    ![Dependencies](media/cmpltfinlsdvsd.png)
 
+  <validation step="f36e777d-dc2f-42c3-9afe-e54c2d9eff60" />
 
 ### Task 4: Dismissing dependency scanning alerts
 
