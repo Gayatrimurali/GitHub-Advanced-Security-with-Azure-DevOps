@@ -198,7 +198,7 @@ In this task, you will update the pipeline to include Advances security dependen
 
    ![allow-permissions](media/branchv1.png)
 
-1. Remove the existing code in the pipeline and add the below code
+1. Remove the existing code in the pipeline and add the below code:
 
    ```yaml
     trigger:
