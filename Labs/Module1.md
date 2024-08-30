@@ -201,13 +201,13 @@ In this task, you will update the pipeline to include Advances security dependen
 1. Remove the existing code in the pipeline and add the below code:
 
    ```yaml
-    trigger:
+   trigger:
      - main
      
-    pool:
+   pool:
       vmImage: ubuntu latest
     
-    extends: 
+   extends: 
       template: template.yaml
       parameters:
         stages:
@@ -260,8 +260,7 @@ In this task, you will update the pipeline to include Advances security dependen
                 displayName: 'Publish Artifact'
                 inputs:
                   PathtoPublish: '$(build.artifactstagingdirectory)'
-                condition: succeededOrFailed()
-
+                condition: succeededOrFailed()      
       ```
      
 1. Click on **Validate and save**.
