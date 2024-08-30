@@ -278,7 +278,9 @@ In this task, you will update the pipeline to include Advances security dependen
 1. For the title, enter the **added secret and updated pipeline** and click on **Create**. This will run the eShoponWeb pipeline to validate changes.
  
    ![allow-permissions](media/pg3-15.png)buildscs
-   
+
+   >**Note** : If you encounter any build errors, re-queue the build and repeat the process until it completes successfully without errors.
+
 1. Once the eShoponWeb pipeline has been completed, click **Approve**, and then click on **Complete** and click on **Complete merge**.
   
    > **Note:** The pipeline execution can take approx. 5 minutes to get complete, please wait untill the build gets completed and then click on Complete merge. If you want to see the actual progress of pipeline, you can click on eShopOnWeb (Build in progress) button under overview section
@@ -294,6 +296,8 @@ In this task, you will update the pipeline to include Advances security dependen
 1. Select the latest pipeline run, tagging to the PR description (Added secret and updated pipeline.) and select running **build** from bottom. You will be able to see the vulnerabilities that are selected by the advanced security tasks that we have added in previous steps.
 
    ![allow-permissions](media/smrynwarning.png)
+
+   >**Note** : If you receive build errors indicating that advanced security is not enabled, please repeat Task-2, which includes instructions for enabling it. Afterward, re-run the pipeline on the main branch and wait until it completes successfully. Use this process for any similar errors you encounter in upcoming labs.
 
 1. You can also see how each task is categorized in pipeline run and you can expant to see the actual raw results. 
 
