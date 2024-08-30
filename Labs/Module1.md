@@ -202,8 +202,8 @@ In this task, you will update the pipeline to include Advances security dependen
 
    ```yaml
     trigger:
-    - main
-    
+     - main
+     
     pool:
       vmImage: ubuntu latest
     
