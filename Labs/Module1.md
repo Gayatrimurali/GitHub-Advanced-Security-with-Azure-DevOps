@@ -22,9 +22,8 @@ In this lab, you will perform:
 1. Open the **Edge browser**, and navigate to **Azure DevOps** using the link below. Select **Start Free**, and sign in with the credentials provided in the Environment variables.
 
    ```
-    https://dev.azure.com
+    https://aex.dev.azure.com
    ```
-      ![setup](media/lab1-image1.png)
 
 1. You'll see the **Sign into Microsoft Azure** tab. Here, enter your credentials:
  
@@ -42,9 +41,17 @@ In this lab, you will perform:
 
       ![setup](media/pg3-3.png)
 
+1. On **We need a few more details** page, leave everything as default and click on **Continue**.
+
+    ![](media/updatedghasimg1.png)
+
+1. On the **Azure DevOps** main page, click on **Create new organization**.
+
+    ![](media/updatedghasimg2.png)
+
 1. On the **Get Started with Azure DevOps** page, click on **Continue**.
 
-      ![setup](media/pg3-4.png)
+      ![setup](./media/updatedghasimg3.png)
 
 1. On the **Almost done** page, enter the **captcha (1)** and click on **Continue (2)**.
 
@@ -127,6 +134,8 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
    ![allow-permissions](media/v1.png)
 
 1. Select **+ New Token**.
+
+   ![](media/updatedghasimg4.png)
 
 1. On **Create a new personal access token** window, enter the below values and click on **Create (4)**.
 
