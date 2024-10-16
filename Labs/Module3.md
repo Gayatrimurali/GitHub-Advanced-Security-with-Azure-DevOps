@@ -32,7 +32,7 @@ Dependency Scanning scans your project's dependencies, such as libraries, framew
     ```
            - task: AdvancedSecurity-Dependency-Scanning@1
              condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
-             displayName: 'Dependency Scanning''
+             displayName: 'Dependency Scanning'
      ```
 
     ![alert_detected](media/taskdpdncdscng.png)

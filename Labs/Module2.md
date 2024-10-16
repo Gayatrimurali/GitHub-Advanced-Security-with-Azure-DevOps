@@ -38,7 +38,7 @@ The Advanced Security Alert Hub is where all alerts are raised and where we gain
 
    ![Secret Details](media/secrtdetailss.png)
 
-### Task 2: Checking push protextion and Fixing secret scanning alerts
+### Task 2: Checking push protection and Fixing secret scanning alerts
 
 Once a credential touches the repo, it's too late. Hackers might have already exploited it. The only way forward is to permanently eliminate these leaks and find all the places they're being used in production.
 
