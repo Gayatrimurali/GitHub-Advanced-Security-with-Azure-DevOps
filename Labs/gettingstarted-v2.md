@@ -2,16 +2,21 @@
 ### Overall Estimated Duration: 4 Hours
 ## Overview
 
-GitHub Advanced Security (GHAS) and Azure DevOps (ADO) are powerful tools that can enhance your development workflow and improve the security of your codebase. Integrating GHAS with ADO leverages the strengths of both platforms to create a more secure and efficient development process. Here's an introduction to help you get started:
-## What is Azure DevOps?
+GitHub Advanced Security (GHAS) and Azure DevOps (ADO) are powerful tools that can enhance your development workflow and improve the security of your codebase. Integrating GHAS with ADO leverages the strengths of both platforms to create a more secure and efficient development process.
 
-Azure DevOps is a set of development tools and services provided by Microsoft, which offers:
+## Pre-requisites
+## Architecture
+## Architecture Diagram
+![Architecture Diagram](media/arch.png)
+## Explanation of Components
+The architecture for this lab involves the following key components:
 
-1. **Azure Repos**: A set of version control tools to manage your code.
-2. **Azure Pipelines**: Continuous integration and continuous delivery (CI/CD) that works with any language, platform, and cloud.
-3. **Azure Boards**: Agile planning tools to track work with Kanban boards, backlogs, team dashboards, and custom reporting.
-4. **Azure Test Plans**: Automated and manual testing tools.
-5. **Azure Artifacts**: Package management for Maven, npm, NuGet, and more.
+- **Azure DevOps**: Azure DevOps is a set of development tools and services provided by Microsoft, which offers:
+    1. **Azure Repos**: A set of version control tools to manage your code.
+    2. **Azure Pipelines**: Continuous integration and continuous delivery (CI/CD) that works with any language, platform, and cloud.
+    3. **Azure Boards**: Agile planning tools to track work with Kanban boards, backlogs, team dashboards, and custom reporting.
+    4. **Azure Test Plans**: Automated and manual testing tools.
+    5. **Azure Artifacts**: Package management for Maven, npm, NuGet, and more.
 
 ## Integrating GitHub Advanced Security with Azure DevOps
 
@@ -25,11 +30,6 @@ Integrating GHAS with ADO can be done through various approaches, combining the 
 
 - **Enhanced Security**: By integrating GHAS with ADO, you can catch vulnerabilities early in the development process and ensure that your code is secure before it is deployed.
 - **Automated Workflows**: Automate security checks and balances within your CI/CD pipeline to reduce manual effort and improve efficiency.
-
-## Pre-requisites
-## Architecture
-## Architecture Diagram
-![Architecture Diagram](media/arch.png)
 ## Getting Started with Your GitHub Advanced Security with Azure DevOps
  
 Welcome to your GitHub Advanced Security with Azure DevOps workshop! We've prepared a seamless environment for you to explore and learn about enabling, configuring, and managing security features across various tasks, such as secret scanning, dependency scanning, and code scanning. Let's begin by making the most of this experience:
