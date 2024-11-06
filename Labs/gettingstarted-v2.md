@@ -12,7 +12,6 @@ Participants should have:
 * **Source Control Knowledge**: Familiarity with Git fundamentals and Azure Repos for managing code repositories.
 * **Security Background**: Basic understanding of security principles, vulnerability management, and secure coding practices.
 
-These prerequisites ensure participants can effectively follow the labs and implement the security scanning and monitoring architecture within their Azure DevOps environment.
 ## Architecture
 In this hands-on lab, the architecture flow includes several essential security components. You'll begin by setting up the eShopOnWeb team project in Azure DevOps and configuring advanced security permissions to establish the foundational security infrastructure. At the heart of the architecture is the Azure DevOps security scanning system, utilizing both secret scanning and dependency scanning capabilities to identify and manage potential vulnerabilities. These scanning mechanisms enable smooth integration with alert management systems and remediation workflows. The Visual Studio integration plays a crucial role, handling tasks such as dependency scanning, alert analysis, and code fixes, while maintaining security compliance across the development lifecycle.
 ## Architecture Diagram
@@ -39,6 +38,7 @@ Integrating GHAS with ADO can be done through various approaches, combining the 
 
 - **Enhanced Security**: By integrating GHAS with ADO, you can catch vulnerabilities early in the development process and ensure that your code is secure before it is deployed.
 - **Automated Workflows**: Automate security checks and balances within your CI/CD pipeline to reduce manual effort and improve efficiency.
+
 ## Getting Started with Your GitHub Advanced Security with Azure DevOps
  
 Welcome to your GitHub Advanced Security with Azure DevOps workshop! We've prepared a seamless environment for you to explore and learn about enabling, configuring, and managing security features across various tasks, such as secret scanning, dependency scanning, and code scanning. Let's begin by making the most of this experience:
