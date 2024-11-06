@@ -1,8 +1,8 @@
 # Mitigating Vulnerabilities with GitHub Advanced Security and Azure DevOps
 ### Overall Estimated Duration: 4 Hours
 ## Overview
-
-GitHub Advanced Security (GHAS) and Azure DevOps (ADO) are powerful tools that can enhance your development workflow and improve the security of your codebase. Integrating GHAS with ADO leverages the strengths of both platforms to create a more secure and efficient development process.
+In this hands-on lab, you will build a robust security architecture within Azure DevOps, starting with the setup of the eShopOnWeb team project and configuring advanced security permissions. This foundational setup paves the way for the integration of critical security tools and scanning mechanisms, ensuring a secure development lifecycle from start to finish. 
+You will enhance your workflow by integrating GitHub Advanced Security (GHAS) with Azure DevOps (ADO), combining the strengths of both platforms to create a more secure and efficient development process. This integration leverages GHAS’s advanced security capabilities and ADO’s powerful DevOps features, providing a unified approach to identifying and mitigating security risks in your codebase.As you continue, you will implement sophisticated code scanning capabilities, starting with basic code analysis and advancing to more complex security layers, represented by the green shield icon. This final stage signifies a fully matured security pipeline, integrating continuous code analysis and vulnerability management to safeguard the entire development process.Throughout the lab, you will work within Azure DevOps to manage security alerts, monitor potential vulnerabilities, and resolve issues in real-time. This comprehensive approach integrates both GitHub Advanced Security and Azure DevOps, creating a seamless security pipeline that proactively identifies and addresses security concerns at every stage of the development lifecycle, ensuring a secure and efficient development environment.
 
 ## Pre-requisites
 
