@@ -5,7 +5,16 @@
 GitHub Advanced Security (GHAS) and Azure DevOps (ADO) are powerful tools that can enhance your development workflow and improve the security of your codebase. Integrating GHAS with ADO leverages the strengths of both platforms to create a more secure and efficient development process.
 
 ## Pre-requisites
+
+Participants should have:
+* **Familiarity with Azure DevOps**: Understanding of Azure DevOps services, pipelines, and basic security concepts.
+* **Experience with Visual Studio**: Working knowledge of Visual Studio 2022 and its security features, particularly around code scanning and dependency analysis.
+* **Source Control Knowledge**: Familiarity with Git fundamentals and Azure Repos for managing code repositories.
+* **Security Background**: Basic understanding of security principles, vulnerability management, and secure coding practices.
+
+These prerequisites ensure participants can effectively follow the labs and implement the security scanning and monitoring architecture within their Azure DevOps environment.
 ## Architecture
+In this hands-on lab, the architecture flow includes several essential security components. You'll begin by setting up the eShopOnWeb team project in Azure DevOps and configuring advanced security permissions to establish the foundational security infrastructure. At the heart of the architecture is the Azure DevOps security scanning system, utilizing both secret scanning and dependency scanning capabilities to identify and manage potential vulnerabilities. These scanning mechanisms enable smooth integration with alert management systems and remediation workflows. The Visual Studio integration plays a crucial role, handling tasks such as dependency scanning, alert analysis, and code fixes, while maintaining security compliance across the development lifecycle.
 ## Architecture Diagram
 ![Architecture Diagram](media/arch.png)
 ## Explanation of Components
