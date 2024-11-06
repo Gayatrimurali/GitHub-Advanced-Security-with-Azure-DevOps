@@ -1,6 +1,5 @@
 # Lab 04: Code scanning
-
-## Lab Scenario
+### Estimated Timing: 45 minutes
 
 In this lab, You will set up code scanning in Azure DevOps using GitHub Advanced Security to analyze code for security vulnerabilities and errors. You will review code scanning alerts, fix identified issues in the code, and dismiss resolved alerts, thereby enhancing the security of their codebase.
 
@@ -12,8 +11,6 @@ In this lab, you will perform the following:
 - Task 2: Review Code Scanning Alert (Gain Insights)
 - Task 3: Fixing the Code to resolve the alert
 - Task 4: Dismissing the code scanning alerts 
-
-## Estimated Timing: 45 minutes
 
 ## Architecture Diagram
 

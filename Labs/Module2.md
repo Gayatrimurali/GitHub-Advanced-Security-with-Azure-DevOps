@@ -1,6 +1,5 @@
 # Lab 02: Secret Scanning 
-
-## Lab Scenario
+### Estimated Timing: 30 minutes
 
 In this lab, we implement secret scanning in Azure DevOps to identify and mitigate potential exposures. We learn to view, fix, and dismiss secret scanning alerts, enhancing security measures within their development environment.
 
@@ -11,8 +10,7 @@ In this lab, you will perform the following:
 - Task 1: Viewing alerts of the repository
 - Task 2: Fixing secret scanning alerts
 - Task 3: Dismissing secret scanning alerts
-  
-## Estimated Timing: 30 minutes
+
 
 ## Architecture Diagram
 
