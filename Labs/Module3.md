@@ -1,5 +1,5 @@
 # Lab 03: Dependency Scanning
-### Estimated Timing: 45 minutes
+### Estimated Duration: 45 minutes
 
 In this lab, we implement dependency scanning in Azure DevOps to detect and address potential security vulnerabilities in project dependencies. We configure scanning, view alerts, fix identified vulnerabilities, and dismiss resolved alerts, enhancing the overall security posture of their application.
 
@@ -12,9 +12,9 @@ In this lab, you will perform the following:
 - Task 3: Fixing dependency scanning alerts
 - Task 4: Dismissing dependency scanning alerts
 
-## Architecture Diagram
+<!-- ## Architecture Diagram
 
-  ![AD](media/ard03.png)
+  ![AD](media/ard03.png) -->
 
 ### Task 1: Setup Dependency Scanning
 

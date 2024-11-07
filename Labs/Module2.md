@@ -1,5 +1,5 @@
 # Lab 02: Secret Scanning 
-### Estimated Timing: 30 minutes
+### Estimated Duration: 30 minutes
 
 In this lab, we implement secret scanning in Azure DevOps to identify and mitigate potential exposures. We learn to view, fix, and dismiss secret scanning alerts, enhancing security measures within their development environment.
 
@@ -11,11 +11,11 @@ In this lab, you will perform the following:
 - Task 2: Fixing secret scanning alerts
 - Task 3: Dismissing secret scanning alerts
 
-
+<!-- 
 ## Architecture Diagram
 
   ![AD](media/ard02.png)
-  
+   -->
 Secret Scanning scans your codebase and other resources to identify potential secrets that may have been inadvertently committed and provides alerts to mitigate the risk of exposure. Push protection also prevents credentials from being leaked in the first place.
 
 Once this is toggled on, it starts off a background scan of this repo and looks for exposed credentials. The scan doesn't just look at the tip of the main, since attackers would look through all the branches and the entire commit history.

@@ -1,5 +1,5 @@
 # Lab 06: Remove Subscription from DevOps billing
-### Estimated Timing: 10 minutes
+### Estimated Duration: 10 minutes
 
 In this lab, we connect your Azure DevOps environment and remove the subscription from billing. This process helps manage our organization's billing settings effectively.
 
