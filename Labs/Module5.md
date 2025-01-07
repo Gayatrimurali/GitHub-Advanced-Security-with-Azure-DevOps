@@ -30,7 +30,7 @@ In this lab, you will perform the following:
 
     ![alert_detected](media/ghas1.png)
 
-1. On the **Azure DevOps Connection** page, under **Account details**, provide the below settings.
+1. On the **Azure DevOps Connection** page, under **Account details**, provide the below settings, and select **Next: Select Plans >**.
 
    | Setting  | Value |
    -----------|---------
@@ -55,7 +55,12 @@ In this lab, you will perform the following:
 
     >**Note:** It can take upto 2 hours for the status to change from In progress to Connected.
 
-    <validation step="c52850e5-7c62-4d01-a624-175043de84b6" />
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
+
+<validation step="c52850e5-7c62-4d01-a624-175043de84b6" />
 
 ### Task 2: Understanding your DevOps security (Read-Only)
 

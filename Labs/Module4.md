@@ -79,15 +79,15 @@ __{drive}__ using a query, we can directly define it as __C__ for the string dri
 
     ![Image](media/nls11.png)
 
-1. Click on **Commit** to save changes. Enter **Fixalert** for the branch name and Check **Create a pull request**, and then click on **Commit** again.
+1. Click on **Commit** to save changes. Enter **Fixalert (1)** for the branch name and Check **Create a pull request (2)**, and then click on **Commit (3)** again.
 
-    ![Image](media/fixalertsdsfsdf.png)
+    ![Image](media/Fixalert.png)
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
 1. You will be navigated to the new pull required page to push the commits from **Fixalert** to the **main**, just click on **Create**.
 
-    ![Image](media/crtpsddsfbnjsdf.png)
+    ![Image](media/creates.png)
 
 1. Once the **eShoponWeb** pipeline has been completed, click on **Approve** and then click on **Complete**.
 
@@ -99,7 +99,12 @@ __{drive}__ using a query, we can directly define it as __C__ for the string dri
 
     > **Note**: The build will run automatically, initiating the code scanning task and publishing the results to Advanced Security.
 
-    <validation step="35f2bb5c-ac28-4706-a14a-69bcae74d995" />
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
+
+<validation step="35f2bb5c-ac28-4706-a14a-69bcae74d995" />
 
 ### Task 4: Dismissing the code scanning alerts 
 
@@ -113,4 +118,4 @@ In this lab, you have completed the following:
 - Fixed the Code to resolve the alert.
 - Dismissed the code scanning alerts. 
 
-Click on **Next** to proceed with the next lab.
+> Click on **Next** to proceed with the next lab.
