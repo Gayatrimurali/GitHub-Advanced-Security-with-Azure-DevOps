@@ -366,4 +366,4 @@ In this lab, you have completed the following:
 - Enabled Advanced Security from the Portal.
 - Understand and Manage Advanced Security Permissions
 
-Click on **Next** to proceed with the next lab.
+>> Click on **Next** to proceed with the next lab.
