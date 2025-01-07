@@ -28,13 +28,13 @@ The Advanced Security Alert Hub is where all alerts are raised and where we gain
 
    ![setup](media/lab1-image16.png)
 
-1. Click on **Secrets (1)** to see a list of all the exposed secret alerts that have been found. This includes the alert and introduced dates. Click on the **Azure DevOps legacy personal access token (PAT) (2)** to see more details about the alert and what you can do to clean up the secret.
+1. Click on **Secrets (1)** to see a list of all the exposed secret alerts that have been found. This includes the alert and introduced dates. Click on the **Azure DevOps identifiable personal access token (PAT) (2)** to see more details about the alert and what you can do to clean up the secret.
 
-   ![Secrets page](media/secrtfound.png)
+   ![Secrets page](media/azuredevops.png)
 
 1. Notice that this includes the Recommendation, Locations found, Remediation steps, Severity, and the Date it was first introduced. We can easily clean this up and dismiss the alert.
 
-   ![Secret Details](media/secrtdetailss.png)
+   ![Secret Details](media/pattoken.png)
 
 ### Task 2: Checking push protection and Fixing secret scanning alerts
 
@@ -102,7 +102,7 @@ You can follow the below steps to fix the exposed secret.
 
 1. Enter **PATFIX (1)** for the branch name and then click on **Commit (2)** again.
 
-     ![setup](media/patfxx.png)
+     ![setup](media/patfixs.png)
 
     > **Note:** This step is necessary since the main branch is protected by a pull request pipeline.
 
@@ -110,7 +110,7 @@ You can follow the below steps to fix the exposed secret.
 
    ![Remove STORAGE_ID](media/06-26-2024(7).png)
 
-1. Select the existing token and select **Regenerate** and **copy** the token value, then open a new tab and continue with the next step..
+1. Select the existing token and select **Regenerate** twice and **copy** the token value, then open a new tab and continue with the next step..
 
     ![Remove STORAGE_ID](media/regv88.png)
 
@@ -120,12 +120,11 @@ You can follow the below steps to fix the exposed secret.
 
 1. Now lets raise the PR and merge the changes to main branch, click on **Repos (1)** from left side menu, click **Pull Requests (2)**, and click on **Create a pull request (3)** to merge the changes from branch **PATFIX** into branch **main**. 
 
-    ![Pipeline Save](media/crtprss.png)
+    ![Pipeline Save](media/pullrequestes.png)
 
 1. For the title, enter the **Fixed secret (2)** and click on **Create (3)**. This will run the **eShoponWeb** pipeline to validate changes. 
 
-    ![Pipeline Save](media/fxscrt.png)
-
+    ![Pipeline Save](media/fixedsecret.png)
 
 1. Once the **eShoponWeb** pipeline run has been completed, click **Approve**, and then click on **Complete**.
 
@@ -135,7 +134,12 @@ You can follow the below steps to fix the exposed secret.
 
     ![Completing merge](media/dfltmerge.png)
 
-   <validation step="850d5a53-dfa3-456c-a94d-9e081b2185cf" />
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
+
+<validation step="850d5a53-dfa3-456c-a94d-9e081b2185cf" />
 
 ### Task 3: Dismissing secret scanning alerts
 
@@ -147,7 +151,7 @@ You can follow the below steps to dismiss the alert.
 
     >**Note:** You can check the pipeline status by navigating to the pipeline section from the left side menu, usually it takes about 5 minutes to complete the execution. 
 
-1. Click on the following item, **Azure DevOps personal access token(PAT)** to see the exposed secret and how we easily dismiss the alert. 
+1. Click on the following item, **Azure DevOps identifiable personal access token(PAT)** to see the exposed secret and how we easily dismiss the alert. 
 
 1. Click on **Close alert (1)** to dismiss the alert. Select **Revoked (2)**, and then click on **Close (3)**.
     
@@ -157,7 +161,7 @@ You can follow the below steps to dismiss the alert.
 
 1. Go to the Azure DevOps Advanced Security dashboard, click on **Secrets**. You will see a list of other exposed secret alerts that have been found. 
 
-1. You will see that the alert **Azure DevOps legacy personal access token(PAT)** no longer exists, as it is now revoked, if you want you can select **State** filter from left side and change it to **Closed** to see the previouslt closed alerts.
+1. You will see that the alert **Azure DevOps identifiable personal access token(PAT)** no longer exists, as it is now revoked, if you want you can select **State** filter from left side and change it to **Closed** to see the previouslt closed alerts.
 
     >**Note**: Anyone with contributor permissions for a repository can view a summary of all alerts for a repository, but only the project administrator and project collection administrator  can dismiss Advanced Security alerts.
 
@@ -168,4 +172,4 @@ In this lab, you have completed the following:
 - Fixed secret scanning alerts.
 - Dismissed secret scanning alerts.
 
-Click on **Next** to proceed with the next lab.
+> Click on **Next** to proceed with the next lab.

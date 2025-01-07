@@ -54,6 +54,8 @@ In this lab, you will perform:
 
       ![setup](media/pg3-5.png)
 
+      >**Note:** If it doesn't prompt for a **captcha**, select **Continue** and proceed to the next step.
+
 1. On the **Azure DevOps** page, at the button left, click on **Organization settings** (opening this screen takes a few seconds).
 
     ![](media/pg3-6.png)
@@ -160,11 +162,16 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
 1. On the **Commit** page, provide the branch name as **addsecret (1)** and click on **Commit (2)**.
 
-   ![allow-permissions](media/addsecrtcmt.png)
+   ![allow-permissions](media/addsecrets.png)
 
   >**Note**: You were able to add the secret value directly to the code without any issues, which emphasizes that the advanced security feature is not yet enabled. We will be enabling it in the next step and you will be able to see the advance security feature in action. 
 
-  <validation step="719b12ff-b146-4cc6-b0e3-b834f797d9b1" />
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
+
+<validation step="719b12ff-b146-4cc6-b0e3-b834f797d9b1" />
 
 ## Task 2: Enable Advanced Security from Portal
 
@@ -283,7 +290,7 @@ In this task, you will update the pipeline to include Advances security dependen
 
 1. For the title, enter the **added secret and updated pipeline** and click on **Create**. This will run the eShoponWeb pipeline to validate changes.
  
-   ![allow-permissions](media/pg3-15.png)buildscs
+   ![allow-permissions](media/pg3-15.png)
 
    >**Note** : If you encounter any build errors, re-queue the build and repeat the process until it completes successfully without errors.
 
@@ -359,4 +366,4 @@ In this lab, you have completed the following:
 - Enabled Advanced Security from the Portal.
 - Understand and Manage Advanced Security Permissions
 
-Click on **Next** to proceed with the next lab.
+> Click on **Next** to proceed with the next lab.

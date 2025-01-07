@@ -80,7 +80,7 @@ In your repository, there are two types of dependencies: direct and transitive (
 In Azure DevOps, Fixing dependency scanning alerts involves updating the affected dependencies to secure versions, testing the changes, and deploying the updates to address identified vulnerabilities.
 You can follow the below recommended steps to manually update dependencies.
 
-When a Dependency Alert is created in Azure DevOps Advanced Security, it will contain details about the vulnerability and steps you can take to resolve it.
+When a Dependency Alert is created in **Azure DevOps > Advanced Security**, it will contain details about the vulnerability and steps you can take to resolve it.
 
 1. Select the Start menu and search for **Visual Studio 2022**. Select **Visual Studio 2022** to run it.
 
@@ -100,7 +100,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/lctionalerts.png)
    
-1. Copy the repo URL from Azure DevOps by navigating to the **Repos** section from the left navigation pane, clicking on **Clone** to get the repo URL, and taking note of it in the notepad.
+1. Copy the repo URL from Azure DevOps by navigating to the **Repos** section from the left navigation pane, click on the **ellipses**, and then click on **Clone** to get the repo URL, and taking note of it in the notepad.
 
     ![Dependencies](media/clone1.png)
 
@@ -128,7 +128,7 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs5.png)
 
-1. Once the source code is opened in Solution Explorer, navigate to the **Dependencies** section under **(SRC>Web)Web.**.
+1. Once the source code is opened in Solution Explorer, navigate to the **Dependencies** section under **(SRC>Web) Web.**
 
     ![Dependencies](media/advlab35.png)
 
@@ -160,8 +160,6 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
     ![Dependencies](media/vs10.png)
 
-    >**Note:** On the **Commit** pop-up select **Save and commit**.
-
 1. Navigate to **Azure DevOps**, click on **Repos**, select **Pull requests** and select **Create a pull request** to push the commits from **Codefix** to the **main**.
 
    ![Dependencies](media/vs11.png)
@@ -174,19 +172,24 @@ When a Dependency Alert is created in Azure DevOps Advanced Security, it will co
 
 1. Once the **eShoponWeb** pipeline has been completed, click on **Approve (1)** and then click on **Complete (2)**, 
 
-   ![Dependencies](media/aprvdpipelinessd.png)
+   ![Dependencies](media/codefix.png)
 
 1. On Complete pull request page, leave all option to default and click on **Complete merge** button to merge changes into the main branch.
 
-   ![Dependencies](media/cmpltfinlsdvsd.png)
+   ![Dependencies](media/completemerge.png)
 
-  <validation step="f36e777d-dc2f-42c3-9afe-e54c2d9eff60" />
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
+
+<validation step="f36e777d-dc2f-42c3-9afe-e54c2d9eff60" />
 
 ### Task 4: Dismissing dependency scanning alerts
 
-1. Navigate to the **pipelines section** and wait for it to complete. It might take up to 10 minutes.
+1. Navigate to the **Pipelines** section and wait for it to complete. It might take up to 10 minutes.
 
-1. Once the pipeline has been completed, **eShopOnWeb**, go to the Azure DevOps Advanced Security dashboard and click on **Dependencies**.
+1. Once the pipeline has been completed, **eShopOnWeb**, go to the **Repos > Advanced Security** dashboard and click on **Dependencies**.
 
 1. You will see that the alert **Improper Input Validation in IpMatcher....** no longer exists. It is now closed, if you want to see the filter in closed state, select the State filter and changes it to Closed.
 
@@ -199,4 +202,4 @@ In this lab, you have completed the following:
 - Fixed dependency scanning alerts.
 - Dismissed dependency scanning alerts.
 
-Click on **Next** to continue with the next lab.
+> Click on **Next** to continue with the next lab.
