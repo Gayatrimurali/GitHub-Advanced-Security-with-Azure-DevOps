@@ -37,9 +37,11 @@ In this lab, you will perform the following:
    | Connector name | **AzureDevopsconnector (1)** |
    | Subscription | Choose the default subscription |
    | Resource group | **Lab-VM (2)** |
-   | Location | Select any supporting region **(3)** |
+   | Location | Select the region where you created the Azure DevOps organization. **(3)** |
 
     ![alert_detected](media/advlab52.png)
+
+    >**Note:** To check the region of your Azure DevOps organization, navigate to **Azure DevOps > Organization Settings**. There, you will find the region where it was created.
 
 1. Select **Next: Configure access**.
 
@@ -53,7 +55,7 @@ In this lab, you will perform the following:
 
     ![alert_detected](media/advlab54.png)
 
-    >**Note:** It can take upto 2 hours for the status to change from In progress to Connected.
+    >**Note:** It can take upto 2-3 hours for the status to change from In progress to Connected.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - If you receive a success message, you can proceed to the next task.
