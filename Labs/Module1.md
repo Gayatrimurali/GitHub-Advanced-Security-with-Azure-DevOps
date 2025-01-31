@@ -16,7 +16,7 @@ In this lab, you will perform:
 
 ## Task 1: Sign up and configure the eShopOnWeb team project in Azure DevOps
 
-1. Open the **Edge browser**, and navigate to **Azure DevOps** using the link below. Select **Start Free**, and sign in with the credentials provided in the Environment variables.
+1. Search for Edge in the Windows Open the **Edge browser**, and navigate to **Azure DevOps** using the link below. Select **Start Free**, and sign in with the credentials provided in the Environment variables.
 
    ```
     https://aex.dev.azure.com
