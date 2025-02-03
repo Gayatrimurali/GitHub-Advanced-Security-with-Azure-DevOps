@@ -16,7 +16,7 @@ In this lab, you will perform the following:
 
 ### Task 1: Connect Azure DevOps Environment to Microsoft Defender for Cloud
 
-1. Sign in to the Azure portal, using the below credentials.
+1. Open a new tab, navigate to `portal.azure.com` and sign in using the below credentials.
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
@@ -43,7 +43,7 @@ In this lab, you will perform the following:
 
     >**Note:** To check the region of your Azure DevOps organization, navigate to **Azure DevOps > Organization Settings**. There, you will find the region where it was created.
 
-1. Select **Next: Configure access**.
+1. Click on **Next: Select Plans >** ,keep everything as default and click on **Next: Configure Access**.
 
 1. Select **Authorize** and ensure you're authorizing the correct Azure Tenant by using the drop-down menu in Azure DevOps and verifying you're in the correct Azure Tenant in Defender for Cloud. In the popup dialog, read the list of permission requests and then select **Accept**.
 
