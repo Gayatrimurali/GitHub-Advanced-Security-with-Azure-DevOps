@@ -20,7 +20,7 @@ In this lab, you will perform the following:
 
 Dependency Scanning scans your project's dependencies, such as libraries, frameworks, and packages, to identify any known security vulnerabilities or outdated versions that may pose a risk to your application.
 
-1. Select the pipeline **eShopOnweb** and click on **Edit**.
+1. Navigate to **Pipelines** from the left pane, select the pipeline **eShopOnweb** and click on **Edit**.
 
     ![alert_detected](media/advlab33.png)
 
@@ -148,7 +148,7 @@ When a Dependency Alert is created in **Azure DevOps > Advanced Security**, it w
 
    ![](media/2-2.png)
 
-1. Switch to the **GitChanges (1)** tab from bottom and select **Configure (2)** to add the username and email address that are required before committing changes, the details would be already available.
+1. Switch to the **GitChanges (1)** tab from the bottom right and select **Configure (2)** to add the username and email address that are required before committing changes, the details would be already available.
 
     ![Dependencies](media/vs8.png)
 
