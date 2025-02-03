@@ -93,7 +93,7 @@ __{drive}__ using a query, we can directly define it as __C__ for the string dri
 
     ![Image](media/mls4.png)
 
-1. Change **Merge Type** to **Squash commit** and check the box **Delete Fixalert after merging** to merge changes into the main branch.
+1. Change **Merge Type** to **Squash commit (1)** and check the box for **Complete associated work items after merging** and **Delete Fixalert after merging** **(2)** to merge changes into the main branch. Click on **Complete merge (3)**.
 
     ![Image](media/mls5.png)
 
