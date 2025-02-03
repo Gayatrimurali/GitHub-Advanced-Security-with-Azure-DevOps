@@ -30,7 +30,7 @@ In this lab, you will perform the following:
 
     ![alert_detected](media/ghas1.png)
 
-1. On the **Azure DevOps Connection** page, under **Account details**, provide the below settings, and select **Next: Select Plans >**.
+1. On the **Azure DevOps Connection** page, under **Account details**, provide the below settings, and select **Next: Select Plans >** **(4)**.
 
    | Setting  | Value |
    -----------|---------
@@ -39,11 +39,11 @@ In this lab, you will perform the following:
    | Resource group | **Lab-VM (2)** |
    | Location | Select the region where you created the Azure DevOps organization. **(3)** |
 
-    ![alert_detected](media/advlab52.png)
+    ![alert_detected](media/gidev8.png)
 
     >**Note:** To check the region of your Azure DevOps organization, navigate to **Azure DevOps > Organization Settings**. There, you will find the region where it was created.
 
-1. Click on **Next: Select Plans >** ,keep everything as default and click on **Next: Configure Access**.
+1. On the Select Plans page ,keep everything as default and click on **Next: Configure Access**.
 
 1. Select **Authorize** and ensure you're authorizing the correct Azure Tenant by using the drop-down menu in Azure DevOps and verifying you're in the correct Azure Tenant in Defender for Cloud. In the popup dialog, read the list of permission requests and then select **Accept**.
 
@@ -53,7 +53,7 @@ In this lab, you will perform the following:
 
 1. Wait for some time to view the connector on the **Environment settings** page.
 
-    ![alert_detected](media/advlab54.png)
+    ![alert_detected](media/gidev7.png)
 
     >**Note:** It can take upto 2-3 hours for the status to change from In progress to Connected.
 
@@ -70,11 +70,11 @@ This task has been set to Read-Only because addressing the DevOps security findi
 
 1. Navigate to **DevOps Security** under **Cloud Security**.
 
-    ![alert_detected](media/advlab55.png)
+    ![alert_detected](media/gidev5.png)
 
 1. The **DevOps security findings** and **DevOps security results** are listed on the page, which helps to review the DevOps security posture.
 
-    ![alert_detected](media/m51.png)
+    ![alert_detected](media/m51-1.png)
 
    >**Note:** It might take upto 8hrs to reflect the real-time status.
 
