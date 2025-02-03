@@ -232,6 +232,16 @@ In this task, you will update the pipeline to include Advances security dependen
             - job: Build
               steps:
               - checkout: self
+
+             # Use specific .NET SDK version
+             - task: UseDotNet@2
+               displayName: 'Use .NET SDK 7.0'
+               inputs:
+                 packageType: sdk
+                 version: 7.0.x
+                 rollForward: latestFeature
+                 installationPath: $(Agent.ToolsDirectory)/dotnet
+
     
               - task: DotNetCoreCLI@2
                 displayName: Restore 
@@ -368,4 +378,4 @@ In this lab, you have completed the following:
 - Enabled Advanced Security from the Portal.
 - Understand and Manage Advanced Security Permissions
 
-> Click on **Next** to proceed with the next lab.
+### You have successfully completed the lab!
