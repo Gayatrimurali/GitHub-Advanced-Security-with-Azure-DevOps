@@ -202,4 +202,4 @@ In this lab, you have completed the following:
 - Fixed dependency scanning alerts.
 - Dismissed dependency scanning alerts.
 
-> Click on **Next** to continue with the next lab.
+### You have successfully completed the lab!
