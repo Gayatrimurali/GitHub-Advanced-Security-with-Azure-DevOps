@@ -16,7 +16,7 @@ In this lab, you will perform:
 
 ## Task 1: Sign up and configure the eShopOnWeb team project in Azure DevOps
 
-1. Open the **Edge browser**, and navigate to **Azure DevOps** using the link below. Select **Start Free**, and sign in with the credentials provided in the Environment variables.
+1. Search for Edge in the Windows Search bar, select it and navigate to **Azure DevOps** using the link below. Select **Start Free**, and sign in with the credentials provided in the Environment variables.
 
    ```
     https://aex.dev.azure.com
@@ -118,7 +118,7 @@ This task is being carried out to facilitate a seamless workflow during testing 
 
       ![allow-permissions](media/pg3-13.png)
 
-1. Turn **Off** the check for linked work items policy
+1. Turn **Off** the **Check for linked work items** policy.
 
       ![allow-permissions](media/pg3-14.png)
 
@@ -146,15 +146,19 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
     ![allow-permissions](media/06-26-2024(9).png)
 
-1. Once you've generated the token, click on the **Copy** icon to the right of the secret value in the notepad.
+1. Once you've generated the token, click on the **Copy** icon to the right of the secret value in the notepad. Once copied, click on **Close**.
 
    ![allow-permissions](media/06-26-2024(1).png)
 
-1. You can copy the PAT in a Notepad window or open a new tab, navigate to the eShopOnWeb project, and paste the PAT token as described in the below step.
+1. Click on the **Azure DevOps (1)** logo from the top left, click on **eShopOnWeb (2)** project.
+
+   ![allow-permissions](media/gidev1.png)
 
 1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**.
 
    ![allow-permissions](media/editv1.png)
+
+  > **Note**: Ensure to add the **SemiColon (;)** after adding the token.
 
 1. Add **public const string AZ_PAT = "Your-Secret-Value";** to the existing code as shown below. Replace "Your-Secret-Value" with your PAT token, and **commit** the changes.
 
@@ -187,7 +191,7 @@ To enable Azure DevOps Advanced Security on your repositry, you can follow these
 
     ![setup](media/06-26-2024(5).png)
 
-1. Click **Begin Billing**.
+1. Click on **Begin Billing**.
 
     ![](media/billingn.png)
 
@@ -230,6 +234,16 @@ In this task, you will update the pipeline to include Advances security dependen
             - job: Build
               steps:
               - checkout: self
+
+             # Use specific .NET SDK version
+             - task: UseDotNet@2
+               displayName: 'Use .NET SDK 7.0'
+               inputs:
+                 packageType: sdk
+                 version: 7.0.x
+                 rollForward: latestFeature
+                 installationPath: $(Agent.ToolsDirectory)/dotnet
+
     
               - task: DotNetCoreCLI@2
                 displayName: Restore 
@@ -292,9 +306,11 @@ In this task, you will update the pipeline to include Advances security dependen
  
    ![allow-permissions](media/pg3-15.png)
 
-   >**Note** : If you encounter any build errors, re-queue the build and repeat the process until it completes successfully without errors.
+   >**Note** : If you encounter any build errors, navigate to **Repos > Pull Request > Existing request** and click on re-queue the build and repeat the process until it completes successfully without errors.
 
-1. Once the eShoponWeb pipeline has been completed, click **Approve**, and then click on **Complete** and click on **Complete merge**.
+   ![allow-permissions](media/gidev2.png)
+
+1. Once the eShoponWeb pipeline has been completed, click on **Approve**, and then click on **Complete** and click on **Complete merge**.
   
    > **Note:** The pipeline execution can take approx. 5 minutes to get complete, please wait untill the build gets completed and then click on Complete merge. If you want to see the actual progress of pipeline, you can click on eShopOnWeb (Build in progress) button under overview section
    
@@ -304,11 +320,11 @@ In this task, you will update the pipeline to include Advances security dependen
 
 1. Once the pipeline merges, Navigate to pipeline section from the lab side menu and select the newly running pipeline on merging the branch to main.
 
-   ![allow-permissions](media/mergingPR.png)
+   ![allow-permissions](media/gidev3.png)
 
 1. Select the latest pipeline run, tagging to the PR description (Added secret and updated pipeline.) and select running **build** from bottom. You will be able to see the vulnerabilities that are selected by the advanced security tasks that we have added in previous steps.
 
-   ![allow-permissions](media/smrynwarning.png)
+   ![allow-permissions](media/gidev4.png)
 
    >**Note** : If you receive build errors indicating that advanced security is not enabled, please repeat Task-2, which includes instructions for enabling it. Afterward, re-run the pipeline on the main branch and wait until it completes successfully. Use this process for any similar errors you encounter in upcoming labs.
 
@@ -366,4 +382,4 @@ In this lab, you have completed the following:
 - Enabled Advanced Security from the Portal.
 - Understand and Manage Advanced Security Permissions
 
-> Click on **Next** to proceed with the next lab.
+### You have successfully completed the lab!

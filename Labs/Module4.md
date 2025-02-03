@@ -61,7 +61,7 @@ Code Scanning in GitHub Advanced Security for Azure DevOps enables automated ana
 
 1. This is simple to fix using parameters in the command line described in the remediation steps.
 
-1. Click on **Locations found** to see the code that triggered the alert.
+1. Click on **Location** to see the code that triggered the alert.
 
    ![Image](media/advlab4n6.png)
 
@@ -93,7 +93,7 @@ __{drive}__ using a query, we can directly define it as __C__ for the string dri
 
     ![Image](media/mls4.png)
 
-1. Change **Merge Type** to **Squash commit** and check the box **Delete Fixalert after merging** to merge changes into the main branch.
+1. Change **Merge Type** to **Squash commit (1)** and check the box for **Complete associated work items after merging** and **Delete Fixalert after merging** **(2)** to merge changes into the main branch. Click on **Complete merge (3)**.
 
     ![Image](media/mls5.png)
 
@@ -118,4 +118,4 @@ In this lab, you have completed the following:
 - Fixed the Code to resolve the alert.
 - Dismissed the code scanning alerts. 
 
-> Click on **Next** to proceed with the next lab.
+### You have successfully completed the lab!

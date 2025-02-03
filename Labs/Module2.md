@@ -110,13 +110,17 @@ You can follow the below steps to fix the exposed secret.
 
    ![Remove STORAGE_ID](media/06-26-2024(7).png)
 
-1. Select the existing token and select **Regenerate** twice and **copy** the token value, then open a new tab and continue with the next step..
+1. **Select (1)** the existing token and select **Regenerate (2)** twice.
 
     ![Remove STORAGE_ID](media/regv88.png)
+
+1. **Copy (1)** the token value and click on **Close (2)**.
 
     ![Remove STORAGE_ID](media/copyv.png)
 
    >**Note**: In this lab, we have deliberately avoided creating the AZ_PAT environment variable because it is not required for the exercise. However, in real scenarios, you would set up this variable in the pipeline after regenerating the PAT.
+
+1. Click on the **Azure DevOps (1)** logo from the top left, click on **eShopOnWeb (2)** project.
 
 1. Now lets raise the PR and merge the changes to main branch, click on **Repos (1)** from left side menu, click **Pull Requests (2)**, and click on **Create a pull request (3)** to merge the changes from branch **PATFIX** into branch **main**. 
 
@@ -172,4 +176,4 @@ In this lab, you have completed the following:
 - Fixed secret scanning alerts.
 - Dismissed secret scanning alerts.
 
-> Click on **Next** to proceed with the next lab.
+### You have successfully completed the lab!
