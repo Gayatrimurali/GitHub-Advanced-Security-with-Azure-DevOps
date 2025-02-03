@@ -156,9 +156,9 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
 1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**.
 
-   ![allow-permissions](media/editv1.png)
+     ![allow-permissions](media/editv1.png)
 
-  > **Note**: Ensure to add the **SemiColon (;)** after adding the token.
+      > **Note**: Ensure to add the **SemiColon (;)** after adding the token.
 
 1. Add **public const string AZ_PAT = "Your-Secret-Value";** to the existing code as shown below. Replace "Your-Secret-Value" with your PAT token, and **commit** the changes.
 
