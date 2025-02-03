@@ -236,9 +236,9 @@ In this task, you will update the pipeline to include Advances security dependen
               - checkout: self
 
              # Use specific .NET SDK version
-             - task: UseDotNet@2
-               displayName: 'Use .NET SDK 7.0'
-               inputs:
+              - task: UseDotNet@2
+                displayName: 'Use .NET SDK 7.0'
+                inputs:
                  packageType: sdk
                  version: 7.0.x
                  rollForward: latestFeature
