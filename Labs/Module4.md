@@ -61,7 +61,7 @@ Code Scanning in GitHub Advanced Security for Azure DevOps enables automated ana
 
 1. This is simple to fix using parameters in the command line described in the remediation steps.
 
-1. Click on **Locations found** to see the code that triggered the alert.
+1. Click on **Location** to see the code that triggered the alert.
 
    ![Image](media/advlab4n6.png)
 
@@ -118,4 +118,4 @@ In this lab, you have completed the following:
 - Fixed the Code to resolve the alert.
 - Dismissed the code scanning alerts. 
 
-> Click on **Next** to proceed with the next lab.
+### You have successfully completed the lab!
