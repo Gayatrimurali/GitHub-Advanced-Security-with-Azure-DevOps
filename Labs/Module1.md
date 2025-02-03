@@ -150,7 +150,7 @@ In this task, you will create a Personal Access Token (PAT) in Azure DevOps and 
 
    ![allow-permissions](media/06-26-2024(1).png)
 
-1. Click on the **Azure DevOps** logo from the top left, click on **eShopOnWeb** project.
+1. Click on the **Azure DevOps (1)** logo from the top left, click on **eShopOnWeb (2)** project.
 
 1. Navigate to **eShopOnWeb** project > **Repos** > **src** > **Web** > and select **Constants.cs** file and click on **Edit**.
 
